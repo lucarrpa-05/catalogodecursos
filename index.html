@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Cursos</title>
+  <!-- Tailwind CSS from CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 50;
+      backdrop-filter: blur(3px);
+    }
+    .modal-content {
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .professor-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .professor-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .star-rating {
+      color: #fbbf24;
+    }
+    .reviews-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 60;
+      backdrop-filter: blur(5px);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen p-4">
+  <div class="container mx-auto max-w-6xl">
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl shadow-xl p-6 mb-8">
+      <h1 class="text-3xl font-bold flex items-center">
+        <i class="fas fa-graduation-cap mr-3"></i>
+        Catálogo de Cursos - Facultad de Economía
+      </h1>
+      <p class="mt-2 opacity-90">Explora cursos y revisa las reseñas de profesores</p>
+    </header>
+
+    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+      <div class="p-6 bg-white border-b border-gray-200">
+        <div class="flex flex-wrap gap-4 items-center">
+          <div class="relative flex-grow">
+            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            <input type="text" id="searchInput" placeholder="Buscar cursos..." 
+                  class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50">
+          </div>
+          <div class="flex items-center text-gray-600 text-sm">
+            <div class="mr-4">Dificultad:&nbsp;</div>
+            <div class="flex">
+              <i class="fas fa-star text-yellow-400 mr-1"></i>Fácil
+              <span class="mx-2">→</span>
+              <i class="fas fa-star text-yellow-400 mr-1"></i>
+              <i class="fas fa-star text-yellow-400 mr-1"></i>
+              <i class="fas fa-star text-yellow-400 mr-1"></i>
+              <i class="fas fa-star text-yellow-400 mr-1"></i>
+              <i class="fas fa-star text-yellow-400"></i>Difícil
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable(0)">
+                <div class="flex items-center">
+                  Nombre del Curso
+                  <i class="fas fa-sort ml-1"></i>
+                </div>
+              </th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable(1)">
+                <div class="flex items-center">
+                  Prerrequisito
+                  <i class="fas fa-sort ml-1"></i>
+                </div>
+              </th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable(2)">
+                <div class="flex items-center">
+                  Dificultad
+                  <i class="fas fa-sort ml-1"></i>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="coursesTable" class="divide-y divide-gray-200">
+            <!-- Course data will be injected here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="modal">
+    <div class="modal-content bg-white w-full max-w-4xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
+        <div class="flex justify-between items-center">
+          <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+          <button id="closeModal" class="text-white hover:text-gray-200 text-2xl p-1">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="flex items-center mt-2">
+          <div id="modalPrereq" class="text-sm opacity-90"></div>
+          <div id="modalDifficulty" class="ml-6 text-sm opacity-90"></div>
+        </div>
+      </div>
+      <div id="modalContent" class="p-6 max-h-[60vh] overflow-y-auto"></div>
+    </div>
+  </div>
+  
+  <!-- Professor Reviews Modal -->
+  <div id="reviewsModal" class="reviews-modal">
+    <div class="modal-content bg-white w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden">
+      <div class="bg-gradient-to-r from-indigo-600 to-purple-700 p-6 text-white">
+        <div class="flex justify-between items-center">
+          <h2 id="reviewsModalTitle" class="text-2xl font-bold"></h2>
+          <button id="closeReviewsModal" class="text-white hover:text-gray-200 text-2xl p-1">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div id="reviewsModalSubtitle" class="text-sm opacity-90 mt-1"></div>
+      </div>
+      <div id="reviewsModalContent" class="p-6 max-h-[60vh] overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <script>
+    // Global state for modals
+    let currentProfessor = null;
+    
+    // Fetch and display course data
+    document.addEventListener('DOMContentLoaded', async function() {
+      try {
+        const response = await fetch('courses.json');
+        const courses = await response.json();
+        
+        displayCourses(courses);
+        setupSearch(courses);
+        setupModalClosers();
+      } catch (error) {
+        console.error('Error loading courses:', error);
+        document.getElementById('coursesTable').innerHTML = 
+          '<tr><td colspan="3" class="px-6 py-4 text-center text-red-500">Error loading course data</td></tr>';
+      }
+    });
+
+    // Display courses in the table
+    function displayCourses(courses) {
+      const tableBody = document.getElementById('coursesTable');
+      tableBody.innerHTML = '';
+      
+      courses.forEach(course => {
+        const row = document.createElement('tr');
+        row.className = 'hover:bg-gray-50 cursor-pointer';
+        row.onclick = () => showCourseModal(course);
+        
+        // Generate star HTML for difficulty
+        const difficultyStars = generateStarRating(course.difficulty);
+        
+        row.innerHTML = `
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="text-sm font-medium text-gray-900">${course.name}</div>
+              <div class="ml-2 text-sm text-gray-500">${course.professors.length} Profesor${course.professors.length !== 1 ? 'es' : ''}</div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-gray-900">${course.prerequisite || 'N/A'}</div>
+          </td>
+          <td class="px-6 py-4">
+            <div class="flex star-rating">${difficultyStars}</div>
+          </td>
+        `;
+        
+        tableBody.appendChild(row);
+      });
+    }
+    
+    // Generate star rating HTML
+    function generateStarRating(rating) {
+      let starsHtml = '';
+      for (let i = 0; i < 5; i++) {
+        if (i < rating) {
+          starsHtml += '<i class="fas fa-star mr-1"></i>';
+        } else {
+          starsHtml += '<i class="far fa-star mr-1"></i>';
+        }
+      }
+      return starsHtml;
+    }
+
+    // Setup search functionality
+    function setupSearch(courses) {
+      const searchInput = document.getElementById('searchInput');
+      
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredCourses = courses.filter(course => 
+          course.name.toLowerCase().includes(searchTerm) || 
+          course.prerequisite.toLowerCase().includes(searchTerm) ||
+          course.professors.some(prof => prof.name?.toLowerCase().includes(searchTerm))
+        );
+        displayCourses(filteredCourses);
+      });
+    }
+
+    // Setup modal closers
+    function setupModalClosers() {
+      // Course modal
+      document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('courseModal').style.display = 'none';
+      });
+      
+      // Reviews modal
+      document.getElementById('closeReviewsModal').addEventListener('click', () => {
+        document.getElementById('reviewsModal').style.display = 'none';
+      });
+      
+      // Close modals when clicking outside
+      window.addEventListener('click', (event) => {
+        const courseModal = document.getElementById('courseModal');
+        const reviewsModal = document.getElementById('reviewsModal');
+        
+        if (event.target === courseModal) {
+          courseModal.style.display = 'none';
+        }
+        
+        if (event.target === reviewsModal) {
+          reviewsModal.style.display = 'none';
+        }
+      });
+    }
+
+    // Show course modal with professors
+    function showCourseModal(course) {
+      const modal = document.getElementById('courseModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      const modalPrereq = document.getElementById('modalPrereq');
+      const modalDifficulty = document.getElementById('modalDifficulty');
+      
+      // Set course info
+      modalTitle.textContent = course.name;
+      modalPrereq.innerHTML = `<i class="fas fa-book-open mr-2"></i>Prerrequisito: ${course.prerequisite}`;
+      modalDifficulty.innerHTML = `<i class="fas fa-chart-line mr-2"></i>Dificultad: ${generateStarRating(course.difficulty)}`;
+      
+      let content = '';
+      
+      // Display professors
+      if (course.professors.length > 0) {
+        content += `<h3 class="text-xl font-semibold mb-4">Profesores</h3>`;
+        content += `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">`;
+        
+        course.professors.forEach(prof => {
+          // Calculate and prepare rating information
+          let numericRating = typeof prof.rating === 'number'
+            ? prof.rating
+            : (Array.isArray(prof.reviews) && prof.reviews.length > 0
+                ? prof.reviews.reduce((sum, r) => sum + (Number(r.rating) || 0), 0) / prof.reviews.length
+                : null);
+
+          const ratingStars = numericRating !== null ? generateStarRating(Math.round(numericRating)) : generateStarRating(0);
+          const ratingDisplay = numericRating !== null ? numericRating.toFixed(1) : 'N/A';
+          
+          content += `
+            <div class="professor-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+              <div class="p-4 flex items-start">
+                <div class="w-10 h-10 flex items-center justify-center bg-indigo-600 text-white rounded-full mr-4">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="text-lg font-semibold">${prof.name}</h4>
+                  <div class="flex items-center mt-1">
+                    <div class="flex star-rating mr-2">${ratingStars}</div>
+                    <span class="text-sm text-gray-600">${ratingDisplay}</span>
+                  </div>
+                  <p class="text-gray-600 mt-1">${prof.reviews?.length || 0} reseña${prof.reviews?.length !== 1 ? 's' : ''}</p>
+                  <button class="mt-2 px-3 py-1 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700 transition-colors"
+                          onclick="showReviewsModal(event, '${encodeURIComponent(JSON.stringify(prof))}', '${course.name}')">Ver Reseñas</button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        
+        content += `</div>`;
+      } else {
+        content += `<p class="italic text-gray-500">No hay profesores asignados a este curso actualmente.</p>`;
+      }
+      
+      modalContent.innerHTML = content;
+      modal.style.display = 'block';
+    }
+    
+    // Show reviews modal for a professor
+    function showReviewsModal(event, encodedProfJson, courseName) {
+      // Prevent the click from propagating to the course modal
+      event.stopPropagation();
+      
+      // Decode and parse the professor JSON string
+      const professorJson = decodeURIComponent(encodedProfJson);
+      const professor = JSON.parse(professorJson);
+      
+      const modal = document.getElementById('reviewsModal');
+      const title = document.getElementById('reviewsModalTitle');
+      const subtitle = document.getElementById('reviewsModalSubtitle');
+      const content = document.getElementById('reviewsModalContent');
+      
+      title.textContent = professor.name;
+      subtitle.textContent = `Reseñas para ${courseName}`;
+      
+      let reviewsHtml = '';
+      
+      if (professor.reviews && professor.reviews.length > 0) {
+        reviewsHtml += `<div class="space-y-4">`;
+        
+        professor.reviews.forEach(review => {
+          reviewsHtml += `
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div class="flex items-center mb-2">
+                <div class="flex star-rating mr-2">${generateStarRating(review.rating)}</div>
+                <span class="text-sm text-gray-600">${review.date}</span>
+              </div>
+              <p class="text-gray-800">${review.text}</p>
+              <p class="text-sm text-gray-500 mt-1">Curso: ${review.course}</p>
+            </div>
+          `;
+        });
+        
+        reviewsHtml += `</div>`;
+      } else {
+        reviewsHtml = `<p class="text-center italic text-gray-500">No hay reseñas disponibles para este profesor.</p>`;
+      }
+      
+      content.innerHTML = reviewsHtml;
+      modal.style.display = 'block';
+    }
+
+    // Sort table functionality
+    function sortTable(columnIndex) {
+      const table = document.getElementById('coursesTable');
+      const rows = Array.from(table.rows);
+      
+      rows.sort((a, b) => {
+        let aValue, bValue;
+        
+        // Special handling for difficulty column which has star icons
+        if (columnIndex === 2) {
+          aValue = a.cells[columnIndex].querySelector('.star-rating').childElementCount;
+          bValue = b.cells[columnIndex].querySelector('.star-rating').childElementCount;
+          return aValue - bValue;
+        } else {
+          // For text columns
+          aValue = a.cells[columnIndex].textContent;
+          bValue = b.cells[columnIndex].textContent;
+          return aValue.localeCompare(bValue);
+        }
+      });
+      
+      // Re-append rows in the new order
+      rows.forEach(row => table.appendChild(row));
+    }
+  </script>
+</body>
+</html>

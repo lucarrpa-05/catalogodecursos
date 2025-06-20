@@ -1,0 +1,746 @@
+[
+  {
+    "name": "Algoritmos y Estructuras de Datos",
+    "prerequisite": "Programación de Computadores",
+    "difficulty": 4,
+    "professors": [
+      {
+        "slug": "wightman-p",
+        "name": "Pedro Wightman",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "text": "Es muy importante tener buenas bases en C++. Con eso, la clase es bastante sencilla. El profesor Pedro tiene una metodología muy práctica, con muchos ejercicios en clase, no tanta teoría. Los parciales son muy sencillos si uno hace los ejercicios. También, con el proyecto, que pesa el 25%, fácilmente se puede subir mucho la nota si a uno no le fue tan bien en algún parcial. Recomiendo 100% verla con él.",
+            "rating": 4.5,
+            "date": "2025-06-08",
+            "course": "Algoritmos y Estructuras de Datos"
+          }
+        ]
+      },
+      {
+        "slug": "garcia-ls",
+        "name": "Luz Stella García",
+        "rating": 1,
+        "reviews": [
+          {
+            "text": "No la recomiendo para nada. Hace la clase mucho más difícil que el otro profesor, califica super raro, los parciales son muy teóricos.. metanla con Pedro."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Álgebra Lineal",
+    "prerequisite": "Precálculo",
+    "difficulty": 3,
+    "professors": [
+      {
+        "slug": "rodriguez-c",
+        "name": "César Rodríguez",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "text": "Excelente profesor y hermosa materia. Recomendado César totalmente para todas las clases que dicta. Es formal (da definiciones, teoremas con sus demostraciones, etc.), habla sobre las aplicaciones de los conceptos, y enseña muy bien la parte mecánica, que al final es lo que se evalúa.",
+            "rating": 4.5,
+            "date": "2025-06-08",
+            "course": "Álgebra Lineal"
+          }
+        ]
+      },
+      {
+        "slug": "martinez-j",
+        "name": "Juan Carlos Martínez",
+        "rating": 1,
+        "reviews": [
+          {
+            "text": "El curso puede ser bastante abstracto y no ser muy útil para cursos posteriores. Los temas útiles corresponden a entender una matriz, sacar determinantes y regresión lineal. Pone a prueba las habilidades matemáticas.",
+            "rating": 0.5,
+            "date": "2025-06-08",
+            "course": "Álgebra Lineal"
+          }
+        ]
+      },
+      {
+        "slug": "muete-w",
+        "name": "Walther Muete",
+        "rating": 2.5,
+        "reviews": [
+          {
+            "text": "Excelente profesor, le gusta tener buena relación con sus estudiantes, haciendo que la materia sea mucho más llevadera. Explica con claridad, no tiene problema en responder preguntas o devolverse si hay dudas.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Álgebra Lineal"
+          },
+          {
+            "text": "Curso de alta dificultad, en el que por la naturaleza de la materia en si, los parciales pueden ser largos y propensos a errores. Recomiendo poner atención desde el primer momento de la primera clase, y practicar constantemente",
+            "rating": 2,
+            "date": "2025-06-09",
+            "course": "Álgebra Lineal"
+          },
+          {
+            "text": "Es muy buena persona, pero como profesor no explica bien, manda tareas por medio de canales no institucionales como WhatsApp, a veces no explica algunos temas y se demora mucho explicando otros poco importantes, además es pasivo agrsivo muchas veces con algunas personas en especifico",
+            "rating": 1.5,
+            "date": "2025-06-11",
+            "course": "Álgebra Lineal"
+          }
+        ]
+      },
+      {
+        "slug": "sarmiento-n",
+        "name": "Norma Sarmiento",
+        "rating": 5,
+        "reviews": [
+          {
+            "text": "La profesora explica muy bien, los parciales van acorde a lo visto y la carga académica es baja.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Álgebra Lineal"
+          },
+          {
+            "text": "La profesora no solo conoce en profundidad los contenidos de la clase, sino que además, utiliza estrategias pedagógicas que benefician mucho el aprendizaje. Adicional, la profesora valora y reconoce el esfuerzo de los estudiantes.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Álgebra Lineal"
+          }
+        ]
+      },
+      {
+        "slug": "castro-d",
+        "name": "Daniel Castro",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "text": "Me gustó mucho el curso con Daniel, fue muy fácil y se aprende todo lo necesario de buena manera.",
+            "rating": 4.5,
+            "date": "2025-06-09",
+            "course": "Álgebra Lineal"
+          },
+          {
+            "text": "El curso no es complicado, el profesor va a enseñar y es poco exigente",
+            "rating": 4.5,
+            "date": "2025-06-10",
+            "course": "Álgebra Lineal"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cálculo I",
+    "prerequisite": "Precálculo",
+    "difficulty": 5,
+    "professors": [
+      {
+        "slug": "muete-w",
+        "name": "Walther Muete",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "text": "Es demasiado importante para el resto de la carrera. En lo personal sugiero un montón verla con Walther porque es bastante exigente y te deja muy bien preparado para los cursos siguientes: Microeconomía I y Cálculo II. Esto hace que uno se esfuerce más al momento de verla, pero el semestre siguiente es más suave. Califica bastante rápido y es muy accesible si uno tiene dudas que necesitan ser resueltas. La clase es dinámica y muy amena. Posible desventaja es que tiene el Excel de notas público para todos.",
+            "rating": 4.5,
+            "date": "2025-06-08",
+            "course": "Cálculo I"
+          },
+          {
+            "text": "El curso esta bien, sin embargo el profesor lo hace un poco complicado, aveces va muy rapido, no es claro en algunas cosas, el parcial es mucho mas dificil de las explicaciones de la clase y la forma de calificar es muyy estricta",
+            "rating": 1.5,
+            "date": "2025-06-09",
+            "course": "Cálculo I"
+          },
+          {
+            "text": "Si bien es un profesor bastante estricto, con él que “sí o sí” vas a aprender y vas a obtener excelentes bases para la carrera. Es un profesor que no solo es matemático, sino que tiene conocimientos económicos, lo cual permite que las clases sean más aplicadas, algo fundamental en cálculo diferencial.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Cálculo I"
+          },
+          {
+            "text": "Con Walther es un poco mas difícil pero se aprende más y este curso es fundamental para el resto de la carrera, entonces recomendado Walther.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Cálculo I"
+          },
+          {
+            "text": "El curso requiere mucha práctica, pero no es inherentemente difícil. Walther califica duro, pero explica bien, así que hay que aprovechar sus clases y practicar constantemente. Vi la materia cuando no había monitoria regular, así que eso también influyó en el rendimiento. La \"tutoría\" con el profesor no sirve de mucho, pues solo es hacer unos qüizes.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Cálculo I"
+          },
+          {
+            "text": "La materia puede ser complicada, pero el profe Walther la hace muy buena y agradable. Incentiva mucho el aprendizaje de los estudiantes.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Cálculo I"
+          },
+          {
+            "text": "A pesar de ser un curso un poco complicado, Walter es muy buen profesor, es un poco exigente al calificar los parciales pero uno aprende mucho",
+            "rating": 4,
+            "date": "2025-06-10",
+            "course": "Cálculo I"
+          },
+          {
+            "text": "El profesor es exigente porque explica muy bien, él sabe que lo que él enseña es muy acorde a lo que evalúa, me funcionó mucho para microeconomía tener una buena base de cálculo diferencial",
+            "rating": 5,
+            "date": "2025-06-10",
+            "course": "Cálculo I"
+          },
+          {
+            "text": "Calculo I es super importante para el resto de la carrera y aunque en principio no es fácil, Water es un excelente profesor",
+            "rating": 5,
+            "date": "2025-06-10",
+            "course": "Cálculo I"
+          }
+        ]
+      },
+      {
+        "slug": "casas-d",
+        "name": "Diego Casas",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Muy buen profesor, explica todo al detalle y intenta hacer ejercicios en clase que se van a parecer a los del parcial, lo malo es que a veces llega a ser pasivo agresivo y además llega bastante tarde a clase",
+            "rating": 4,
+            "date": "2025-06-11",
+            "course": "Cálculo I"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cálculo II",
+    "prerequisite": "Cálculo I",
+    "difficulty": 4,
+    "professors": [
+      {
+        "slug": "sarmiento-n",
+        "name": "Norma Sarmiento",
+        "rating": 4.1,
+        "reviews": [
+          {
+            "text": "Es una asignatura relativamente sencilla que con pocas horas de estudio se puede pasar sin dificultades. No es tan útil todo el curso, pero puede ayudar a subir el promedio semestral. Norma es excelente profesora, muy ordenada y entrega notas bastante rápido.",
+            "rating": 2.5,
+            "date": "2025-06-08",
+            "course": "Cálculo II"
+          },
+          {
+            "text": "Super buena profesora explica excelente",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Cálculo II"
+          },
+          {
+            "text": "Es un curso el cual no se requiere mucho esfuerzo y la profesora explica muy bien",
+            "rating": 2,
+            "date": "2025-06-09",
+            "course": "Cálculo II"
+          },
+          {
+            "text": "La profesora cuenta con los conocimientos requeridos para dictar el curso y aplica metodologías pedagógicas fundamentales para el aprendizaje. Adicional, muestra gran pasión por la materia que motivan el aprendizaje. Por último, se interesa por reconocer el esfuerzo de los estudiantes.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Cálculo II"
+          },
+          {
+            "text": "Curso de baja dificultad en el que con practicar se dominan los temas. Norma explica bien y es muy factible dejar el curso alto.",
+            "rating": 4.5,
+            "date": "2025-06-09",
+            "course": "Cálculo II"
+          },
+          {
+            "text": "Norma es la mejor profesora para la materia de Cálculo II, es bastante querida y está muy pendiente de los estudiantes. La materia no es super difícil pero es de bastante práctica.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Cálculo II"
+          },
+          {
+            "text": "Norma es muy escuelera (tema, ejemplos, ejercicios y taller) personalmente creo que es una de las mejores formas de enseñar y me encanta... Es sencillo entenderle y es muy amable (eso no significa que deje de ser estricta o que regale puntos extra así como así) hay que estudiar muy bien y el proyecto (cuando lo vi) dejo tema libre.",
+            "rating": 4.5,
+            "date": "2025-06-10",
+            "course": "Cálculo II"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Constitución Política e Instrucción Cívica",
+    "prerequisite": "N/A",
+    "difficulty": 2,
+    "professors": [
+      {
+        "slug": "valencia-d",
+        "name": "Diana Valencia",
+        "rating": 2.8,
+        "reviews": [
+          {
+            "text": "Es un curso útil para entender a grandes rasgos cómo funciona el estado y la historia de la constitución. Con la profesora Diana se aprende lo necesario, hace el curso simplificado para los economistas y las evaluaciones son bastante sencillas. Excelente ser humano.",
+            "rating": 2.5,
+            "date": "2025-06-08",
+            "course": "Constitución Política e Instrucción Cívica"
+          },
+          {
+            "text": "La profesora es exigente con la materia, siendo profesora de derecho pero no es complicada pasarla. Realizar las actividades en clase y hacer las lecturas pertinentes.",
+            "rating": 3,
+            "date": "2025-06-09",
+            "course": "Constitución Política e Instrucción Cívica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Contabilidad Financiera",
+    "prerequisite": "N/A",
+    "difficulty": 3,
+    "professors": [
+      {
+        "slug": "castelblanco-o",
+        "name": "Omar Castelblanco",
+        "rating": 2.5,
+        "reviews": [
+          {
+            "text": "La clase es muy útil para entender la estructura de las empresas, interpretar cifras y pensar como empresarios. Este profesor hacía la clase muy sencilla, evaluaciones retadoras y fácil de aprobarla.",
+            "rating": 2.5,
+            "date": "2025-06-08",
+            "course": "Contabilidad Financiera"
+          }
+        ]
+      },
+      {
+        "slug": "villa-j",
+        "name": "Joaquín Villa",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "text": "Contabilidad es una materia bastante interesante y el profesor se nota que sabe un montón, además, es bastante practico",
+            "rating": 4.5,
+            "date": "2025-06-10",
+            "course": "Contabilidad Financiera"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Curso Básico STATA",
+    "prerequisite": "N/A",
+    "difficulty": 3.5,
+    "professors": [
+      {
+        "slug": "lopez-n",
+        "name": "Nazly López",
+        "rating": 2.5,
+        "reviews": [
+          {
+            "text": "Fue un curso muy útil para entender este software estadística y reforzar temas de Econometría Básica de manera más práctica. La profesora Nazly hace muy fácil aprender y entender las funciones de STATA. También, trae bases de datos muy útiles. Recomendadísimo el curso.",
+            "rating": 2.5,
+            "date": "2025-06-08",
+            "course": "Curso Básico STATA"
+          },
+          {
+            "text": "Bastante práctico, se aprende bastante y la profesora explica detalladamente la aplicación de cada uno de los temas",
+            "rating": 4.5,
+            "date": "2025-06-09",
+            "course": "Curso Básico STATA"
+          },
+          {
+            "text": "Mul mala experiencia. Una profesora que no sabe enseñar, va demasiado rápido en la clases, no le gusta que se le pregunté y no da la argumentación de porque de las notas.",
+            "rating": 0.5,
+            "date": "2025-06-09",
+            "course": "Curso Básico STATA"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Derivados",
+    "prerequisite": "N/A",
+    "difficulty": 3,
+    "professors": [
+      {
+        "slug": "ramirez-g",
+        "name": "Gonzalo Ramírez",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Excelente profesor. Manejo perfecto de los temas del curso, notable el conocimiento sobre este, ejemplos útiles de la vida real y ejercicios prácticos relevantes para entender. Las evaluaciones son parciales de opción múltiple bastante sencillos. En lo personal, la línea de finanzas no es de mi agrado y estos temas se me hacían pesados, pero a quien le guste le encantará.",
+            "rating": 4,
+            "date": "2025-06-08",
+            "course": "Derivados"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Doctrinas Económicas",
+    "prerequisite": "N/A",
+    "difficulty": 2,
+    "professors": [
+      {
+        "slug": "castrillon-a",
+        "name": "Alberto Castrillón",
+        "rating": 3,
+        "reviews": [
+          {
+            "text": "Un curso para entender sobre el pensamiento económico a lo largo del tiempo, recap de las escuelas económicas y autores relevantes. El profesor Castrillón explica con facilidad los temas, no hace ningún tipo de control de lectura y sus clases son muy interesantes. El día antes del parcial hace un taller que es al menos 75% idéntico al parcial. Una clase para dejarla alta sin dificultades.",
+            "rating": 3,
+            "date": "2025-06-08",
+            "course": "Doctrinas Económicas"
+          }
+        ]
+      },
+      {
+        "slug": "henao-j",
+        "name": "José Leonardo Henao",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Henao es muy buen profesor, los parciales no son difíciles y se aprende mucho",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Doctrinas Económicas"
+          }
+        ]
+      },
+      {
+        "slug": "bohorquez-j",
+        "name": "Jesús Bohórquez",
+        "rating": 2.5,
+        "reviews": [
+          {
+            "text": "Muy buen profesor, logra atraparte a través vez  de la historia económica y entender el comportamiento en la actualidad, te incentiva a que no te quedes con las dudas y entiendas de la mejor manera los temas, porque sabe que son parte de la columna vertebral  de la carrera",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Doctrinas Económicas"
+          },
+          {
+            "text": "Jesús es un profesor exigente, y conduce la clase de manera particular. Pero todo lo que hace está conducido a explicar, y las lecturas son perfectas para la clase, siendo clásicos de la economía que se tienen que conocer. Con hacer todas las lecturas basta para dejar la materia bien.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Doctrinas Económicas"
+          },
+          {
+            "text": "El profesor nos comparaba constantemente con otros grupos que había tenido en semestres pasados",
+            "rating": 1,
+            "date": "2025-06-10",
+            "course": "Doctrinas Económicas"
+          },
+          {
+            "text": "Cuando la vi en primer semestre no fue muy fácil porque no estaba a costumbrada a leer tanto, pero la clase de Jesus es dinámica y ayuda a comprender a los autores con ejemplos cotidianos. Es importante asistir a las clases y preguntarle, es muy brillante y se interesa por el bienestar de sus estudiantes. Es un poco tosco (algunos dirían que grosero) pero si te acercas a hablarle es bastante agradable y uno de los mejores profesores que he tenido en la carrera. Es un profesional con mucha experiencia en Historia Económica",
+            "rating": 2,
+            "date": "2025-06-10",
+            "course": "Doctrinas Económicas"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Curso Básico R",
+    "prerequisite": "N/A",
+    "difficulty": 2,
+    "professors": [
+      {
+        "slug": "marin-m",
+        "name": "Margarita Marín",
+        "rating": 0.5,
+        "reviews": [
+          {
+            "text": "La profesora no explicaba y faltaba mucho a clase avisando con poco tiempo de antelación",
+            "rating": 0.5,
+            "date": "2025-06-09",
+            "course": "Curso Básico R"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Medición Económica",
+    "prerequisite": "Introducción a la Ciencia Económica",
+    "difficulty": 3,
+    "professors": [
+      {
+        "slug": "mora-c",
+        "name": "Carlos Mora",
+        "rating": 3.5,
+        "reviews": [
+          {
+            "text": "Muy buena persona, pero pierde demasiado tiempo con cosas que no son relevantes. La clase es demasiado teórica. Hay un desconecto grande entre lo que se enseña en la clase y lo que se evalua en los parciales. Podría ser una muy buena clase pero se desaprovehca bastante.",
+            "rating": 3.5,
+            "date": "2025-06-10",
+            "course": "Medición Económica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Microeconomía I",
+    "prerequisite": "Cálculo I, Introducción a la Ciencia Económica",
+    "difficulty": 5,
+    "professors": [
+      {
+        "slug": "sepulveda-c",
+        "name": "Carlos Sepúlveda",
+        "rating": 5,
+        "reviews": [
+          {
+            "text": "Excelente, enseña de manera clara y sencilla, ejemplos prácticos y explicaciones detalladas que ayudan demasiado a entender la intuición. Recomiendo mucho. Siento que la materia es igual de difícil con Sepúlveda o Luis H, pero uno entiende mucho más con Sepúlveda.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Microeconomía I"
+          },
+          {
+            "text": "Muy buen profesor, enseña muy bien la intuición y hace muchos ejercicios para que uno pueda entender los conceptos. Es una materia dura que toca estudiar bastante. Recomiendo ir a todas las monitorías y practicar mucho.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Microeconomía I"
+          }
+        ]
+      },
+      {
+        "slug": "gutierrez-l",
+        "name": "Luis H Gutierrez",
+        "rating": 2.75,
+        "reviews": [
+          {
+            "text": "Mi experiencia con la materia es que el profesor Luis H tiende a desviarse de tema, no tiene espacios de solución de duda, es demasiado tema y tiende a ir muy rápido. tips, la materia es muy auto didáctica si te va bien con la lecturas recomiendan el libro de varian, sin embargo mi método estudie con las diapositivas del profesor y desde el primer día que pude estudie realizando parciales, y sobre todo caerle bien al profesor.",
+            "rating": 2,
+            "date": "2025-06-09",
+            "course": "Microeconomía I"
+          },
+          {
+            "text": "El curso es bastante útil para las materias siguientes y no es para nada fácil. Se requiere estudiar bastante, casi con tres semanas de antelación al parcial. Mi experiencia con Luis H fue muy buena, dándonos bastante espacios para hacer ejercicios, nos hacía clases extra de repaso y era fácil acceder a él vía correo. La monitoria puede ser la diferencia entre sufrir la materia o no.",
+            "rating": 3.5,
+            "date": "2025-06-09",
+            "course": "Microeconomía I"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Desarrollo Económico",
+    "prerequisite": "N/A",
+    "difficulty": 3.5,
+    "professors": [
+      {
+        "slug": "seither-j",
+        "name": "Julia Seither",
+        "rating": 4.25,
+        "reviews": [
+          {
+            "text": "Curso con temáticas interesantes que motivan la participación. Hay que ir todas las clases porque siempre se saca nota. A la hora de estudiar, no confiarse y revisar todos los recursos del curso.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Desarrollo Económico"
+          },
+          {
+            "text": "Una clase muy buena. Combina tanto los componentes teóricos como prácticos de la carrera y permite que se reflexione sobre temas muy importantes de la economía, a través de debates y dinámicas en la clase, donde se discuten temas complicados pero necesarios para tener una mejor visión del desarrollo economico.",
+            "rating": 4.5,
+            "date": "2025-06-10",
+            "course": "Desarrollo Económico"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Econometría Básica",
+    "prerequisite": "N/A",
+    "difficulty": 4,
+    "professors": [
+      {
+        "slug": "rodriguez-p",
+        "name": "Paul Rodríguez",
+        "rating": 3.7,
+        "reviews": [
+          {
+            "text": "Adoro a Paul como persona, pero me parece muy importante ver el curso con Saavedra, realmente sales mucho mejor preparado.",
+            "rating": 3,
+            "date": "2025-06-09",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "Es un curso que, si bien presenta las bases teóricas a profundidad, se enfoca en las aplicaciones practicas de la econometría, lo que lo hace más valioso para los estudiantes. El profesor Paul explica claro y abre varias actividades para practicar lo aprendido. Julia no se hace entender tan bien, pero también se enfoca en la práctica y en actividades de aplicación",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "Es un curso muy intuitivo, Paul es un excelente profesor y busca que su clase sea bastante aplicable. Se profundiza en el conocimiento en R y el proyecto es una oportunidad de hacer cosas muy chéveres",
+            "rating": 4,
+            "date": "2025-06-10",
+            "course": "Econometría Básica"
+          }
+        ]
+      },
+      {
+        "slug": "saavedra-s",
+        "name": "Santiago Saavedra",
+        "rating": 4.75,
+        "reviews": [
+          {
+            "text": "De los cursos más importantes de la carrera donde se analiza la regresión lineal en su máximo esplendor. Temas de evaluación de impacto son abordados. Este curso reúne lo visto en otros cursos complementando y reforzando los conceptos ya obtenidos. \nNo tuve la mejor experiencia con el profesor Santiago, pero explica bien y eso es lo importante. Los parciales no son complicados.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "Hace un muy buen manejo del tema y logra que sus estudiantes se atrapen en el tema, ya que su manera de enseñar es didáctica. Excelente profesor",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "El docente tiene tanto buen manejo del tema, como dominio de los estudiantes. Sabe explicar muy bien, los parciales no son difíciles, complementa todos los temas con experiencias personales que te ayudan a comprender mas el tema en situaciones cotidianas.",
+            "rating": 4.5,
+            "date": "2025-06-10",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "Un curso bastante retador pero el profesor es demasiado bueno explicando cada uno de los temas y se preocupa mucho por que los estudiantes tengan un entendimiento claro",
+            "rating": 4.5,
+            "date": "2025-06-12",
+            "course": "Econometría Básica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Economía Matemática",
+    "prerequisite": "Cálculo II, Álgebra Lineal",
+    "difficulty": 5,
+    "professors": [
+      {
+        "slug": "kayi-c",
+        "name": "Cagatay Kayi",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "La materia puede llegar a ser bastante complicada, pero realmente es cuestión de estudiarla bien y sobre todo tener buenas bases. Son muchas fórmulas y muchos temas, hay que estudiar bastante y los parciales no son sencillos. Eso si, el profesor ayuda mucho con las notas si uno muestra esfuerzo y buena actitud.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Economía Matemática"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Estadística",
+    "prerequisite": "Probabilidad",
+    "difficulty": 4,
+    "professors": [
+      {
+        "slug": "moreno-d",
+        "name": "Diana Moreno",
+        "rating": 3,
+        "reviews": [
+          {
+            "text": "Es buena profesora, explica los conceptos de manera clara y es paciente con las dudas. En lo personal me parece más fácil que probabilidad, pero igual tiene su ciencia. No es una materia fácil pero tampoco una muy complicada.",
+            "rating": 3,
+            "date": "2025-06-09",
+            "course": "Estadística"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Haciendo Economía",
+    "prerequisite": "N/A",
+    "difficulty": 2,
+    "professors": [
+      {
+        "slug": "rodriguez-p",
+        "name": "Paul Rodríguez",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Es un curso bastante sencillo, Paul es muy chévere y busca que su clase sea bastante aplicada. No hay que estudiar mucho, es fácil, pero hay muchas entregas, entonces si quita tiempo.",
+            "rating": 4,
+            "date": "2025-06-10",
+            "course": "Haciendo Economía"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Introducción a la Ciencia Económica",
+    "prerequisite": "N/A",
+    "difficulty": 2,
+    "professors": [
+      {
+        "slug": "ferraz-e",
+        "name": "Eduardo Ferraz",
+        "rating": 3,
+        "reviews": [
+          {
+            "text": "Ferraz es muy malo de profesor, no explica para nada bien, siempre se enreda muchísimo con cosas demasiado sencillas y en general complica mucho todo, sobre todo los parciales, hace que un tema fácil se vuelva muy dificíl porque no se expresa bien y lo confunde mucho a uno. Se nota que sabe muchísimo pero en verdad no lo explica bien.",
+            "rating": 2,
+            "date": "2025-06-09",
+            "course": "Introducción a la Ciencia Económica"
+          },
+          {
+            "text": "Clase introductoria muy sencilla, conceptos muy básicos e intuitivos para cualquier persona, no se necesita tener bases en nada. El profesor Eduardo es de los mejores economistas que tiene la facultad, tiene mucho conocimiento y creo que hace un esfuerzo grande por dárselo a los estudiantes de la forma más sencilla posible, pero a veces le cuesta expresarse, sobre todo por escrito.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Introducción a la Ciencia Económica"
+          }
+        ]
+      },
+      {
+        "slug": "ropero-s",
+        "name": "Sergio Ropero",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Es un profesor excelente, explica los conceptos de manera clara y tiene muy buenas diapositivas. La clase es muy fácil si uno pone atención y hace los talleres.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Introducción a la Ciencia Económica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Precálculo",
+    "prerequisite": "N/A",
+    "difficulty": 2,
+    "professors": [
+      {
+        "slug": "castro-d",
+        "name": "Daniel Castro",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "La clase es muy sencilla. Los parciales son fáciles de preparar y en general no toca estudiar mucho.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Precálculo"
+          }
+        ]
+      },
+      {
+        "slug": "sierra-s",
+        "name": "Stella Sierra",
+        "rating": 3,
+        "reviews": [
+          {
+            "text": "La profesora explica muy bien las bases, es muy útil para los que no aprendieron bien en el colegio.",
+            "rating": 3,
+            "date": "2025-06-19",
+            "course": "Precálculo"
+          }
+        ]
+      }
+    ]
+  }
+]
