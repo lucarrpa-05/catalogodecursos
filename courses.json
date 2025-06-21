@@ -7,11 +7,17 @@
       {
         "slug": "wightman-p",
         "name": "Pedro Wightman",
-        "rating": 4.5,
+        "rating": 4,
         "reviews": [
           {
             "text": "Es muy importante tener buenas bases en C++. Con eso, la clase es bastante sencilla. El profesor Pedro tiene una metodología muy práctica, con muchos ejercicios en clase, no tanta teoría. Los parciales son muy sencillos si uno hace los ejercicios. También, con el proyecto, que pesa el 25%, fácilmente se puede subir mucho la nota si a uno no le fue tan bien en algún parcial. Recomiendo 100% verla con él.",
             "rating": 4.5,
+            "date": "2025-06-08",
+            "course": "Algoritmos y Estructuras de Datos"
+          },
+          {
+            "text": "La clase puede ser o muy fácil o extremadamente difícil, todo depende de las bases que uno tenga en programación. Clave dominar o por lo menos entender programación orientada a objetos en C++, porque todos los temas de la clase se basan en eso y el profesor asume que uno ya sabe, y no explica para nada lo que se supone que uno aprendió en programación. En lo personal mi experiencia fue buena, nunca me costó pasar un parcial e igual con el proyecto se levanta bastante la nota, pero si tuve gente en mi grupo que la sufrió un resto. Pedro es muy bueno, sabe muchísimo, pero solamente van a aprovechar eso los que tengan buenas bases... si no, creo que la experiencia es pésima, vas a sentir que el man va a toda, que no explica nada y que los parciales son imposibles. Todo depende de lo que uno ya sepa...",
+            "rating": 3.5,
             "date": "2025-06-08",
             "course": "Algoritmos y Estructuras de Datos"
           }
@@ -23,7 +29,10 @@
         "rating": 1,
         "reviews": [
           {
-            "text": "No la recomiendo para nada. Hace la clase mucho más difícil que el otro profesor, califica super raro, los parciales son muy teóricos.. metanla con Pedro."
+            "text": "No la recomiendo para nada. Hace la clase mucho más difícil que el otro profesor, califica super raro, los parciales son muy teóricos.. metanla con Pedro.",
+            "rating": 1,
+            "date": "2025-06-08",
+            "course": "Algoritmos y Estructuras de Datos"
           }
         ]
       }
@@ -40,7 +49,7 @@
         "rating": 4.5,
         "reviews": [
           {
-            "text": "Excelente profesor y hermosa materia. Recomendado César totalmente para todas las clases que dicta. Es formal (da definiciones, teoremas con sus demostraciones, etc.), habla sobre las aplicaciones de los conceptos, y enseña muy bien la parte mecánica, que al final es lo que se evalúa.",
+            "text": "Excelente profesor y hermosa materia. Recomendado César totalmente para todas las clases que dicta. Es formal (da definiciones, teoremas con sus demostraciones, etc.), habla sobre las aplicaciones de los conceptos, y enseña muy bien la parte mecánica, que al final es lo que se evalúa. Sobre eso, califica muy generosamente. No penaliza mucho errores de cálculos simples, que son fáciles de cometer en esta materia si no dejan usar calculadora (que fue mi caso), y en cambio, si premia mucho que uno entienda los conceptos. El único defecto que tiene, y es uno grande, es que es súper difícil acceder a él afuera de la clase. Dice que no le funciona el correo (no sé como es posible eso), nunca contesta por e-aulas, entonces toca depender del monitor para todo contacto con él. Sin embargo, es tan bueno como docente que lo compensa.",
             "rating": 4.5,
             "date": "2025-06-08",
             "course": "Álgebra Lineal"
@@ -214,11 +223,11 @@
       {
         "slug": "sarmiento-n",
         "name": "Norma Sarmiento",
-        "rating": 4.1,
+        "rating": 4.5,
         "reviews": [
           {
             "text": "Es una asignatura relativamente sencilla que con pocas horas de estudio se puede pasar sin dificultades. No es tan útil todo el curso, pero puede ayudar a subir el promedio semestral. Norma es excelente profesora, muy ordenada y entrega notas bastante rápido.",
-            "rating": 2.5,
+            "rating": 4,
             "date": "2025-06-08",
             "course": "Cálculo II"
           },
@@ -230,7 +239,7 @@
           },
           {
             "text": "Es un curso el cual no se requiere mucho esfuerzo y la profesora explica muy bien",
-            "rating": 2,
+            "rating": 4,
             "date": "2025-06-09",
             "course": "Cálculo II"
           },
@@ -254,7 +263,7 @@
           },
           {
             "text": "Norma es muy escuelera (tema, ejemplos, ejercicios y taller) personalmente creo que es una de las mejores formas de enseñar y me encanta... Es sencillo entenderle y es muy amable (eso no significa que deje de ser estricta o que regale puntos extra así como así) hay que estudiar muy bien y el proyecto (cuando lo vi) dejo tema libre.",
-            "rating": 4.5,
+            "rating": 5,
             "date": "2025-06-10",
             "course": "Cálculo II"
           }
@@ -465,11 +474,17 @@
       {
         "slug": "mora-c",
         "name": "Carlos Mora",
-        "rating": 3.5,
+        "rating": 2,
         "reviews": [
           {
             "text": "Muy buena persona, pero pierde demasiado tiempo con cosas que no son relevantes. La clase es demasiado teórica. Hay un desconecto grande entre lo que se enseña en la clase y lo que se evalua en los parciales. Podría ser una muy buena clase pero se desaprovehca bastante.",
-            "rating": 3.5,
+            "rating": 3,
+            "date": "2025-06-10",
+            "course": "Medición Económica"
+          },
+          {
+            "text": "A pesar de ser bastante fácil, es la clase que menos he disfrutado en toda la carrera. Involucra mucha memorización, pues casi todo lo evaluable se centra en aprenderse fórmulas y saber cuándo usar cada una, pero en la clase no se profundiza para nada en de dónde vienen. En cambio, el profesor decide dedicar la mayoría del tiempo a obligar a los estudiantes a participar, hacer quices sorpresa, ejercicos que no tienen nada que ver con los parciales... entonces, uno depende bastante de la monitoría, pero en lo personal tampoco me pareció efectiva. Los talleres nada que ver con los parciales, en general muy poca explicación de lo que uno necesita saber para los parciales, tanto en la clase como en la monitoría. Y estos, en especial uno, parecía hecho con la intención de coger temas extremadamente sencillos sin ninguna ciencia y enredarlos lo más posible. En serio creo que la materia está muy mal dictada.",
+            "rating": 1,
             "date": "2025-06-10",
             "course": "Medición Económica"
           }
@@ -518,6 +533,25 @@
             "date": "2025-06-09",
             "course": "Microeconomía I"
           }
+        ]
+      }
+    ]
+  },
+  {
+    "name" : "Microeconomía II",
+    "prerequisite" : "Microeconomía I",
+    "difficulty" : 3,
+    "professors" : [
+      {
+        "slug" : "gallego-j",
+        "name" : "Juan Miguel Gallego",
+        "rating" : 4,
+        "reviews" : [
+          {
+            "text" : "La clase es muy interesante, la más chévere que he visto hasta ahora, y no da tan duro como Micro 1 si uno cogió buena intuición. Gallego excelente, clases muy interactivas, un montón de ejemplos prácticos, te enseña muy bien a ver los conceptos que enseña en la clase en la vida real.",
+            "rating" : 4,
+            "date" : "2025-06-20"
+         }
         ]
       }
     ]
@@ -652,6 +686,25 @@
     ]
   },
   {
+    "name" : "Lógica y Matemáticas Discretas",
+    "prerequisite" : "N/A",
+    "difficulty" : 4,
+    "professors" : [
+      {
+        "slug" : "duque-s",
+        "name" : "Sergio Nicolás Duque",
+        "rating" : 4,
+        "reviews" : [
+          {
+            "text" : "Lógica es la materia más dura de primer semestre, aunque le han bajado bastante a la cantidad de temas y a la dificultad de los mismos. Igual, es complicado, son muchos conceptos nuevos y es difícil cogerle el tiro al inicio. Yo lo que recomiendo es leer y ver vídeos, más que hacer un montón de ejercicios. Es súper importante aprender a ver la estructura de las demostraciones. Recomiendo, por ejemplo, este canal de YouTube: The Math Sorcerer. Para aprender a demostrar es excelente y tiene vídeos de todos los temas que se ven. Sobre el profesor Sergio solo tengo cosas buenas para decir. Yo no vi esta materia con él, la vi con César Rodríguez, pero si vi Pensamiento Matemático con él y me pareció excelente. Es una persona graduada recientemente, por lo que es muy empático con el estudiante, entiende la situación en la que estás y hace todo lo posible para ayudarte. Explica muy bien, califica súper suave, es muy paciente y deja actividades muy sencillas para sacar el 15%. Lo malo es que tiene varios trabajos, entonces se enreda bastante a veces; llega tarde, se nota distraído, cosas así, pero igual lo recomiendo full. Yo digo esto: no se asusten, parece algo muy loco al inicio, pero en realidad es bastante sencillo y te ayuda a adquirir muchísima madurez matemática.",
+            "rating" : 4,
+            "date" : "2025-06-20"
+         }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Haciendo Economía",
     "prerequisite": "N/A",
     "difficulty": 2,
@@ -659,11 +712,17 @@
       {
         "slug": "rodriguez-p",
         "name": "Paul Rodríguez",
-        "rating": 4,
+        "rating": 3.75,
         "reviews": [
           {
-            "text": "Es un curso bastante sencillo, Paul es muy chévere y busca que su clase sea bastante aplicada. No hay que estudiar mucho, es fácil, pero hay muchas entregas, entonces si quita tiempo.",
+            "text": "Es un curso bastante sencillo, Paul es muy chévere y la clase es bastante aplicada. No hay que estudiar mucho, es fácil, pero hay muchas entregas, entonces si quita tiempo.",
             "rating": 4,
+            "date": "2025-06-10",
+            "course": "Haciendo Economía"
+          }, 
+          {
+            "text": "La materia es muy sencilla, pero quita mucho tiempo con las entregas. Además, es un poco raro para los de analítica, porque ellos la ven en segundo, y normalmente la mete gente de economía de semestres mucho más avanzados, entonces el profesor asume que uno ya sabe mucho más de lo que en realidad sabe. A veces cuesta seguir los ejemplos por eso. Pero las actividades son fáciles. Paul también muy bueno, muy querido y sabe mucho, pero tiene ese problema.",
+            "rating": 3.5,
             "date": "2025-06-10",
             "course": "Haciendo Economía"
           }
@@ -739,6 +798,25 @@
             "date": "2025-06-19",
             "course": "Precálculo"
           }
+        ]
+      }
+    ]
+  },
+  {
+    "name" : "Programación de Computadores",
+    "prerequisite" : "N/A",
+    "difficulty" : 2,
+    "professors" : [
+      {
+        "slug" : "guerrero-j",
+        "name" : "José Alejandro Guerrero",
+        "rating" : 4,
+        "reviews" : [
+          {
+            "text" : "Es un excelente profesor, pero quizás se ajusta mejor a cursos más avanazados. Tiene ese tipo de metodología, te trata como un amigo más que como un alumno, da mucha autonomía y en general es una clase muy autodidacta. Por ello es fácil no aprovecharla, no hacer nada en clase y pilotear los parciales con las diapositivas, pero no recomiendo hacer eso. Es muy tentador, pero no vale la pena, créanme. Es importante aprender las bases. La clase en si es muy fácil, una recocha total, pero tiene ese problema. Recomiendo tomarsela más en serio de lo que exige su dificultad.",
+            "rating" : 4,
+            "date" : "2025-06-20"
+         }
         ]
       }
     ]
