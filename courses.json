@@ -266,6 +266,31 @@
             "rating": 5,
             "date": "2025-06-10",
             "course": "Cálculo II"
+          },
+          {
+            "text": "Es súper querida y da muchos ejemplos. Se entiende fácil",
+            "rating": 4.5,
+            "date": "2025-06-20",
+            "course": "Cálculo II"
+          }
+        ]
+      },
+      {
+        "slug": "castro-d",
+        "name": "Daniel Castro",
+        "rating": 4.8,
+        "reviews": [
+          {
+            "text": "Me gustó mucho la forma de explicar los temas, se realizaron muchos ejemplos y fue muy didáctica la clase, muy fácil de entender los temas ya que va a un buen ritmo.",
+            "rating": 4.5,
+            "date": "2025-06-20",
+            "course": "Cálculo II"
+          },
+          {
+            "text": "Excelente clase me encantó enserio la manera como se dió y realmente muy práctica la materia, el profe Daniel maneja muy bien cada tema y cada truco que da en cada ejercicio facilita la comprensión",
+            "rating": 5,
+            "date": "2025-06-20",
+            "course": "Cálculo II"
           }
         ]
       }
@@ -318,12 +343,18 @@
       {
         "slug": "villa-j",
         "name": "Joaquín Villa",
-        "rating": 4.5,
+        "rating": 1.5,
         "reviews": [
           {
             "text": "Contabilidad es una materia bastante interesante y el profesor se nota que sabe un montón, además, es bastante practico",
             "rating": 4.5,
             "date": "2025-06-10",
+            "course": "Contabilidad Financiera"
+          },
+          {
+            "text": "Es un profesor que no sabe explicar muy bien, solo lee diapositivas y al hacerle preguntas de ciertas cosas no sabe responderlas, sin embargo la materia es fácil",
+            "rating": 1.5,
+            "date": "2025-06-19",
             "course": "Contabilidad Financiera"
           }
         ]
@@ -538,20 +569,26 @@
     ]
   },
   {
-    "name" : "Microeconomía II",
-    "prerequisite" : "Microeconomía I",
-    "difficulty" : 3,
-    "professors" : [
+    "name": "Microeconomía II",
+    "prerequisite": "Microeconomía I",
+    "difficulty": 3,
+    "professors": [
       {
-        "slug" : "gallego-j",
-        "name" : "Juan Miguel Gallego",
-        "rating" : 4,
-        "reviews" : [
+        "slug": "gallego-j",
+        "name": "Juan Miguel Gallego",
+        "rating": 4,
+        "reviews": [
           {
-            "text" : "La clase es muy interesante, la más chévere que he visto hasta ahora, y no da tan duro como Micro 1 si uno cogió buena intuición. Gallego excelente, clases muy interactivas, un montón de ejemplos prácticos, te enseña muy bien a ver los conceptos que enseña en la clase en la vida real.",
-            "rating" : 4,
-            "date" : "2025-06-20"
-         }
+            "text": "La clase es muy interesante, la más chévere que he visto hasta ahora, y no da tan duro como Micro 1 si uno cogió buena intuición. Gallego excelente, clases muy interactivas, un montón de ejemplos prácticos, te enseña muy bien a ver los conceptos que enseña en la clase en la vida real.",
+            "rating": 4,
+            "date": "2025-06-20"
+          },
+          {
+            "text": "Súper buena experiencia, el profesor sabe mucho sobre el tema y lo explica súper bien. A veces se desvía un poco del tema y empieza a hablar de otros temas pero igual súper recomendado.",
+            "rating": 4,
+            "date": "2025-06-20",
+            "course": "Microeconomía II"
+          }
         ]
       }
     ]
@@ -653,12 +690,37 @@
       {
         "slug": "kayi-c",
         "name": "Cagatay Kayi",
-        "rating": 4,
+        "rating": 4.2,
         "reviews": [
           {
             "text": "La materia puede llegar a ser bastante complicada, pero realmente es cuestión de estudiarla bien y sobre todo tener buenas bases. Son muchas fórmulas y muchos temas, hay que estudiar bastante y los parciales no son sencillos. Eso si, el profesor ayuda mucho con las notas si uno muestra esfuerzo y buena actitud.",
             "rating": 4,
             "date": "2025-06-09",
+            "course": "Economía Matemática"
+          },
+          {
+            "text": "La materia es complicada, son muchos conceptos y definiciones que uno se tiene que aprender. Pero el profesor es súper amable y explica bien, además es súper suave con las notas si uno va a clase. Recomiendo mucho ir a las monitorias y toca empezar a estudiar con tiempo para los parciales.",
+            "rating": 4,
+            "date": "2025-06-20",
+            "course": "Economía Matemática"
+          },
+          {
+            "text": "Aunque la clase sea en inglés el profesor a veces responde cosas en español y es muy bueno resolviendo dudas de los estudiantes... A veces es un poco desorganizado en el desarrollo de unos ejercicios entonces hay que ponerle mucha atención a clase...a materia como tal tiene muchos componentes pesados y algunos que personalmente por que observará no los entendía. El monitor esclarecio y resumió todos los conceptos muy bien (eso es muy importante) por último las calificaciones Cagatai las promedia y si en el siguiente corte te va mejor que el anterior, te sube el anterior (si en el primer corte te fue a medias, pero en el segundo te fue mejor el promedia pa nota para cambiar la nota del primer corte)\nEcomat es fundamental para micro 3 por la intuición económica (más que todo convexidad y con cavidad)",
+            "rating": 4.5,
+            "date": "2025-06-10",
+            "course": "Economía Matemática"
+          }
+        ]
+      },
+      {
+        "slug": "ramirez-r",
+        "name": "René Ramírez",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Rene es muy bueno explicando, como es bastante contenido toca concentrarse mucho pero si necesitas ayuda, lo puedes contactar o correo o acercarte que el siempre está disponible para sus alumnos.",
+            "rating": 4,
+            "date": "2025-06-10",
             "course": "Economía Matemática"
           }
         ]
@@ -686,20 +748,20 @@
     ]
   },
   {
-    "name" : "Lógica y Matemáticas Discretas",
-    "prerequisite" : "N/A",
-    "difficulty" : 4,
-    "professors" : [
+    "name": "Lógica y Matemáticas Discretas",
+    "prerequisite": "N/A",
+    "difficulty": 4,
+    "professors": [
       {
-        "slug" : "duque-s",
-        "name" : "Sergio Nicolás Duque",
-        "rating" : 4,
-        "reviews" : [
+        "slug": "duque-s",
+        "name": "Sergio Nicolás Duque",
+        "rating": 4,
+        "reviews": [
           {
-            "text" : "Lógica es la materia más dura de primer semestre, aunque le han bajado bastante a la cantidad de temas y a la dificultad de los mismos. Igual, es complicado, son muchos conceptos nuevos y es difícil cogerle el tiro al inicio. Yo lo que recomiendo es leer y ver vídeos, más que hacer un montón de ejercicios. Es súper importante aprender a ver la estructura de las demostraciones. Recomiendo, por ejemplo, este canal de YouTube: The Math Sorcerer. Para aprender a demostrar es excelente y tiene vídeos de todos los temas que se ven. Sobre el profesor Sergio solo tengo cosas buenas para decir. Yo no vi esta materia con él, la vi con César Rodríguez, pero si vi Pensamiento Matemático con él y me pareció excelente. Es una persona graduada recientemente, por lo que es muy empático con el estudiante, entiende la situación en la que estás y hace todo lo posible para ayudarte. Explica muy bien, califica súper suave, es muy paciente y deja actividades muy sencillas para sacar el 15%. Lo malo es que tiene varios trabajos, entonces se enreda bastante a veces; llega tarde, se nota distraído, cosas así, pero igual lo recomiendo full. Yo digo esto: no se asusten, parece algo muy loco al inicio, pero en realidad es bastante sencillo y te ayuda a adquirir muchísima madurez matemática.",
-            "rating" : 4,
-            "date" : "2025-06-20"
-         }
+            "text": "Lógica es la materia más dura de primer semestre, aunque le han bajado bastante a la cantidad de temas y a la dificultad de los mismos. Igual, es complicado, son muchos conceptos nuevos y es difícil cogerle el tiro al inicio. Yo lo que recomiendo es leer y ver vídeos, más que hacer un montón de ejercicios. Es súper importante aprender a ver la estructura de las demostraciones. Recomiendo, por ejemplo, este canal de YouTube: The Math Sorcerer. Para aprender a demostrar es excelente y tiene vídeos de todos los temas que se ven. Sobre el profesor Sergio solo tengo cosas buenas para decir. Yo no vi esta materia con él, la vi con César Rodríguez, pero si vi Pensamiento Matemático con él y me pareció excelente. Es una persona graduada recientemente, por lo que es muy empático con el estudiante, entiende la situación en la que estás y hace todo lo posible para ayudarte. Explica muy bien, califica súper suave, es muy paciente y deja actividades muy sencillas para sacar el 15%. Lo malo es que tiene varios trabajos, entonces se enreda bastante a veces; llega tarde, se nota distraído, cosas así, pero igual lo recomiendo full. Yo digo esto: no se asusten, parece algo muy loco al inicio, pero en realidad es bastante sencillo y te ayuda a adquirir muchísima madurez matemática.",
+            "rating": 4,
+            "date": "2025-06-20"
+          }
         ]
       }
     ]
@@ -719,7 +781,7 @@
             "rating": 4,
             "date": "2025-06-10",
             "course": "Haciendo Economía"
-          }, 
+          },
           {
             "text": "La materia es muy sencilla, pero quita mucho tiempo con las entregas. Además, es un poco raro para los de analítica, porque ellos la ven en segundo, y normalmente la mete gente de economía de semestres mucho más avanzados, entonces el profesor asume que uno ya sabe mucho más de lo que en realidad sabe. A veces cuesta seguir los ejemplos por eso. Pero las actividades son fáciles. Paul también muy bueno, muy querido y sabe mucho, pero tiene ese problema.",
             "rating": 3.5,
@@ -803,20 +865,158 @@
     ]
   },
   {
-    "name" : "Programación de Computadores",
-    "prerequisite" : "N/A",
-    "difficulty" : 2,
-    "professors" : [
+    "name": "Programación de Computadores",
+    "prerequisite": "N/A",
+    "difficulty": 2,
+    "professors": [
       {
-        "slug" : "guerrero-j",
-        "name" : "José Alejandro Guerrero",
-        "rating" : 4,
-        "reviews" : [
+        "slug": "guerrero-j",
+        "name": "José Alejandro Guerrero",
+        "rating": 4,
+        "reviews": [
           {
-            "text" : "Es un excelente profesor, pero quizás se ajusta mejor a cursos más avanazados. Tiene ese tipo de metodología, te trata como un amigo más que como un alumno, da mucha autonomía y en general es una clase muy autodidacta. Por ello es fácil no aprovecharla, no hacer nada en clase y pilotear los parciales con las diapositivas, pero no recomiendo hacer eso. Es muy tentador, pero no vale la pena, créanme. Es importante aprender las bases. La clase en si es muy fácil, una recocha total, pero tiene ese problema. Recomiendo tomarsela más en serio de lo que exige su dificultad.",
-            "rating" : 4,
-            "date" : "2025-06-20"
-         }
+            "text": "Es un excelente profesor, pero quizás se ajusta mejor a cursos más avanazados. Tiene ese tipo de metodología, te trata como un amigo más que como un alumno, da mucha autonomía y en general es una clase muy autodidacta. Por ello es fácil no aprovecharla, no hacer nada en clase y pilotear los parciales con las diapositivas, pero no recomiendo hacer eso. Es muy tentador, pero no vale la pena, créanme. Es importante aprender las bases. La clase en si es muy fácil, una recocha total, pero tiene ese problema. Recomiendo tomarsela más en serio de lo que exige su dificultad.",
+            "rating": 4,
+            "date": "2025-06-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Microeconomía III",
+    "prerequisite": "Microeconomía II",
+    "difficulty": 4.5,
+    "professors": [
+      {
+        "slug": "cortes-d",
+        "name": "Darwin Cortés",
+        "rating": 3.8,
+        "reviews": [
+          {
+            "text": "Es un curso que requiere mucho esfuerzo y dedicación, si bien no mucha gente lo pierde, sí puede pasar. En cuanto a Darwin mis comentarios son neutrales, sus clases tienden hacer aburridas pero cumple con su labor.",
+            "rating": 3.5,
+            "date": "2025-06-18",
+            "course": "Microeconomía III"
+          },
+          {
+            "text": "Darwin es muy buen profesor, pero es bastante escuelro así que asegurate de hacer las lecturas que les pida y copiar todo lo que haga en clase. Los contenidos son muy muy interesantes, aunque no quita que el curso en sí sea complejo",
+            "rating": 4,
+            "date": "2025-06-10",
+            "course": "Microeconomía III"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Macroeconomía III",
+    "prerequisite": "Macroeconomía II",
+    "difficulty": 3,
+    "professors": [
+      {
+        "slug": "perez-r",
+        "name": "Roberto Rafael Pérez",
+        "rating": 5,
+        "reviews": [
+          {
+            "text": "Mi experiencia fue increíble! Sobretodo desde el punto de vista de alguien que le gusta más la micro. El profesor es muy intuitivo, da todas las herramientas para obtener buenas notas y en las clases siempre tuvo la mejor actitud. Fácil de los cursos más disfrutables de la carrera",
+            "rating": 5,
+            "date": "2025-06-18",
+            "course": "Macroeconomía III"
+          },
+          {
+            "text": "Roberto es muy buen profesor, el curso no es tan complejo y hay bastante material para prepararse para el parcial, en gran parte el que entrega Roberto",
+            "rating": 5,
+            "date": "2025-06-10",
+            "course": "Macroeconomía III"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Macroeconomía I",
+    "prerequisite": "Microeconomía I",
+    "difficulty": 3.2,
+    "professors": [
+      {
+        "slug": "velasco-a",
+        "name": "Andrés Velasco",
+        "rating": 3,
+        "reviews": [
+          {
+            "text": "Es un curso bastante útil, da muchas bases para la carrera por lo que es fundamental tener claros los conceptos. El profesor Andrés Velasco aplica mucho los conceptos a la vida real y para los parciales la monitoria es esencial.",
+            "rating": 3,
+            "date": "2025-06-20",
+            "course": "Macroeconomía I"
+          }
+        ]
+      },
+      {
+        "slug": "avila-o",
+        "name": "Oscar Iván Ávila",
+        "rating": 5,
+        "reviews": [
+          {
+            "text": "Muy buen profesional, trabaja en el banco y es profesor de posgrado así que el curso es actualizado en cierto modo para ser teorías antiquísimas",
+            "rating": 5,
+            "date": "2025-06-10",
+            "course": "Macroeconomía I"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Economía Financiera",
+    "prerequisite": "Microeconomía I, Probabilidad",
+    "difficulty": 3.5,
+    "professors": [
+      {
+        "slug": "castro-c",
+        "name": "Carlos Castro",
+        "rating": 3.5,
+        "reviews": [
+          {
+            "text": "En este curso se ve la teoría de las finanzas, el profesor Carlos Castro entrega muchos recursos para la clase y el aprendizaje de la misma, lo que resulta bastante útil. Sin embargo, las clases tienden a ser monótonas.",
+            "rating": 3.5,
+            "date": "2025-06-20",
+            "course": "Economía Financiera"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Probabilidad",
+    "prerequisite": "Cálculo II",
+    "difficulty": 3.8,
+    "professors": [
+      {
+        "slug": "moreno-d",
+        "name": "Diana Moreno",
+        "rating": 2.5,
+        "reviews": [
+          {
+            "text": "Es buena profesora, si hay dudas está siempre dispuesta a responderlas, pero tienen que caerle bien para que sea querida. Lo único es que va MUY rápido entonces la clase como tal puede llegar a ser confusa.",
+            "rating": 2.5,
+            "date": "2025-06-20",
+            "course": "Probabilidad"
+          }
+        ]
+      },
+      {
+        "slug": "reyes-c",
+        "name": "César Reyes",
+        "rating": 2.5,
+        "reviews": [
+          {
+            "text": "Cesar explica bien pero se enreda mucho y muchas veces parece ser mas complicado de lo que es, es buen profesor aunque hay cosas que podrían mejorar",
+            "rating": 2.5,
+            "date": "2025-06-10",
+            "course": "Probabilidad"
+          }
         ]
       }
     ]
