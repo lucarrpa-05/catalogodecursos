@@ -62,9 +62,13 @@
         Catálogo de Cursos - Facultad de Economía
       </h1>
       <p class="mt-2 opacity-90">Explora cursos y revisa las reseñas de profesores</p>
+      <nav class="mt-4 inline-flex rounded-lg overflow-hidden shadow-lg">
+        <button id="navCourses" class="px-4 py-2 bg-white text-indigo-700 font-semibold focus:outline-none">Cursos</button>
+        <button id="navProfessors" class="px-4 py-2 bg-white text-indigo-700 font-semibold border-l focus:outline-none">Profesores</button>
+      </nav>
     </header>
 
-    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+    <div id="coursesSection" class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
       <div class="p-6 bg-white border-b border-gray-200">
         <div class="flex flex-wrap gap-4 items-center">
           <div class="relative flex-grow">
@@ -119,6 +123,42 @@
     </div>
   </div>
 
+  <div id="professorsSection" class="bg-white rounded-xl shadow-md overflow-hidden mb-8 hidden">
+    <div class="p-6 bg-white border-b border-gray-200">
+      <div class="relative w-full">
+        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+        <input type="text" id="profSearchInput" placeholder="Buscar profesores..." 
+               class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-50">
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortProfessors('name')"><div class="flex items-center">Profesor<i class="fas fa-sort ml-1"></i></div></th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortProfessors('rating')"><div class="flex items-center">Rating<i class="fas fa-sort ml-1"></i></div></th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cursos</th>
+          </tr>
+        </thead>
+        <tbody id="professorsTable" class="divide-y divide-gray-200"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Professor Modal -->
+  <div id="professorModal" class="modal">
+    <div class="modal-content bg-white w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden">
+      <div class="bg-gradient-to-r from-purple-700 to-indigo-700 p-6 text-white">
+        <div class="flex justify-between items-center">
+          <h2 id="professorModalTitle" class="text-2xl font-bold"></h2>
+          <button id="closeProfessorModal" class="text-white hover:text-gray-200 text-2xl p-1"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="professorModalSubtitle" class="text-sm opacity-90 mt-1"></div>
+      </div>
+      <div id="professorModalContent" class="p-6 max-h-[60vh] overflow-y-auto"></div>
+    </div>
+  </div>
+
   <!-- Course Modal -->
   <div id="courseModal" class="modal">
     <div class="modal-content bg-white w-full max-w-4xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden">
@@ -164,9 +204,16 @@
         const response = await fetch('courses.json');
         const courses = await response.json();
         
+        window.allCourses = courses;
+        const professors = buildProfessors(courses);
+
         displayCourses(courses);
+        displayProfessors(professors);
+
         setupSearch(courses);
+        setupProfSearch(professors);
         setupModalClosers();
+        setupNav();
       } catch (error) {
         console.error('Error loading courses:', error);
         document.getElementById('coursesTable').innerHTML = 
@@ -378,7 +425,7 @@
         if (columnIndex === 2) {
           aValue = a.cells[columnIndex].querySelector('.star-rating').childElementCount;
           bValue = b.cells[columnIndex].querySelector('.star-rating').childElementCount;
-          return aValue - bValue;
+          return bValue - aValue;
         } else {
           // For text columns
           aValue = a.cells[columnIndex].textContent;
@@ -390,6 +437,172 @@
       // Re-append rows in the new order
       rows.forEach(row => table.appendChild(row));
     }
+
+    // Professors sorting
+    let allProfessors = [];
+    function sortProfessors(by) {
+      if (!allProfessors.length) return;
+      const sorted = [...allProfessors];
+      if (by === 'rating') {
+        sorted.sort((a, b) => {
+          const aR = typeof a.avgRating === 'number' ? a.avgRating : -1;
+          const bR = typeof b.avgRating === 'number' ? b.avgRating : -1;
+          return bR - aR; // high to low
+        });
+      } else if (by === 'name') {
+        sorted.sort((a, b) => a.name.localeCompare(b.name));
+      }
+      displayProfessors(sorted);
+    }
+    // Build professors list from courses
+    function buildProfessors(courses) {
+      const map = {};
+      courses.forEach(course => {
+        course.professors?.forEach(p => {
+          if (!map[p.slug]) {
+            map[p.slug] = {
+              slug: p.slug,
+              name: p.name,
+              courses: new Set(),
+              reviews: [],
+                ratingValues: []
+            };
+          }
+          map[p.slug].courses.add(course.name);
+          // collect rating value for this course occurrence
+          let ratingVal = null;
+          if (typeof p.rating === 'number') {
+            ratingVal = p.rating;
+          } else if (Array.isArray(p.reviews) && p.reviews.length) {
+            const nums = p.reviews.map(r=>Number(r.rating)).filter(n=>!isNaN(n));
+            if (nums.length) ratingVal = nums.reduce((a,b)=>a+b,0)/nums.length;
+          }
+          if (ratingVal !== null) {
+            map[p.slug].ratingValues.push(ratingVal);
+          }
+          if (Array.isArray(p.reviews)) {
+            p.reviews.forEach(r => {
+              const numeric = Number(r.rating);
+              map[p.slug].reviews.push({
+                ...r,
+                rating: isNaN(numeric) ? null : numeric,
+                course: r.course || course.name
+              });
+            });
+          }
+        });
+      });
+      return Object.values(map).map(p => {
+        const avg = p.ratingValues.length ? p.ratingValues.reduce((a,b)=>a+b,0)/p.ratingValues.length : null;
+        return {
+          slug: p.slug,
+          name: p.name,
+          courses: Array.from(p.courses),
+          reviews: p.reviews,
+          avgRating: avg
+        };
+      });
+    }
+
+
+    // Display professors in table
+    function displayProfessors(professors) {
+      allProfessors = professors;
+      const tbody = document.getElementById('professorsTable');
+      tbody.innerHTML = '';
+      professors.forEach(prof => {
+        const numericRating = typeof prof.avgRating === 'number' ? prof.avgRating : null;
+        const ratingStars = numericRating !== null ? generateStarRating(Math.round(numericRating)) : generateStarRating(0);
+        const ratingDisplay = numericRating !== null ? numericRating.toFixed(1) : 'N/A';
+
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-gray-50 cursor-pointer';
+        tr.innerHTML = `
+          <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-700">${prof.name}</td>
+          <td class="px-6 py-4"><div class="flex star-rating mr-2 inline-block">${ratingStars}</div><span class="ml-2 text-sm text-gray-600">${ratingDisplay}</span></td>
+          <td class="px-6 py-4 text-sm text-gray-600">${prof.courses.length}</td>`;
+        tr.addEventListener('click', () => showProfessorModal(prof));
+        tbody.appendChild(tr);
+      });
+    }
+
+
+    // Professor modal showing courses they teach
+    function showProfessorModal(prof) {
+      const modal = document.getElementById('professorModal');
+      const title = document.getElementById('professorModalTitle');
+      const subtitle = document.getElementById('professorModalSubtitle');
+      const content = document.getElementById('professorModalContent');
+
+      title.textContent = prof.name;
+      subtitle.textContent = `${prof.reviews.length} reseña${prof.reviews.length!==1?'s':''} en ${prof.courses.length} curso${prof.courses.length!==1?'s':''}`;
+
+      let html = '<div class="space-y-4">';
+      if (prof.reviews.length) {
+        prof.reviews.forEach(review => {
+          const stars = review.rating !== null ? generateStarRating(Math.round(review.rating)) : generateStarRating(0);
+          html += `
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div class="flex items-center mb-2">
+                <div class="flex star-rating mr-2">${stars}</div>
+                <span class="text-sm text-gray-600">${review.date || ''}</span>
+                <span class="ml-auto text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">${review.course}</span>
+              </div>
+              <p class="text-gray-800">${review.text}</p>
+            </div>`;
+        });
+      } else {
+        html += '<p class="italic text-gray-500">No hay reseñas disponibles.</p>';
+      }
+      html += '</div>';
+
+      content.innerHTML = html;
+      modal.style.display = 'block';
+    }
+
+
+    // Navigation handling
+    function setupNav() {
+      const btnCourses = document.getElementById('navCourses');
+      const btnProfs = document.getElementById('navProfessors');
+      const coursesSec = document.getElementById('coursesSection');
+      const profSec = document.getElementById('professorsSection');
+
+      function activate(showCourses) {
+        if (showCourses) {
+          coursesSec.classList.remove('hidden');
+          profSec.classList.add('hidden');
+          btnCourses.classList.add('bg-indigo-600','text-white');
+          btnProfs.classList.remove('bg-indigo-600','text-white');
+        } else {
+          coursesSec.classList.add('hidden');
+          profSec.classList.remove('hidden');
+          btnProfs.classList.add('bg-indigo-600','text-white');
+          btnCourses.classList.remove('bg-indigo-600','text-white');
+        }
+      }
+
+      btnCourses.addEventListener('click', () => activate(true));
+      btnProfs.addEventListener('click', () => activate(false));
+      // default view
+      activate(true);
+    }
+
+    // Professors search
+    function setupProfSearch(professors) {
+      const input = document.getElementById('profSearchInput');
+      input.addEventListener('input', () => {
+        const query = input.value.toLowerCase();
+        const filtered = professors.filter(p => p.name.toLowerCase().includes(query));
+        displayProfessors(filtered);
+      });
+    }
+
+    // Close professor modal
+    document.getElementById('closeProfessorModal').addEventListener('click', () => {
+      document.getElementById('professorModal').style.display = 'none';
+    });
+
   </script>
 </body>
 </html>
