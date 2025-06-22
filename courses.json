@@ -363,7 +363,7 @@
   },
   {
     "name": "Curso Básico STATA",
-    "prerequisite": "N/A",
+    "prerequisite": "Econometría Básica",
     "difficulty": 3.5,
     "professors": [
       {
@@ -885,7 +885,7 @@
   },
   {
     "name": "Microeconomía III",
-    "prerequisite": "Microeconomía II",
+    "prerequisite": "Microeconomía I, Economía Matemática",
     "difficulty": 4.5,
     "professors": [
       {
@@ -911,7 +911,7 @@
   },
   {
     "name": "Macroeconomía III",
-    "prerequisite": "Macroeconomía II",
+    "prerequisite": "Macroeconomía II, Economía Matemática",
     "difficulty": 3,
     "professors": [
       {
