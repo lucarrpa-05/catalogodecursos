@@ -937,7 +937,7 @@
   },
   {
     "name": "Macroeconomía I",
-    "prerequisite": "Microeconomía I",
+    "prerequisite": "Cálculo I, Medición Económica, Microeconomía I",
     "difficulty": 3.2,
     "professors": [
       {
