@@ -479,7 +479,7 @@
   },
   {
     "name": "Curso Básico R",
-    "prerequisite": "N/A",
+    "prerequisite": "Econometría Básica",
     "difficulty": 2,
     "professors": [
       {
