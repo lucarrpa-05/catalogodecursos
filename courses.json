@@ -395,7 +395,7 @@
   },
   {
     "name": "Derivados",
-    "prerequisite": "N/A",
+    "prerequisite": "Economía Financiera, Renta Fija",
     "difficulty": 3,
     "professors": [
       {
@@ -595,7 +595,7 @@
   },
   {
     "name": "Desarrollo Económico",
-    "prerequisite": "N/A",
+    "prerequisite": "Introducción a la Ciencia Económica",
     "difficulty": 3.5,
     "professors": [
       {
@@ -621,7 +621,7 @@
   },
   {
     "name": "Econometría Básica",
-    "prerequisite": "N/A",
+    "prerequisite": "Estadística",
     "difficulty": 4,
     "professors": [
       {
