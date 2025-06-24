@@ -152,7 +152,10 @@
         <button id="navCourses" class="px-4 py-2 bg-white text-indigo-700 font-semibold focus:outline-none">Cursos</button>
         <button id="navProfessors" class="px-4 py-2 bg-white text-indigo-700 font-semibold border-l focus:outline-none">Profesores</button>
       </nav>
-      <img src="logo.png" alt="Logo" class="h-28 absolute top-3 right-4">
+      <!-- Logo with responsive sizing -->
+      <img src="logo.png" alt="Logo" class="absolute lg:h-28 md:h-20 h-16 md:top-3 top-2 lg:right-4 md:right-3 right-2 md:opacity-100 opacity-80">
+      <!-- Add responsive padding to prevent text overlap with logo on small screens -->
+      <div class="md:pr-0 pr-16"></div>
     </header>
 
     <div id="coursesSection" class="bg-card rounded-xl shadow-md overflow-hidden mb-8" style="background-color: var(--bg-card);">
