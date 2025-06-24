@@ -809,7 +809,7 @@
   },
   {
     "name": "Macroeconomía II",
-    "prerequisite": "N/A",
+    "prerequisite": "Macroeconomía I",
     "difficulty": 4.4,
     "professors": [
       {
@@ -1075,7 +1075,7 @@
   },
   {
     "name": "Renta Fija",
-    "prerequisite": "N/A",
+    "prerequisite": "Matemáticas Financieras",
     "difficulty": 3.8,
     "professors": [
       {
