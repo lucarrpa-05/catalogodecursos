@@ -131,15 +131,15 @@
 <body class="min-h-screen p-4">
   <div class="container mx-auto max-w-6xl">
     <!-- Theme Switcher -->
-    <div class="fixed top-4 right-4 z-40 flex items-center rounded-lg shadow-lg p-2 border" style="background-color: var(--bg-card); border-color: var(--border);" id="theme-switcher">
-      <button class="theme-button p-2 rounded-full" data-theme="light" title="Light Mode">
-        <i class="fas fa-sun"></i>
+    <div class="fixed top-3 right-3 z-40 flex items-center rounded-lg shadow-lg p-1 border" style="background-color: var(--bg-card); border-color: var(--border); scale: 0.85;" id="theme-switcher">
+      <button class="theme-button p-1.5 rounded-full" data-theme="light" title="Light Mode">
+        <i class="fas fa-sun text-sm"></i>
       </button>
-      <button class="theme-button p-2 rounded-full mx-1" data-theme="dark" title="Dark Mode">
-        <i class="fas fa-moon"></i>
+      <button class="theme-button p-1.5 rounded-full mx-1" data-theme="dark" title="Dark Mode">
+        <i class="fas fa-moon text-sm"></i>
       </button>
-      <button class="theme-button p-2 rounded-full" data-theme="high-contrast" title="High Contrast Mode">
-        <i class="fas fa-adjust"></i>
+      <button class="theme-button p-1.5 rounded-full" data-theme="high-contrast" title="High Contrast Mode">
+        <i class="fas fa-adjust text-sm"></i>
       </button>
     </div>
     <header class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl shadow-xl p-6 mb-8">
@@ -147,7 +147,7 @@
         <i class="fas fa-graduation-cap mr-3"></i>
         Catálogo de Cursos - Facultad de Economía
       </h1>
-      <p class="mt-2 opacity-90">Explora cursos y revisa las reseñas de profesores</p>
+      <p class="mt-2 opacity-90">Recomendación de estudiantes para estudiantes. ¡No planees tu horario a ciegas!</p>
       <nav class="mt-4 inline-flex rounded-lg overflow-hidden shadow-lg">
         <button id="navCourses" class="px-4 py-2 bg-white text-indigo-700 font-semibold focus:outline-none">Cursos</button>
         <button id="navProfessors" class="px-4 py-2 bg-white text-indigo-700 font-semibold border-l focus:outline-none">Profesores</button>
@@ -786,5 +786,6 @@
   </a>
 
   <p class="text-center text-xs my-4" style="color: var(--text-muted);">Última actualización: 24 de junio de 2025</p>
+  <p class="text-center text-xs my-4" style="color: var(--text-muted);">Desarrollado por el Consejo Estudiantil de la Facultad de Economía.</p>
 </body>
 </html>
