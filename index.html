@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Theme mode functionality -->
+  <script>
+    // Check for saved theme preference or use default
+    const getStoredTheme = () => localStorage.getItem('theme') || 'light';
+    const setStoredTheme = (theme) => localStorage.setItem('theme', theme);
+
+    // Apply theme to document
+    const applyTheme = (theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      setStoredTheme(theme);
+    };
+
+    // Initialize theme from storage
+    document.addEventListener('DOMContentLoaded', () => {
+      applyTheme(getStoredTheme());
+    });
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Cursos</title>
@@ -13,8 +30,65 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Add hover effect class */
+    .hover-effect:hover {
+      background-color: var(--bg-element) !important;
+    }
+    
+    .theme-button {
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+    
+    .theme-button.active {
+      background-color: var(--accent) !important;
+      color: white !important;
+    }
+    
+    /* Theme color variables */
+    :root[data-theme='light'] {
+      --bg-main: #f9fafb;
+      --bg-card: #ffffff;
+      --bg-element: #f3f4f6;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --border: #e5e7eb;
+      --accent: #4f46e5;
+      --accent-hover: #4338ca;
+      --modal-overlay: rgba(0, 0, 0, 0.7);
+    }
+
+    :root[data-theme='dark'] {
+      --bg-main: #111827;
+      --bg-card: #1f2937;
+      --bg-element: #374151;
+      --text-primary: #f9fafb;
+      --text-secondary: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border: #4b5563;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --modal-overlay: rgba(0, 0, 0, 0.8);
+    }
+
+    :root[data-theme='high-contrast'] {
+      --bg-main: #000000;
+      --bg-card: #0f0f0f;
+      --bg-element: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #f0f0f0;
+      --text-muted: #cccccc;
+      --border: #ffffff;
+      --accent: #ffff00;
+      --accent-hover: #ffff99;
+      --modal-overlay: rgba(0, 0, 0, 0.9);
+    }
+
     body {
       font-family: 'Inter', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
     }
     .modal {
       display: none;
@@ -23,7 +97,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: var(--modal-overlay);
       z-index: 50;
       backdrop-filter: blur(3px);
     }
@@ -48,15 +122,27 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: var(--modal-overlay);
       z-index: 60;
       backdrop-filter: blur(5px);
     }
   </style>
 </head>
-<body class="bg-gray-50 min-h-screen p-4">
+<body class="min-h-screen p-4">
   <div class="container mx-auto max-w-6xl">
-    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl shadow-xl p-6 mb-8">
+    <!-- Theme Switcher -->
+    <div class="fixed top-4 right-4 z-40 flex items-center rounded-lg shadow-lg p-2 border" style="background-color: var(--bg-card); border-color: var(--border);" id="theme-switcher">
+      <button class="theme-button p-2 rounded-full" data-theme="light" title="Light Mode">
+        <i class="fas fa-sun"></i>
+      </button>
+      <button class="theme-button p-2 rounded-full mx-1" data-theme="dark" title="Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="theme-button p-2 rounded-full" data-theme="high-contrast" title="High Contrast Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+    </div>
+    <header class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl shadow-xl p-6 mb-8">
       <h1 class="text-3xl font-bold flex items-center">
         <i class="fas fa-graduation-cap mr-3"></i>
         Catálogo de Cursos - Facultad de Economía
@@ -66,17 +152,18 @@
         <button id="navCourses" class="px-4 py-2 bg-white text-indigo-700 font-semibold focus:outline-none">Cursos</button>
         <button id="navProfessors" class="px-4 py-2 bg-white text-indigo-700 font-semibold border-l focus:outline-none">Profesores</button>
       </nav>
+      <img src="logo.png" alt="Logo" class="h-28 absolute top-3 right-4">
     </header>
 
-    <div id="coursesSection" class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-      <div class="p-6 bg-white border-b border-gray-200">
+    <div id="coursesSection" class="bg-card rounded-xl shadow-md overflow-hidden mb-8" style="background-color: var(--bg-card);">
+      <div class="p-6 border-b" style="background-color: var(--bg-card); border-color: var(--border);">
         <div class="flex flex-wrap gap-4 items-center">
           <div class="relative flex-grow">
             <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
             <input type="text" id="searchInput" placeholder="Buscar cursos..." 
-                  class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50">
+                  class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" style="background-color: var(--bg-element); color: var(--text-primary); border-color: var(--border);">
           </div>
-          <div class="flex items-center text-gray-600 text-sm">
+          <div class="flex items-center text-sm" style="color: var(--text-secondary);">
             <div class="mr-4">Dificultad:&nbsp;</div>
             <div class="flex">
               <i class="fas fa-star text-yellow-400 mr-1"></i>Fácil
@@ -92,10 +179,10 @@
       </div>
 
       <div class="overflow-x-auto">
-        <table class="min-w-full bg-white">
-          <thead class="bg-gray-50">
+        <table class="min-w-full" style="background-color: var(--bg-card);">
+          <thead class="sticky top-0 z-10" style="background-color: var(--bg-element);">
             <tr>
-              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable(0)">
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" onclick="sortTable(0)">
                 <div class="flex items-center">
                   Nombre del Curso
                   <i class="fas fa-sort ml-1"></i>
@@ -123,21 +210,22 @@
     </div>
   </div>
 
-  <div id="professorsSection" class="bg-white rounded-xl shadow-md overflow-hidden mb-8 hidden">
-    <div class="p-6 bg-white border-b border-gray-200">
+  <div id="professorsSection" class="rounded-xl shadow-md overflow-hidden mb-8 hidden" style="background-color: var(--bg-card);">
+    <div class="p-6 border-b" style="background-color: var(--bg-card); border-color: var(--border);">
+
       <div class="relative w-full">
         <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
         <input type="text" id="profSearchInput" placeholder="Buscar profesores..." 
-               class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-50">
+               class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" style="background-color: var(--bg-element); color: var(--text-primary); border-color: var(--border);">
       </div>
     </div>
     <div class="overflow-x-auto">
-      <table class="min-w-full bg-white">
-        <thead class="bg-gray-50">
+      <table class="min-w-full" style="background-color: var(--bg-card);">
+        <thead class="sticky top-0 z-10" style="background-color: var(--bg-element);">
           <tr>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortProfessors('name')"><div class="flex items-center">Profesor<i class="fas fa-sort ml-1"></i></div></th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortProfessors('rating')"><div class="flex items-center">Rating<i class="fas fa-sort ml-1"></i></div></th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cursos</th>
+            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" data-key="name" onclick="sortProfessors('name')"><div class="flex items-center">Profesor<i class="fas fa-sort ml-1"></i></div></th>
+            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" data-key="rating" onclick="sortProfessors('rating')"><div class="flex items-center">Rating<i class="fas fa-sort ml-1"></i></div></th>
+            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style="color: var(--text-muted);">Cursos</th>
           </tr>
         </thead>
         <tbody id="professorsTable" class="divide-y divide-gray-200"></tbody>
@@ -147,7 +235,7 @@
 
   <!-- Professor Modal -->
   <div id="professorModal" class="modal">
-    <div class="modal-content bg-white w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden">
+    <div class="modal-content w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden" style="background-color: var(--bg-card);">
       <div class="bg-gradient-to-r from-purple-700 to-indigo-700 p-6 text-white">
         <div class="flex justify-between items-center">
           <h2 id="professorModalTitle" class="text-2xl font-bold"></h2>
@@ -161,7 +249,7 @@
 
   <!-- Course Modal -->
   <div id="courseModal" class="modal">
-    <div class="modal-content bg-white w-full max-w-4xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden">
+    <div class="modal-content w-full max-w-4xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden" style="background-color: var(--bg-card);">
       <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
         <div class="flex justify-between items-center">
           <h2 id="modalTitle" class="text-2xl font-bold"></h2>
@@ -180,7 +268,7 @@
   
   <!-- Professor Reviews Modal -->
   <div id="reviewsModal" class="reviews-modal">
-    <div class="modal-content bg-white w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden">
+    <div class="modal-content w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden" style="background-color: var(--bg-card);">
       <div class="bg-gradient-to-r from-indigo-600 to-purple-700 p-6 text-white">
         <div class="flex justify-between items-center">
           <h2 id="reviewsModalTitle" class="text-2xl font-bold"></h2>
@@ -214,6 +302,7 @@
         setupProfSearch(professors);
         setupModalClosers();
         setupNav();
+        setupThemeToggle();
       } catch (error) {
         console.error('Error loading courses:', error);
         document.getElementById('coursesTable').innerHTML = 
@@ -228,7 +317,8 @@
       
       courses.forEach(course => {
         const row = document.createElement('tr');
-        row.className = 'hover:bg-gray-50 cursor-pointer';
+        row.className = 'cursor-pointer hover-effect';
+        row.style.transition = 'background-color 0.2s';
         row.onclick = () => showCourseModal(course);
         
         // Generate star HTML for difficulty
@@ -237,12 +327,12 @@
         row.innerHTML = `
           <td class="px-6 py-4 whitespace-nowrap">
             <div class="flex items-center">
-              <div class="text-sm font-medium text-gray-900">${course.name}</div>
-              <div class="ml-2 text-sm text-gray-500">${course.professors.length} Profesor${course.professors.length !== 1 ? 'es' : ''}</div>
+              <div class="text-sm font-medium" style="color: var(--text-primary);">${course.name}</div>
+              <div class="ml-2 text-sm" style="color: var(--text-secondary);">${course.professors.length} Profesor${course.professors.length !== 1 ? 'es' : ''}</div>
             </div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">${course.prerequisite || 'N/A'}</div>
+            <div class="text-sm" style="color: var(--text-primary)">${course.prerequisite || 'N/A'}</div>
           </td>
           <td class="px-6 py-4">
             <div class="flex star-rating">${difficultyStars}</div>
@@ -340,18 +430,18 @@
           const ratingDisplay = numericRating !== null ? numericRating.toFixed(1) : 'N/A';
           
           content += `
-            <div class="professor-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+            <div class="professor-card rounded-lg overflow-hidden shadow-md" style="background-color: var(--bg-element); color: var(--text-primary);">
               <div class="p-4 flex items-start">
                 <div class="w-10 h-10 flex items-center justify-center bg-indigo-600 text-white rounded-full mr-4">
                   <i class="fas fa-user"></i>
                 </div>
                 <div class="flex-1">
-                  <h4 class="text-lg font-semibold">${prof.name}</h4>
+                  <h4 class="text-lg font-semibold" style="color: var(--text-primary);">${prof.name}</h4>
                   <div class="flex items-center mt-1">
-                    <div class="flex star-rating mr-2">${ratingStars}</div>
-                    <span class="text-sm text-gray-600">${ratingDisplay}</span>
+                    <div class="flex star-rating mr-2" style="color: #fbbf24;">${ratingStars}</div>
+                    <span class="text-sm" style="color: var(--text-secondary)">${ratingDisplay}</span>
                   </div>
-                  <p class="text-gray-600 mt-1">${prof.reviews?.length || 0} reseña${prof.reviews?.length !== 1 ? 's' : ''}</p>
+                  <p class="mt-1" style="color: var(--text-secondary);">${prof.reviews?.length || 0} reseña${prof.reviews?.length !== 1 ? 's' : ''}</p>
                   <button class="mt-2 px-3 py-1 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700 transition-colors"
                           onclick="showReviewsModal(event, '${encodeURIComponent(JSON.stringify(prof))}', '${course.name}')">Ver Reseñas</button>
                 </div>
@@ -393,67 +483,112 @@
         
         professor.reviews.forEach(review => {
           reviewsHtml += `
-            <div class="bg-gray-50 p-4 rounded-lg">
+            <div class="p-4 rounded-lg" style="background-color: var(--bg-element); color: var(--text-primary);">
               <div class="flex items-center mb-2">
-                <div class="flex star-rating mr-2">${generateStarRating(review.rating)}</div>
-                <span class="text-sm text-gray-600">${review.date}</span>
+                <div class="flex star-rating mr-2" style="color: #fbbf24;">${generateStarRating(review.rating)}</div>
+                <span class="text-sm" style="color: var(--text-secondary)">${review.date}</span>
               </div>
-              <p class="text-gray-800">${review.text}</p>
-              <p class="text-sm text-gray-500 mt-1">Curso: ${review.course}</p>
+              <p style="color: var(--text-primary);">${review.text}</p>
+              <p class="text-sm mt-1" style="color: var(--text-secondary);">Curso: ${review.course}</p>
             </div>
           `;
         });
         
         reviewsHtml += `</div>`;
       } else {
-        reviewsHtml = `<p class="text-center italic text-gray-500">No hay reseñas disponibles para este profesor.</p>`;
+        reviewsHtml = `<p class="text-center italic" style="color: var(--text-secondary);">No hay reseñas disponibles para este profesor.</p>`;
       }
       
       content.innerHTML = reviewsHtml;
       modal.style.display = 'block';
     }
 
+    // Sorting state variables
+    let courseSort = {col: null, asc: true};
+    let profSort = {key: null, asc: true};
+
     // Sort table functionality
     function sortTable(columnIndex) {
       const table = document.getElementById('coursesTable');
       const rows = Array.from(table.rows);
-      
+
+      // toggle sort direction
+      if (courseSort.col === columnIndex) {
+        courseSort.asc = !courseSort.asc;
+      } else {
+        courseSort.col = columnIndex;
+        courseSort.asc = true;
+      }
+
       rows.sort((a, b) => {
-        let aValue, bValue;
-        
-        // Special handling for difficulty column which has star icons
+        let aValue, bValue, compare;
         if (columnIndex === 2) {
           aValue = a.cells[columnIndex].querySelector('.star-rating').childElementCount;
           bValue = b.cells[columnIndex].querySelector('.star-rating').childElementCount;
-          return bValue - aValue;
+          compare = aValue - bValue;
         } else {
-          // For text columns
-          aValue = a.cells[columnIndex].textContent;
-          bValue = b.cells[columnIndex].textContent;
-          return aValue.localeCompare(bValue);
+          aValue = a.cells[columnIndex].textContent.trim();
+          bValue = b.cells[columnIndex].textContent.trim();
+          compare = aValue.localeCompare(bValue);
+        }
+        return courseSort.asc ? compare : -compare;
+      });
+
+      rows.forEach(row => table.appendChild(row));
+
+      // update header icons
+      const headers = document.querySelectorAll('#coursesSection thead th');
+      headers.forEach((th, idx) => {
+        const icon = th.querySelector('i');
+        if (!icon) return;
+        icon.classList.remove('fa-sort','fa-sort-up','fa-sort-down');
+        if (idx === columnIndex) {
+          icon.classList.add(courseSort.asc ? 'fa-sort-up' : 'fa-sort-down');
+        } else {
+          icon.classList.add('fa-sort');
         }
       });
-      
-      // Re-append rows in the new order
-      rows.forEach(row => table.appendChild(row));
     }
 
     // Professors sorting
     let allProfessors = [];
     function sortProfessors(by) {
       if (!allProfessors.length) return;
+
+      if (profSort.key === by) {
+        profSort.asc = !profSort.asc;
+      } else {
+        profSort.key = by;
+        profSort.asc = by === 'rating' ? false : true; // default direction
+      }
+
       const sorted = [...allProfessors];
       if (by === 'rating') {
         sorted.sort((a, b) => {
           const aR = typeof a.avgRating === 'number' ? a.avgRating : -1;
           const bR = typeof b.avgRating === 'number' ? b.avgRating : -1;
-          return bR - aR; // high to low
+          return profSort.asc ? aR - bR : bR - aR;
         });
       } else if (by === 'name') {
-        sorted.sort((a, b) => a.name.localeCompare(b.name));
+        sorted.sort((a, b) => profSort.asc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
       }
       displayProfessors(sorted);
+
+      // update header icons
+      const headers = document.querySelectorAll('#professorsSection thead th');
+      headers.forEach(th => {
+        const key = th.dataset.key;
+        const icon = th.querySelector('i');
+        if (!icon) return;
+        icon.classList.remove('fa-sort','fa-sort-up','fa-sort-down');
+        if (key === by) {
+          icon.classList.add(profSort.asc ? 'fa-sort-up' : 'fa-sort-down');
+        } else {
+          icon.classList.add('fa-sort');
+        }
+      });
     }
+
     // Build professors list from courses
     function buildProfessors(courses) {
       const map = {};
@@ -516,11 +651,14 @@
         const ratingDisplay = numericRating !== null ? numericRating.toFixed(1) : 'N/A';
 
         const tr = document.createElement('tr');
-        tr.className = 'hover:bg-gray-50 cursor-pointer';
+        tr.className = 'cursor-pointer hover-effect';
+        tr.style.transition = 'background-color 0.2s';
+        tr.onmouseover = () => tr.style.backgroundColor = 'var(--bg-element)';
+        tr.onmouseout = () => tr.style.backgroundColor = 'var(--bg-card)';
         tr.innerHTML = `
-          <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-700">${prof.name}</td>
-          <td class="px-6 py-4"><div class="flex star-rating mr-2 inline-block">${ratingStars}</div><span class="ml-2 text-sm text-gray-600">${ratingDisplay}</span></td>
-          <td class="px-6 py-4 text-sm text-gray-600">${prof.courses.length}</td>`;
+          <td class="px-6 py-4 whitespace-nowrap font-medium" style="color: var(--text-primary);">${prof.name}</td>
+          <td class="px-6 py-4"><div class="flex star-rating mr-2 inline-block">${ratingStars}</div><div class="text-sm" style="color: var(--text-primary);">${ratingDisplay}</div></td>
+          <td class="px-6 py-4 text-sm" style="color: var(--text-secondary);">${prof.courses.length}</td>`;
         tr.addEventListener('click', () => showProfessorModal(prof));
         tbody.appendChild(tr);
       });
@@ -542,13 +680,13 @@
         prof.reviews.forEach(review => {
           const stars = review.rating !== null ? generateStarRating(Math.round(review.rating)) : generateStarRating(0);
           html += `
-            <div class="bg-gray-50 p-4 rounded-lg">
+            <div class="p-4 rounded-lg" style="background-color: var(--bg-element); color: var(--text-primary);">
               <div class="flex items-center mb-2">
-                <div class="flex star-rating mr-2">${stars}</div>
-                <span class="text-sm text-gray-600">${review.date || ''}</span>
-                <span class="ml-auto text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">${review.course}</span>
+                <div class="flex star-rating mr-2" style="color: #fbbf24;">${stars}</div>
+                <span class="text-sm" style="color: var(--text-secondary)">${review.date || ''}</span>
+                <span class="ml-auto text-xs px-2 py-0.5 rounded" style="background-color: var(--accent); color: var(--bg-card); opacity: 0.9;">${review.course}</span>
               </div>
-              <p class="text-gray-800">${review.text}</p>
+              <p style="color: var(--text-primary);">${review.text}</p>
             </div>`;
         });
       } else {
@@ -603,7 +741,47 @@
       document.getElementById('professorModal').style.display = 'none';
     });
 
+    // Theme toggle functionality
+    function setupThemeToggle() {
+      const themeButtons = document.querySelectorAll('.theme-button');
+      const currentTheme = getStoredTheme();
+
+      // Highlight the active theme button
+      updateActiveThemeButton(currentTheme);
+      
+      // Add event listeners for each theme button
+      themeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const newTheme = button.getAttribute('data-theme');
+          applyTheme(newTheme);
+          updateActiveThemeButton(newTheme);
+        });
+      });
+    }
+
+    // Update active theme button styling
+    function updateActiveThemeButton(activeTheme) {
+      const themeButtons = document.querySelectorAll('.theme-button');
+      themeButtons.forEach(button => {
+        const theme = button.getAttribute('data-theme');
+        if (theme === activeTheme) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+    }
+
   </script>
-  <p class="text-center text-xs text-gray-400 my-4">Última actualización: 24 de junio de 2025</p>
+  <!-- Floating review button -->
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdrlW3eG_wwAWFHfLDoE6bM4nllon6-CZ0gIsnK53hXFhWMw/viewform" target="_blank" title="Enviar una nueva reseña"
+     class="fixed bottom-6 right-6 text-white rounded-full shadow-lg px-5 py-3 text-sm font-medium focus:outline-none focus:ring-2"
+     style="background-color: var(--accent); transition: background-color 0.2s;"
+     onmouseover="this.style.backgroundColor='var(--accent-hover)'"
+     onmouseout="this.style.backgroundColor='var(--accent)'">
+     <i class="fas fa-pen mr-2"></i>Agregar reseña
+  </a>
+
+  <p class="text-center text-xs my-4" style="color: var(--text-muted);">Última actualización: 24 de junio de 2025</p>
 </body>
 </html>
