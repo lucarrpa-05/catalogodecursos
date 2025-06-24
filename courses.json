@@ -1,44 +1,5 @@
 [
   {
-    "name": "Algoritmos y Estructuras de Datos",
-    "prerequisite": "Programación de Computadores",
-    "difficulty": 4,
-    "professors": [
-      {
-        "slug": "wightman-p",
-        "name": "Pedro Wightman",
-        "rating": 4,
-        "reviews": [
-          {
-            "text": "Es muy importante tener buenas bases en C++. Con eso, la clase es bastante sencilla. El profesor Pedro tiene una metodología muy práctica, con muchos ejercicios en clase, no tanta teoría. Los parciales son muy sencillos si uno hace los ejercicios. También, con el proyecto, que pesa el 25%, fácilmente se puede subir mucho la nota si a uno no le fue tan bien en algún parcial. Recomiendo 100% verla con él.",
-            "rating": 4.5,
-            "date": "2025-06-08",
-            "course": "Algoritmos y Estructuras de Datos"
-          },
-          {
-            "text": "La clase puede ser o muy fácil o extremadamente difícil, todo depende de las bases que uno tenga en programación. Clave dominar o por lo menos entender programación orientada a objetos en C++, porque todos los temas de la clase se basan en eso y el profesor asume que uno ya sabe, y no explica para nada lo que se supone que uno aprendió en programación. En lo personal mi experiencia fue buena, nunca me costó pasar un parcial e igual con el proyecto se levanta bastante la nota, pero si tuve gente en mi grupo que la sufrió un resto. Pedro es muy bueno, sabe muchísimo, pero solamente van a aprovechar eso los que tengan buenas bases... si no, creo que la experiencia es pésima, vas a sentir que el man va a toda, que no explica nada y que los parciales son imposibles. Todo depende de lo que uno ya sepa...",
-            "rating": 3.5,
-            "date": "2025-06-08",
-            "course": "Algoritmos y Estructuras de Datos"
-          }
-        ]
-      },
-      {
-        "slug": "garcia-ls",
-        "name": "Luz Stella García",
-        "rating": 1,
-        "reviews": [
-          {
-            "text": "No la recomiendo para nada. Hace la clase mucho más difícil que el otro profesor, califica super raro, los parciales son muy teóricos.. metanla con Pedro.",
-            "rating": 1,
-            "date": "2025-06-08",
-            "course": "Algoritmos y Estructuras de Datos"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "Álgebra Lineal",
     "prerequisite": "Precálculo",
     "difficulty": 3,
@@ -129,6 +90,45 @@
             "rating": 4.5,
             "date": "2025-06-10",
             "course": "Álgebra Lineal"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Algoritmos y Estructuras de Datos",
+    "prerequisite": "Programación de Computadores",
+    "difficulty": 4,
+    "professors": [
+      {
+        "slug": "wightman-p",
+        "name": "Pedro Wightman",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Es muy importante tener buenas bases en C++. Con eso, la clase es bastante sencilla. El profesor Pedro tiene una metodología muy práctica, con muchos ejercicios en clase, no tanta teoría. Los parciales son muy sencillos si uno hace los ejercicios. También, con el proyecto, que pesa el 25%, fácilmente se puede subir mucho la nota si a uno no le fue tan bien en algún parcial. Recomiendo 100% verla con él.",
+            "rating": 4.5,
+            "date": "2025-06-08",
+            "course": "Algoritmos y Estructuras de Datos"
+          },
+          {
+            "text": "La clase puede ser o muy fácil o extremadamente difícil, todo depende de las bases que uno tenga en programación. Clave dominar o por lo menos entender programación orientada a objetos en C++, porque todos los temas de la clase se basan en eso y el profesor asume que uno ya sabe, y no explica para nada lo que se supone que uno aprendió en programación. En lo personal mi experiencia fue buena, nunca me costó pasar un parcial e igual con el proyecto se levanta bastante la nota, pero si tuve gente en mi grupo que la sufrió un resto. Pedro es muy bueno, sabe muchísimo, pero solamente van a aprovechar eso los que tengan buenas bases... si no, creo que la experiencia es pésima, vas a sentir que el man va a toda, que no explica nada y que los parciales son imposibles. Todo depende de lo que uno ya sepa...",
+            "rating": 3.5,
+            "date": "2025-06-08",
+            "course": "Algoritmos y Estructuras de Datos"
+          }
+        ]
+      },
+      {
+        "slug": "garcia-ls",
+        "name": "Luz Stella García",
+        "rating": 1,
+        "reviews": [
+          {
+            "text": "No la recomiendo para nada. Hace la clase mucho más difícil que el otro profesor, califica super raro, los parciales son muy teóricos.. metanla con Pedro.",
+            "rating": 1,
+            "date": "2025-06-08",
+            "course": "Algoritmos y Estructuras de Datos"
           }
         ]
       }
@@ -362,6 +362,26 @@
     ]
   },
   {
+    "name": "Curso Básico R",
+    "prerequisite": "Econometría Básica",
+    "difficulty": 2,
+    "professors": [
+      {
+        "slug": "marin-m",
+        "name": "Margarita Marín",
+        "rating": 0.5,
+        "reviews": [
+          {
+            "text": "La profesora no explicaba y faltaba mucho a clase avisando con poco tiempo de antelación",
+            "rating": 0.5,
+            "date": "2025-06-09",
+            "course": "Curso Básico R"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Curso Básico STATA",
     "prerequisite": "Econometría Básica",
     "difficulty": 3.5,
@@ -408,6 +428,32 @@
             "rating": 4,
             "date": "2025-06-08",
             "course": "Derivados"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Desarrollo Económico",
+    "prerequisite": "Introducción a la Ciencia Económica",
+    "difficulty": 3.5,
+    "professors": [
+      {
+        "slug": "seither-j",
+        "name": "Julia Seither",
+        "rating": 4.25,
+        "reviews": [
+          {
+            "text": "Curso con temáticas interesantes que motivan la participación. Hay que ir todas las clases porque siempre se saca nota. A la hora de estudiar, no confiarse y revisar todos los recursos del curso.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Desarrollo Económico"
+          },
+          {
+            "text": "Una clase muy buena. Combina tanto los componentes teóricos como prácticos de la carrera y permite que se reflexione sobre temas muy importantes de la economía, a través de debates y dinámicas en la clase, donde se discuten temas complicados pero necesarios para tener una mejor visión del desarrollo economico.",
+            "rating": 4.5,
+            "date": "2025-06-10",
+            "course": "Desarrollo Económico"
           }
         ]
       }
@@ -478,20 +524,343 @@
     ]
   },
   {
-    "name": "Curso Básico R",
-    "prerequisite": "Econometría Básica",
+    "name": "Econometría Básica",
+    "prerequisite": "Estadística",
+    "difficulty": 4,
+    "professors": [
+      {
+        "slug": "rodriguez-p",
+        "name": "Paul Rodríguez",
+        "rating": 3.7,
+        "reviews": [
+          {
+            "text": "Adoro a Paul como persona, pero me parece muy importante ver el curso con Saavedra, realmente sales mucho mejor preparado.",
+            "rating": 3,
+            "date": "2025-06-09",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "Es un curso que, si bien presenta las bases teóricas a profundidad, se enfoca en las aplicaciones practicas de la econometría, lo que lo hace más valioso para los estudiantes. El profesor Paul explica claro y abre varias actividades para practicar lo aprendido. Julia no se hace entender tan bien, pero también se enfoca en la práctica y en actividades de aplicación",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "Es un curso muy intuitivo, Paul es un excelente profesor y busca que su clase sea bastante aplicable. Se profundiza en el conocimiento en R y el proyecto es una oportunidad de hacer cosas muy chéveres",
+            "rating": 4,
+            "date": "2025-06-10",
+            "course": "Econometría Básica"
+          }
+        ]
+      },
+      {
+        "slug": "saavedra-s",
+        "name": "Santiago Saavedra",
+        "rating": 4.75,
+        "reviews": [
+          {
+            "text": "De los cursos más importantes de la carrera donde se analiza la regresión lineal en su máximo esplendor. Temas de evaluación de impacto son abordados. Este curso reúne lo visto en otros cursos complementando y reforzando los conceptos ya obtenidos. \nNo tuve la mejor experiencia con el profesor Santiago, pero explica bien y eso es lo importante. Los parciales no son complicados.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "Hace un muy buen manejo del tema y logra que sus estudiantes se atrapen en el tema, ya que su manera de enseñar es didáctica. Excelente profesor",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "El docente tiene tanto buen manejo del tema, como dominio de los estudiantes. Sabe explicar muy bien, los parciales no son difíciles, complementa todos los temas con experiencias personales que te ayudan a comprender mas el tema en situaciones cotidianas.",
+            "rating": 4.5,
+            "date": "2025-06-10",
+            "course": "Econometría Básica"
+          },
+          {
+            "text": "Un curso bastante retador pero el profesor es demasiado bueno explicando cada uno de los temas y se preocupa mucho por que los estudiantes tengan un entendimiento claro",
+            "rating": 4.5,
+            "date": "2025-06-12",
+            "course": "Econometría Básica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Economía Financiera",
+    "prerequisite": "Microeconomía I, Probabilidad",
+    "difficulty": 3.5,
+    "professors": [
+      {
+        "slug": "castro-c",
+        "name": "Carlos Castro",
+        "rating": 3.5,
+        "reviews": [
+          {
+            "text": "En este curso se ve la teoría de las finanzas, el profesor Carlos Castro entrega muchos recursos para la clase y el aprendizaje de la misma, lo que resulta bastante útil. Sin embargo, las clases tienden a ser monótonas.",
+            "rating": 3.5,
+            "date": "2025-06-20",
+            "course": "Economía Financiera"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Economía Matemática",
+    "prerequisite": "Cálculo II, Álgebra Lineal",
+    "difficulty": 5,
+    "professors": [
+      {
+        "slug": "kayi-c",
+        "name": "Cagatay Kayi",
+        "rating": 4.2,
+        "reviews": [
+          {
+            "text": "La materia puede llegar a ser bastante complicada, pero realmente es cuestión de estudiarla bien y sobre todo tener buenas bases. Son muchas fórmulas y muchos temas, hay que estudiar bastante y los parciales no son sencillos. Eso si, el profesor ayuda mucho con las notas si uno muestra esfuerzo y buena actitud.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Economía Matemática"
+          },
+          {
+            "text": "La materia es complicada, son muchos conceptos y definiciones que uno se tiene que aprender. Pero el profesor es súper amable y explica bien, además es súper suave con las notas si uno va a clase. Recomiendo mucho ir a las monitorias y toca empezar a estudiar con tiempo para los parciales.",
+            "rating": 4,
+            "date": "2025-06-20",
+            "course": "Economía Matemática"
+          },
+          {
+            "text": "Aunque la clase sea en inglés el profesor a veces responde cosas en español y es muy bueno resolviendo dudas de los estudiantes... A veces es un poco desorganizado en el desarrollo de unos ejercicios entonces hay que ponerle mucha atención a clase...a materia como tal tiene muchos componentes pesados y algunos que personalmente por que observará no los entendía. El monitor esclarecio y resumió todos los conceptos muy bien (eso es muy importante) por último las calificaciones Cagatai las promedia y si en el siguiente corte te va mejor que el anterior, te sube el anterior (si en el primer corte te fue a medias, pero en el segundo te fue mejor el promedia pa nota para cambiar la nota del primer corte)\nEcomat es fundamental para micro 3 por la intuición económica (más que todo convexidad y con cavidad)",
+            "rating": 4.5,
+            "date": "2025-06-10",
+            "course": "Economía Matemática"
+          }
+        ]
+      },
+      {
+        "slug": "ramirez-r",
+        "name": "René Ramírez",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Rene es muy bueno explicando, como es bastante contenido toca concentrarse mucho pero si necesitas ayuda, lo puedes contactar o correo o acercarte que el siempre está disponible para sus alumnos.",
+            "rating": 4,
+            "date": "2025-06-10",
+            "course": "Economía Matemática"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Estadística",
+    "prerequisite": "Probabilidad",
+    "difficulty": 4,
+    "professors": [
+      {
+        "slug": "moreno-d",
+        "name": "Diana Moreno",
+        "rating": 3,
+        "reviews": [
+          {
+            "text": "Es buena profesora, explica los conceptos de manera clara y es paciente con las dudas. En lo personal me parece más fácil que probabilidad, pero igual tiene su ciencia. No es una materia fácil pero tampoco una muy complicada.",
+            "rating": 3,
+            "date": "2025-06-09",
+            "course": "Estadística"
+          }
+        ]
+      },
+      {
+        "slug": "reyes-c",
+        "name": "César Reyes",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "text": "El César de estadística es más relajado que el César de probabilidad, explica muy bien los temas del curso y no tiene problema con volver a explicar temas vistos previamente. Muy recomendado.",
+            "rating": 4.5,
+            "date": "2025-06-23",
+            "course": "Estadística"
+          },
+          {
+            "text": "Es un gran preámbulo para econometría básica y sienta las bases para el resto de la carrera en Economía. El profesor es muy bueno y poseen mucho conocimiento en la materia, muy recomendado.",
+            "rating": 5,
+            "date": "2025-06-23",
+            "course": "Estadística"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Haciendo Economía",
+    "prerequisite": "N/A",
     "difficulty": 2,
     "professors": [
       {
-        "slug": "marin-m",
-        "name": "Margarita Marín",
-        "rating": 0.5,
+        "slug": "rodriguez-p",
+        "name": "Paul Rodríguez",
+        "rating": 3.75,
         "reviews": [
           {
-            "text": "La profesora no explicaba y faltaba mucho a clase avisando con poco tiempo de antelación",
-            "rating": 0.5,
+            "text": "Es un curso bastante sencillo, Paul es muy chévere y la clase es bastante aplicada. No hay que estudiar mucho, es fácil, pero hay muchas entregas, entonces si quita tiempo.",
+            "rating": 4,
+            "date": "2025-06-10",
+            "course": "Haciendo Economía"
+          },
+          {
+            "text": "La materia es muy sencilla, pero quita mucho tiempo con las entregas. Además, es un poco raro para los de analítica, porque ellos la ven en segundo, y normalmente la mete gente de economía de semestres mucho más avanzados, entonces el profesor asume que uno ya sabe mucho más de lo que en realidad sabe. A veces cuesta seguir los ejemplos por eso. Pero las actividades son fáciles. Paul también muy bueno, muy querido y sabe mucho, pero tiene ese problema.",
+            "rating": 3.5,
+            "date": "2025-06-10",
+            "course": "Haciendo Economía"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Introducción a la Ciencia Económica",
+    "prerequisite": "N/A",
+    "difficulty": 2,
+    "professors": [
+      {
+        "slug": "ferraz-e",
+        "name": "Eduardo Ferraz",
+        "rating": 3,
+        "reviews": [
+          {
+            "text": "Ferraz es muy malo de profesor, no explica para nada bien, siempre se enreda muchísimo con cosas demasiado sencillas y en general complica mucho todo, sobre todo los parciales, hace que un tema fácil se vuelva muy dificíl porque no se expresa bien y lo confunde mucho a uno. Se nota que sabe muchísimo pero en verdad no lo explica bien.",
+            "rating": 2,
             "date": "2025-06-09",
-            "course": "Curso Básico R"
+            "course": "Introducción a la Ciencia Económica"
+          },
+          {
+            "text": "Clase introductoria muy sencilla, conceptos muy básicos e intuitivos para cualquier persona, no se necesita tener bases en nada. El profesor Eduardo es de los mejores economistas que tiene la facultad, tiene mucho conocimiento y creo que hace un esfuerzo grande por dárselo a los estudiantes de la forma más sencilla posible, pero a veces le cuesta expresarse, sobre todo por escrito.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Introducción a la Ciencia Económica"
+          }
+        ]
+      },
+      {
+        "slug": "ropero-s",
+        "name": "Sergio Ropero",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Es un profesor excelente, explica los conceptos de manera clara y tiene muy buenas diapositivas. La clase es muy fácil si uno pone atención y hace los talleres.",
+            "rating": 4,
+            "date": "2025-06-09",
+            "course": "Introducción a la Ciencia Económica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lógica y Matemáticas Discretas",
+    "prerequisite": "N/A",
+    "difficulty": 4,
+    "professors": [
+      {
+        "slug": "duque-s",
+        "name": "Sergio Nicolás Duque",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Lógica es la materia más dura de primer semestre, aunque le han bajado bastante a la cantidad de temas y a la dificultad de los mismos. Igual, es complicado, son muchos conceptos nuevos y es difícil cogerle el tiro al inicio. Yo lo que recomiendo es leer y ver vídeos, más que hacer un montón de ejercicios. Es súper importante aprender a ver la estructura de las demostraciones. Recomiendo, por ejemplo, este canal de YouTube: The Math Sorcerer. Para aprender a demostrar es excelente y tiene vídeos de todos los temas que se ven. Sobre el profesor Sergio solo tengo cosas buenas para decir. Yo no vi esta materia con él, la vi con César Rodríguez, pero si vi Pensamiento Matemático con él y me pareció excelente. Es una persona graduada recientemente, por lo que es muy empático con el estudiante, entiende la situación en la que estás y hace todo lo posible para ayudarte. Explica muy bien, califica súper suave, es muy paciente y deja actividades muy sencillas para sacar el 15%. Lo malo es que tiene varios trabajos, entonces se enreda bastante a veces; llega tarde, se nota distraído, cosas así, pero igual lo recomiendo full. Yo digo esto: no se asusten, parece algo muy loco al inicio, pero en realidad es bastante sencillo y te ayuda a adquirir muchísima madurez matemática.",
+            "rating": 4,
+            "date": "2025-06-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Macroeconomía I",
+    "prerequisite": "Cálculo I, Medición Económica, Microeconomía I",
+    "difficulty": 3.2,
+    "professors": [
+      {
+        "slug": "velasco-a",
+        "name": "Andrés Velasco",
+        "rating": 3,
+        "reviews": [
+          {
+            "text": "Es un curso bastante útil, da muchas bases para la carrera por lo que es fundamental tener claros los conceptos. El profesor Andrés Velasco aplica mucho los conceptos a la vida real y para los parciales la monitoria es esencial.",
+            "rating": 3,
+            "date": "2025-06-20",
+            "course": "Macroeconomía I"
+          }
+        ]
+      },
+      {
+        "slug": "avila-o",
+        "name": "Oscar Iván Ávila",
+        "rating": 5,
+        "reviews": [
+          {
+            "text": "Muy buen profesional, trabaja en el banco y es profesor de posgrado así que el curso es actualizado en cierto modo para ser teorías antiquísimas",
+            "rating": 5,
+            "date": "2025-06-10",
+            "course": "Macroeconomía I"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Macroeconomía II",
+    "prerequisite": "N/A",
+    "difficulty": 4.4,
+    "professors": [
+      {
+        "slug": "cepeda-f",
+        "name": "Freddy Hernán Cepeda",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "text": "Es un gran curso para ampliar el conocimiento en macroeconomía, el profesor es de gran ayuda en términos de las evaluaciones y es necesario repasar los temas tanto con el monitor como individualmente.",
+            "rating": 4.5,
+            "date": "2025-06-23",
+            "course": "Macroeconomía II"
+          }
+        ]
+      },
+      {
+        "slug": "zarate-j",
+        "name": "Juan Pablo Zárate",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "text": "El profesor estaba abierto a responder preguntas y programó sesiones con invitados muy buenos.",
+            "rating": 4.5,
+            "date": "2025-06-24",
+            "course": "Macroeconomía II"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Macroeconomía III",
+    "prerequisite": "Macroeconomía II, Economía Matemática",
+    "difficulty": 3,
+    "professors": [
+      {
+        "slug": "perez-r",
+        "name": "Roberto Rafael Pérez",
+        "rating": 5,
+        "reviews": [
+          {
+            "text": "Mi experiencia fue increíble! Sobretodo desde el punto de vista de alguien que le gusta más la micro. El profesor es muy intuitivo, da todas las herramientas para obtener buenas notas y en las clases siempre tuvo la mejor actitud. Fácil de los cursos más disfrutables de la carrera",
+            "rating": 5,
+            "date": "2025-06-18",
+            "course": "Macroeconomía III"
+          },
+          {
+            "text": "Roberto es muy buen profesor, el curso no es tan complejo y hay bastante material para prepararse para el parcial, en gran parte el que entrega Roberto",
+            "rating": 5,
+            "date": "2025-06-10",
+            "course": "Macroeconomía III"
           }
         ]
       }
@@ -594,238 +963,26 @@
     ]
   },
   {
-    "name": "Desarrollo Económico",
-    "prerequisite": "Introducción a la Ciencia Económica",
-    "difficulty": 3.5,
+    "name": "Microeconomía III",
+    "prerequisite": "Microeconomía I, Economía Matemática",
+    "difficulty": 4.5,
     "professors": [
       {
-        "slug": "seither-j",
-        "name": "Julia Seither",
-        "rating": 4.25,
+        "slug": "cortes-d",
+        "name": "Darwin Cortés",
+        "rating": 3.8,
         "reviews": [
           {
-            "text": "Curso con temáticas interesantes que motivan la participación. Hay que ir todas las clases porque siempre se saca nota. A la hora de estudiar, no confiarse y revisar todos los recursos del curso.",
-            "rating": 4,
-            "date": "2025-06-09",
-            "course": "Desarrollo Económico"
-          },
-          {
-            "text": "Una clase muy buena. Combina tanto los componentes teóricos como prácticos de la carrera y permite que se reflexione sobre temas muy importantes de la economía, a través de debates y dinámicas en la clase, donde se discuten temas complicados pero necesarios para tener una mejor visión del desarrollo economico.",
-            "rating": 4.5,
-            "date": "2025-06-10",
-            "course": "Desarrollo Económico"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Econometría Básica",
-    "prerequisite": "Estadística",
-    "difficulty": 4,
-    "professors": [
-      {
-        "slug": "rodriguez-p",
-        "name": "Paul Rodríguez",
-        "rating": 3.7,
-        "reviews": [
-          {
-            "text": "Adoro a Paul como persona, pero me parece muy importante ver el curso con Saavedra, realmente sales mucho mejor preparado.",
-            "rating": 3,
-            "date": "2025-06-09",
-            "course": "Econometría Básica"
-          },
-          {
-            "text": "Es un curso que, si bien presenta las bases teóricas a profundidad, se enfoca en las aplicaciones practicas de la econometría, lo que lo hace más valioso para los estudiantes. El profesor Paul explica claro y abre varias actividades para practicar lo aprendido. Julia no se hace entender tan bien, pero también se enfoca en la práctica y en actividades de aplicación",
-            "rating": 4,
-            "date": "2025-06-09",
-            "course": "Econometría Básica"
-          },
-          {
-            "text": "Es un curso muy intuitivo, Paul es un excelente profesor y busca que su clase sea bastante aplicable. Se profundiza en el conocimiento en R y el proyecto es una oportunidad de hacer cosas muy chéveres",
-            "rating": 4,
-            "date": "2025-06-10",
-            "course": "Econometría Básica"
-          }
-        ]
-      },
-      {
-        "slug": "saavedra-s",
-        "name": "Santiago Saavedra",
-        "rating": 4.75,
-        "reviews": [
-          {
-            "text": "De los cursos más importantes de la carrera donde se analiza la regresión lineal en su máximo esplendor. Temas de evaluación de impacto son abordados. Este curso reúne lo visto en otros cursos complementando y reforzando los conceptos ya obtenidos. \nNo tuve la mejor experiencia con el profesor Santiago, pero explica bien y eso es lo importante. Los parciales no son complicados.",
-            "rating": 5,
-            "date": "2025-06-09",
-            "course": "Econometría Básica"
-          },
-          {
-            "text": "Hace un muy buen manejo del tema y logra que sus estudiantes se atrapen en el tema, ya que su manera de enseñar es didáctica. Excelente profesor",
-            "rating": 5,
-            "date": "2025-06-09",
-            "course": "Econometría Básica"
-          },
-          {
-            "text": "El docente tiene tanto buen manejo del tema, como dominio de los estudiantes. Sabe explicar muy bien, los parciales no son difíciles, complementa todos los temas con experiencias personales que te ayudan a comprender mas el tema en situaciones cotidianas.",
-            "rating": 4.5,
-            "date": "2025-06-10",
-            "course": "Econometría Básica"
-          },
-          {
-            "text": "Un curso bastante retador pero el profesor es demasiado bueno explicando cada uno de los temas y se preocupa mucho por que los estudiantes tengan un entendimiento claro",
-            "rating": 4.5,
-            "date": "2025-06-12",
-            "course": "Econometría Básica"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Economía Matemática",
-    "prerequisite": "Cálculo II, Álgebra Lineal",
-    "difficulty": 5,
-    "professors": [
-      {
-        "slug": "kayi-c",
-        "name": "Cagatay Kayi",
-        "rating": 4.2,
-        "reviews": [
-          {
-            "text": "La materia puede llegar a ser bastante complicada, pero realmente es cuestión de estudiarla bien y sobre todo tener buenas bases. Son muchas fórmulas y muchos temas, hay que estudiar bastante y los parciales no son sencillos. Eso si, el profesor ayuda mucho con las notas si uno muestra esfuerzo y buena actitud.",
-            "rating": 4,
-            "date": "2025-06-09",
-            "course": "Economía Matemática"
-          },
-          {
-            "text": "La materia es complicada, son muchos conceptos y definiciones que uno se tiene que aprender. Pero el profesor es súper amable y explica bien, además es súper suave con las notas si uno va a clase. Recomiendo mucho ir a las monitorias y toca empezar a estudiar con tiempo para los parciales.",
-            "rating": 4,
-            "date": "2025-06-20",
-            "course": "Economía Matemática"
-          },
-          {
-            "text": "Aunque la clase sea en inglés el profesor a veces responde cosas en español y es muy bueno resolviendo dudas de los estudiantes... A veces es un poco desorganizado en el desarrollo de unos ejercicios entonces hay que ponerle mucha atención a clase...a materia como tal tiene muchos componentes pesados y algunos que personalmente por que observará no los entendía. El monitor esclarecio y resumió todos los conceptos muy bien (eso es muy importante) por último las calificaciones Cagatai las promedia y si en el siguiente corte te va mejor que el anterior, te sube el anterior (si en el primer corte te fue a medias, pero en el segundo te fue mejor el promedia pa nota para cambiar la nota del primer corte)\nEcomat es fundamental para micro 3 por la intuición económica (más que todo convexidad y con cavidad)",
-            "rating": 4.5,
-            "date": "2025-06-10",
-            "course": "Economía Matemática"
-          }
-        ]
-      },
-      {
-        "slug": "ramirez-r",
-        "name": "René Ramírez",
-        "rating": 4,
-        "reviews": [
-          {
-            "text": "Rene es muy bueno explicando, como es bastante contenido toca concentrarse mucho pero si necesitas ayuda, lo puedes contactar o correo o acercarte que el siempre está disponible para sus alumnos.",
-            "rating": 4,
-            "date": "2025-06-10",
-            "course": "Economía Matemática"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Estadística",
-    "prerequisite": "Probabilidad",
-    "difficulty": 4,
-    "professors": [
-      {
-        "slug": "moreno-d",
-        "name": "Diana Moreno",
-        "rating": 3,
-        "reviews": [
-          {
-            "text": "Es buena profesora, explica los conceptos de manera clara y es paciente con las dudas. En lo personal me parece más fácil que probabilidad, pero igual tiene su ciencia. No es una materia fácil pero tampoco una muy complicada.",
-            "rating": 3,
-            "date": "2025-06-09",
-            "course": "Estadística"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Lógica y Matemáticas Discretas",
-    "prerequisite": "N/A",
-    "difficulty": 4,
-    "professors": [
-      {
-        "slug": "duque-s",
-        "name": "Sergio Nicolás Duque",
-        "rating": 4,
-        "reviews": [
-          {
-            "text": "Lógica es la materia más dura de primer semestre, aunque le han bajado bastante a la cantidad de temas y a la dificultad de los mismos. Igual, es complicado, son muchos conceptos nuevos y es difícil cogerle el tiro al inicio. Yo lo que recomiendo es leer y ver vídeos, más que hacer un montón de ejercicios. Es súper importante aprender a ver la estructura de las demostraciones. Recomiendo, por ejemplo, este canal de YouTube: The Math Sorcerer. Para aprender a demostrar es excelente y tiene vídeos de todos los temas que se ven. Sobre el profesor Sergio solo tengo cosas buenas para decir. Yo no vi esta materia con él, la vi con César Rodríguez, pero si vi Pensamiento Matemático con él y me pareció excelente. Es una persona graduada recientemente, por lo que es muy empático con el estudiante, entiende la situación en la que estás y hace todo lo posible para ayudarte. Explica muy bien, califica súper suave, es muy paciente y deja actividades muy sencillas para sacar el 15%. Lo malo es que tiene varios trabajos, entonces se enreda bastante a veces; llega tarde, se nota distraído, cosas así, pero igual lo recomiendo full. Yo digo esto: no se asusten, parece algo muy loco al inicio, pero en realidad es bastante sencillo y te ayuda a adquirir muchísima madurez matemática.",
-            "rating": 4,
-            "date": "2025-06-20"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Haciendo Economía",
-    "prerequisite": "N/A",
-    "difficulty": 2,
-    "professors": [
-      {
-        "slug": "rodriguez-p",
-        "name": "Paul Rodríguez",
-        "rating": 3.75,
-        "reviews": [
-          {
-            "text": "Es un curso bastante sencillo, Paul es muy chévere y la clase es bastante aplicada. No hay que estudiar mucho, es fácil, pero hay muchas entregas, entonces si quita tiempo.",
-            "rating": 4,
-            "date": "2025-06-10",
-            "course": "Haciendo Economía"
-          },
-          {
-            "text": "La materia es muy sencilla, pero quita mucho tiempo con las entregas. Además, es un poco raro para los de analítica, porque ellos la ven en segundo, y normalmente la mete gente de economía de semestres mucho más avanzados, entonces el profesor asume que uno ya sabe mucho más de lo que en realidad sabe. A veces cuesta seguir los ejemplos por eso. Pero las actividades son fáciles. Paul también muy bueno, muy querido y sabe mucho, pero tiene ese problema.",
+            "text": "Es un curso que requiere mucho esfuerzo y dedicación, si bien no mucha gente lo pierde, sí puede pasar. En cuanto a Darwin mis comentarios son neutrales, sus clases tienden hacer aburridas pero cumple con su labor.",
             "rating": 3.5,
-            "date": "2025-06-10",
-            "course": "Haciendo Economía"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Introducción a la Ciencia Económica",
-    "prerequisite": "N/A",
-    "difficulty": 2,
-    "professors": [
-      {
-        "slug": "ferraz-e",
-        "name": "Eduardo Ferraz",
-        "rating": 3,
-        "reviews": [
-          {
-            "text": "Ferraz es muy malo de profesor, no explica para nada bien, siempre se enreda muchísimo con cosas demasiado sencillas y en general complica mucho todo, sobre todo los parciales, hace que un tema fácil se vuelva muy dificíl porque no se expresa bien y lo confunde mucho a uno. Se nota que sabe muchísimo pero en verdad no lo explica bien.",
-            "rating": 2,
-            "date": "2025-06-09",
-            "course": "Introducción a la Ciencia Económica"
+            "date": "2025-06-18",
+            "course": "Microeconomía III"
           },
           {
-            "text": "Clase introductoria muy sencilla, conceptos muy básicos e intuitivos para cualquier persona, no se necesita tener bases en nada. El profesor Eduardo es de los mejores economistas que tiene la facultad, tiene mucho conocimiento y creo que hace un esfuerzo grande por dárselo a los estudiantes de la forma más sencilla posible, pero a veces le cuesta expresarse, sobre todo por escrito.",
+            "text": "Darwin es muy buen profesor, pero es bastante escuelro así que asegurate de hacer las lecturas que les pida y copiar todo lo que haga en clase. Los contenidos son muy muy interesantes, aunque no quita que el curso en sí sea complejo",
             "rating": 4,
-            "date": "2025-06-09",
-            "course": "Introducción a la Ciencia Económica"
-          }
-        ]
-      },
-      {
-        "slug": "ropero-s",
-        "name": "Sergio Ropero",
-        "rating": 4,
-        "reviews": [
-          {
-            "text": "Es un profesor excelente, explica los conceptos de manera clara y tiene muy buenas diapositivas. La clase es muy fácil si uno pone atención y hace los talleres.",
-            "rating": 4,
-            "date": "2025-06-09",
-            "course": "Introducción a la Ciencia Económica"
+            "date": "2025-06-10",
+            "course": "Microeconomía III"
           }
         ]
       }
@@ -865,130 +1022,6 @@
     ]
   },
   {
-    "name": "Programación de Computadores",
-    "prerequisite": "N/A",
-    "difficulty": 2,
-    "professors": [
-      {
-        "slug": "guerrero-j",
-        "name": "José Alejandro Guerrero",
-        "rating": 4,
-        "reviews": [
-          {
-            "text": "Es un excelente profesor, pero quizás se ajusta mejor a cursos más avanazados. Tiene ese tipo de metodología, te trata como un amigo más que como un alumno, da mucha autonomía y en general es una clase muy autodidacta. Por ello es fácil no aprovecharla, no hacer nada en clase y pilotear los parciales con las diapositivas, pero no recomiendo hacer eso. Es muy tentador, pero no vale la pena, créanme. Es importante aprender las bases. La clase en si es muy fácil, una recocha total, pero tiene ese problema. Recomiendo tomarsela más en serio de lo que exige su dificultad.",
-            "rating": 4,
-            "date": "2025-06-20"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Microeconomía III",
-    "prerequisite": "Microeconomía I, Economía Matemática",
-    "difficulty": 4.5,
-    "professors": [
-      {
-        "slug": "cortes-d",
-        "name": "Darwin Cortés",
-        "rating": 3.8,
-        "reviews": [
-          {
-            "text": "Es un curso que requiere mucho esfuerzo y dedicación, si bien no mucha gente lo pierde, sí puede pasar. En cuanto a Darwin mis comentarios son neutrales, sus clases tienden hacer aburridas pero cumple con su labor.",
-            "rating": 3.5,
-            "date": "2025-06-18",
-            "course": "Microeconomía III"
-          },
-          {
-            "text": "Darwin es muy buen profesor, pero es bastante escuelro así que asegurate de hacer las lecturas que les pida y copiar todo lo que haga en clase. Los contenidos son muy muy interesantes, aunque no quita que el curso en sí sea complejo",
-            "rating": 4,
-            "date": "2025-06-10",
-            "course": "Microeconomía III"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Macroeconomía III",
-    "prerequisite": "Macroeconomía II, Economía Matemática",
-    "difficulty": 3,
-    "professors": [
-      {
-        "slug": "perez-r",
-        "name": "Roberto Rafael Pérez",
-        "rating": 5,
-        "reviews": [
-          {
-            "text": "Mi experiencia fue increíble! Sobretodo desde el punto de vista de alguien que le gusta más la micro. El profesor es muy intuitivo, da todas las herramientas para obtener buenas notas y en las clases siempre tuvo la mejor actitud. Fácil de los cursos más disfrutables de la carrera",
-            "rating": 5,
-            "date": "2025-06-18",
-            "course": "Macroeconomía III"
-          },
-          {
-            "text": "Roberto es muy buen profesor, el curso no es tan complejo y hay bastante material para prepararse para el parcial, en gran parte el que entrega Roberto",
-            "rating": 5,
-            "date": "2025-06-10",
-            "course": "Macroeconomía III"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Macroeconomía I",
-    "prerequisite": "Cálculo I, Medición Económica, Microeconomía I",
-    "difficulty": 3.2,
-    "professors": [
-      {
-        "slug": "velasco-a",
-        "name": "Andrés Velasco",
-        "rating": 3,
-        "reviews": [
-          {
-            "text": "Es un curso bastante útil, da muchas bases para la carrera por lo que es fundamental tener claros los conceptos. El profesor Andrés Velasco aplica mucho los conceptos a la vida real y para los parciales la monitoria es esencial.",
-            "rating": 3,
-            "date": "2025-06-20",
-            "course": "Macroeconomía I"
-          }
-        ]
-      },
-      {
-        "slug": "avila-o",
-        "name": "Oscar Iván Ávila",
-        "rating": 5,
-        "reviews": [
-          {
-            "text": "Muy buen profesional, trabaja en el banco y es profesor de posgrado así que el curso es actualizado en cierto modo para ser teorías antiquísimas",
-            "rating": 5,
-            "date": "2025-06-10",
-            "course": "Macroeconomía I"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Economía Financiera",
-    "prerequisite": "Microeconomía I, Probabilidad",
-    "difficulty": 3.5,
-    "professors": [
-      {
-        "slug": "castro-c",
-        "name": "Carlos Castro",
-        "rating": 3.5,
-        "reviews": [
-          {
-            "text": "En este curso se ve la teoría de las finanzas, el profesor Carlos Castro entrega muchos recursos para la clase y el aprendizaje de la misma, lo que resulta bastante útil. Sin embargo, las clases tienden a ser monótonas.",
-            "rating": 3.5,
-            "date": "2025-06-20",
-            "course": "Economía Financiera"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "Probabilidad",
     "prerequisite": "Cálculo II",
     "difficulty": 3.8,
@@ -1016,6 +1049,45 @@
             "rating": 2.5,
             "date": "2025-06-10",
             "course": "Probabilidad"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Programación de Computadores",
+    "prerequisite": "N/A",
+    "difficulty": 2,
+    "professors": [
+      {
+        "slug": "guerrero-j",
+        "name": "José Alejandro Guerrero",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Es un excelente profesor, pero quizás se ajusta mejor a cursos más avanazados. Tiene ese tipo de metodología, te trata como un amigo más que como un alumno, da mucha autonomía y en general es una clase muy autodidacta. Por ello es fácil no aprovecharla, no hacer nada en clase y pilotear los parciales con las diapositivas, pero no recomiendo hacer eso. Es muy tentador, pero no vale la pena, créanme. Es importante aprender las bases. La clase en si es muy fácil, una recocha total, pero tiene ese problema. Recomiendo tomarsela más en serio de lo que exige su dificultad.",
+            "rating": 4,
+            "date": "2025-06-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Renta Fija",
+    "prerequisite": "N/A",
+    "difficulty": 3.8,
+    "professors": [
+      {
+        "slug": "durango-s",
+        "name": "Sebastián Durango",
+        "rating": 4,
+        "reviews": [
+          {
+            "text": "Durante el semestre, los temas vistos no eran claros, no eran explicados, de manera que aun sin tener bases en el tema, se lograra entender bien.",
+            "rating": 4,
+            "date": "2025-06-23",
+            "course": "Renta Fija"
           }
         ]
       }
