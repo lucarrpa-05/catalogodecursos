@@ -685,6 +685,18 @@
             "rating": 5,
             "date": "2025-06-23",
             "course": "Estadística"
+          },
+          {
+            "text": "El César de estadística es más relajado que el César de probabilidad, explica muy bien los temas del curso y no tiene problema con volver a explicar temas vistos previamente. Muy recomendado.",
+            "rating": 4.5,
+            "date": "2025-06-23",
+            "course": "Estadística"
+          },
+          {
+            "text": "Es un gran preámbulo para econometría básica y sienta las bases para el resto de la carrera en Economía. El profesor es muy bueno y poseen mucho conocimiento en la materia, muy recomendado.",
+            "rating": 5,
+            "date": "2025-06-23",
+            "course": "Estadística"
           }
         ]
       }
@@ -809,7 +821,7 @@
   },
   {
     "name": "Macroeconomía II",
-    "prerequisite": "Macroeconomía I",
+    "prerequisite": "N/A",
     "difficulty": 4.4,
     "professors": [
       {
@@ -817,6 +829,12 @@
         "name": "Freddy Hernán Cepeda",
         "rating": 4.5,
         "reviews": [
+          {
+            "text": "Es un gran curso para ampliar el conocimiento en macroeconomía, el profesor es de gran ayuda en términos de las evaluaciones y es necesario repasar los temas tanto con el monitor como individualmente.",
+            "rating": 4.5,
+            "date": "2025-06-23",
+            "course": "Macroeconomía II"
+          },
           {
             "text": "Es un gran curso para ampliar el conocimiento en macroeconomía, el profesor es de gran ayuda en términos de las evaluaciones y es necesario repasar los temas tanto con el monitor como individualmente.",
             "rating": 4.5,
@@ -830,6 +848,12 @@
         "name": "Juan Pablo Zárate",
         "rating": 4.5,
         "reviews": [
+          {
+            "text": "El profesor estaba abierto a responder preguntas y programó sesiones con invitados muy buenos.",
+            "rating": 4.5,
+            "date": "2025-06-24",
+            "course": "Macroeconomía II"
+          },
           {
             "text": "El profesor estaba abierto a responder preguntas y programó sesiones con invitados muy buenos.",
             "rating": 4.5,
@@ -886,6 +910,55 @@
             "text": "A pesar de ser bastante fácil, es la clase que menos he disfrutado en toda la carrera. Involucra mucha memorización, pues casi todo lo evaluable se centra en aprenderse fórmulas y saber cuándo usar cada una, pero en la clase no se profundiza para nada en de dónde vienen. En cambio, el profesor decide dedicar la mayoría del tiempo a obligar a los estudiantes a participar, hacer quices sorpresa, ejercicos que no tienen nada que ver con los parciales... entonces, uno depende bastante de la monitoría, pero en lo personal tampoco me pareció efectiva. Los talleres nada que ver con los parciales, en general muy poca explicación de lo que uno necesita saber para los parciales, tanto en la clase como en la monitoría. Y estos, en especial uno, parecía hecho con la intención de coger temas extremadamente sencillos sin ninguna ciencia y enredarlos lo más posible. En serio creo que la materia está muy mal dictada.",
             "rating": 1,
             "date": "2025-06-10",
+            "course": "Medición Económica"
+          },
+          {
+            "text": "Realmente los temas de la materia en sí son fáciles, pero tanto el profesor como el monitor se encargaron de hacer parciales extremadamente difíciles, los temas tampoco fueron explicados de la mejor manera en las clases, y que el monitor haga los parciales también se me hizo complicado dado que primero en los ejercicios prácticos, el monitor y el profesor tenían diferente manera de realizarlos y segundo no tenían en cuenta el tiempo que realmente se tenía para la realización del parcial, se hacían parciales demasiado largos y con alta complejidad para lo que realmente se requería en la materia.",
+            "rating": 1,
+            "date": "2025-06-09",
+            "course": "Medición Económica"
+          },
+          {
+            "text": "El profesor y el monitor tienen un muy buen manejo del tema, el profesor tiene micha experiencia lo que facilita la comprensión de los temas",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Medición Económica"
+          },
+          {
+            "text": "Las clases teóricas son demasiado teóricas y las monitorias muy prácticas siendo el parcial demasiado práctico por lo que la monitoria terminaba siendo la clase.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Medición Económica"
+          },
+          {
+            "text": "Es bastante aburrido. Mucha memorización. La clase no tiene absolutamente nada que ver con lo que se evalúa. El profesor es querido y paciente pero poco productivo, pierde mucho tiempo hablando de cosas irrelevantes y aburre bastante. Pero es fácil.",
+            "rating": 2,
+            "date": "2025-06-09",
+            "course": "Medición Económica"
+          },
+          {
+            "text": "Carlos es uno de los mejores profesores para esta materia. La materia depende mucho del monitor, ya que este es el que explica toda la parte práctica de los problemas.",
+            "rating": 5,
+            "date": "2025-06-09",
+            "course": "Medición Económica"
+          },
+          {
+            "text": "El problema del curso, es la metodología ya que en sí no es dificil pero es muy importante asistir a las monitorias y entender como se realizan los ejercicios de los parciales (a mano)",
+            "rating": 3,
+            "date": "2025-06-10",
+            "course": "Medición Económica"
+          }
+        ]
+      },
+      {
+        "slug": "ordonez-j",
+        "name": "Juan Sebastián Ordoñez",
+        "rating": 3,
+        "reviews": [
+          {
+            "text": "El profe conoce muy bien los temas del curso, pero no tiene facultades de profesor. Es muy complejo entenderle, es muy desorganizado en sus explicaciones y no lleva las clases preparadas.",
+            "rating": 3,
+            "date": "2025-06-09",
             "course": "Medición Económica"
           }
         ]
@@ -1075,7 +1148,7 @@
   },
   {
     "name": "Renta Fija",
-    "prerequisite": "Matemáticas Financieras",
+    "prerequisite": "N/A",
     "difficulty": 3.8,
     "professors": [
       {
@@ -1083,6 +1156,12 @@
         "name": "Sebastián Durango",
         "rating": 4,
         "reviews": [
+          {
+            "text": "Durante el semestre, los temas vistos no eran claros, no eran explicados, de manera que aun sin tener bases en el tema, se lograra entender bien.",
+            "rating": 4,
+            "date": "2025-06-23",
+            "course": "Renta Fija"
+          },
           {
             "text": "Durante el semestre, los temas vistos no eran claros, no eran explicados, de manera que aun sin tener bases en el tema, se lograra entender bien.",
             "rating": 4,
