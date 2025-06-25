@@ -422,15 +422,23 @@
         content += `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">`;
         
         course.professors.forEach(prof => {
-          // Calculate and prepare rating information
-          let numericRating = typeof prof.rating === 'number'
-            ? prof.rating
-            : (Array.isArray(prof.reviews) && prof.reviews.length > 0
-                ? prof.reviews.reduce((sum, r) => sum + (Number(r.rating) || 0), 0) / prof.reviews.length
-                : null);
-
+          // Calculate per-course rating information
+          let ratingSum = 0;
+          let ratingCnt = 0;
+          if (Array.isArray(prof.reviews)) {
+            prof.reviews.forEach(r => {
+              const num = Number(r.rating);
+              if (!isNaN(num) && r.course === course.name) {
+                ratingSum += num;
+                ratingCnt += 1;
+              }
+            });
+          }
+          // If there are no individual ratings for this course, fall back to prof.rating if provided
+          let numericRating = ratingCnt ? ratingSum / ratingCnt : (typeof prof.rating === 'number' ? prof.rating : null);
           const ratingStars = numericRating !== null ? generateStarRating(Math.round(numericRating)) : generateStarRating(0);
           const ratingDisplay = numericRating !== null ? numericRating.toFixed(1) : 'N/A';
+          const courseReviewCount = ratingCnt;
           
           content += `
             <div class="professor-card rounded-lg overflow-hidden shadow-md" style="background-color: var(--bg-element); color: var(--text-primary);">
@@ -444,7 +452,7 @@
                     <div class="flex star-rating mr-2" style="color: #fbbf24;">${ratingStars}</div>
                     <span class="text-sm" style="color: var(--text-secondary)">${ratingDisplay}</span>
                   </div>
-                  <p class="mt-1" style="color: var(--text-secondary);">${prof.reviews?.length || 0} reseña${prof.reviews?.length !== 1 ? 's' : ''}</p>
+                  <p class="mt-1" style="color: var(--text-secondary);">${courseReviewCount} reseña${courseReviewCount !== 1 ? 's' : ''}</p>
                   <button class="mt-2 px-3 py-1 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700 transition-colors"
                           onclick="showReviewsModal(event, '${encodeURIComponent(JSON.stringify(prof))}', '${course.name}')">Ver Reseñas</button>
                 </div>
@@ -603,6 +611,59 @@
               name: p.name,
               courses: new Set(),
               reviews: [],
+              ratingSum: 0,
+              ratingCount: 0
+            };
+          }
+          const profObj = map[p.slug];
+          profObj.courses.add(course.name);
+
+          // accumulate reviews
+          if (Array.isArray(p.reviews)) {
+            p.reviews.forEach(r => {
+              const numeric = Number(r.rating);
+              const numRating = isNaN(numeric) ? null : numeric;
+              if (numRating !== null) {
+                profObj.ratingSum += numRating;
+                profObj.ratingCount += 1;
+              }
+              profObj.reviews.push({
+                ...r,
+                rating: numRating,
+                course: r.course || course.name
+              });
+            });
+          }
+
+          // fallback: use p.rating only if there are no individual review ratings
+          if (profObj.ratingCount === 0 && typeof p.rating === 'number') {
+            profObj.ratingSum += p.rating;
+            profObj.ratingCount += 1;
+          }
+        });
+      });
+
+      return Object.values(map).map(p => {
+        const avg = p.ratingCount ? p.ratingSum / p.ratingCount : null;
+        return {
+          slug: p.slug,
+          name: p.name,
+          courses: Array.from(p.courses),
+          reviews: p.reviews,
+          avgRating: avg
+        };
+      });
+    }
+      /* Duplicate old buildProfessors block
+      const map = {};
+      courses.forEach(course => {
+        course.professors?.forEach(p => {
+          if (!map[p.slug]) {
+            map[p.slug] = {
+              slug: p.slug,
+              name: p.name,
+              courses: new Set(),
+              reviews: [],
                 ratingValues: []
             };
           }
@@ -641,8 +702,7 @@
         };
       });
     }
-
-
+    */
     // Display professors in table
     function displayProfessors(professors) {
       allProfessors = professors;
