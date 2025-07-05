@@ -710,7 +710,7 @@
             "rating": 5,
             "date": "2025-06-09",
             "course": "Economía Matemática"
-          } 
+          }, 
          {
             "text": "La materia puede llegar a ser bastante complicada, pero realmente es cuestión de estudiarla bien y sobre todo tener buenas bases. Son muchas fórmulas y muchos temas, hay que estudiar bastante y los parciales no son sencillos. Eso si, el profesor ayuda mucho con las notas si uno muestra esfuerzo y buena actitud.",
             "rating": 4,
@@ -1158,7 +1158,7 @@
             "rating": 4,
             "date": "2025-06-14",
             "course": "Introducción a la Ciencia Económica"
-          },
+          }
         ]
       },
       {
@@ -1344,7 +1344,7 @@
             "rating": 5,
             "date": "2025-06-09",
             "course": "Macroeconomía I"
-          },
+          }
         ]
       },
       {
@@ -1530,7 +1530,7 @@
             "rating": 3,
             "date": "2025-06-09",
             "course": "Medición Económica"
-          },
+          }
         ]
       },
       {
@@ -1803,7 +1803,7 @@
             "rating": 4,
             "date": "2025-06-20",
             "course": "Microeconomía II"
-          },
+          }
         ]
       },
       {
@@ -1916,7 +1916,7 @@
             "rating": 4.5,
             "date": "2025-06-10",
             "course": "Precálculo"
-          },
+          }
         ]
       },
       {
