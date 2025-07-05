@@ -440,8 +440,8 @@
     ]
   },
   {
-    "name": "Desarrollo Económico y Estadística",
-    "prerequisite": "Introducción a la Ciencia Económica",
+    "name": "Desarrollo Económico",
+    "prerequisite": "Introducción a la Ciencia Económica y Estadística",
     "difficulty": 3.5,
     "professors": [
       {
