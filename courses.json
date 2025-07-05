@@ -621,9 +621,7 @@
             "course": "Econometría Intermedia"
           },
           {
-            "text": "El curso ahonda en serie de tiempo enfocándose en temas de Macroeconometría. Siendo honesto, puede ser una materia cuyas temas son bastante abstractos y difíciles de entender. Los teoremas y la matemática detrás de los modelos es compleja. 
-El profesor Jesús usa diapositivas y están demasiado cargadas de información por lo que puede ser difícil seguirle el ritmo. El proyecto empírico de la materia no es difícil mas hay que tener en cuenta los diferentes supuestos y pruebas para tener buena nota. 
-Afortunadamente él repite sus parciales pro lo que dar con uno anterior puede ser la diferencia entre parcharse y pasar alta la materia a preocuparse bastante.",
+            "text": "El curso ahonda en serie de tiempo enfocándose en temas de Macroeconometría. Siendo honesto, puede ser una materia cuyas temas son bastante abstractos y difíciles de entender. Los teoremas y la matemática detrás de los modelos es compleja.  El profesor Jesús usa diapositivas y están demasiado cargadas de información por lo que puede ser difícil seguirle el ritmo. El proyecto empírico de la materia no es difícil mas hay que tener en cuenta los diferentes supuestos y pruebas para tener buena nota.  Afortunadamente él repite sus parciales pro lo que dar con uno anterior puede ser la diferencia entre parcharse y pasar alta la materia a preocuparse bastante.",
             "rating": 2,
             "date": "2025-06-09",
             "course": "Econometría Intermedia"
@@ -744,8 +742,7 @@ Afortunadamente él repite sus parciales pro lo que dar con uno anterior puede s
         "rating": 3.5,
         "reviews": [
           {
-            "text": "Un curso abstracto que reúne lo viste en Logíca y Matemáticas Discretas, Cálculo I y Cálculo II para resolver problemas aplicados a la economía. La rigurosidad y el nivel de las demostraciones de este curso lo hacen tener una dificultad bastante alta.  En lo personal, me sirvió bastante tener buenas bases de Cálculo I para aprobar este curso sin dificultades. Claro, tuve que estudiar bastante. 
-René fue un excelente profesor explicando en detalle los temas, con mucha paciencia y sin problemas para devolverse o volver a explicar. ",
+            "text": "Un curso abstracto que reúne lo viste en Logíca y Matemáticas Discretas, Cálculo I y Cálculo II para resolver problemas aplicados a la economía. La rigurosidad y el nivel de las demostraciones de este curso lo hacen tener una dificultad bastante alta.  En lo personal, me sirvió bastante tener buenas bases de Cálculo I para aprobar este curso sin dificultades. Claro, tuve que estudiar bastante.  René fue un excelente profesor explicando en detalle los temas, con mucha paciencia y sin problemas para devolverse o volver a explicar. ",
             "rating": 4.5,
             "date": "2025-06-09",
             "course": "Economía Matemática"
@@ -817,8 +814,7 @@ René fue un excelente profesor explicando en detalle los temas, con mucha pacie
             "course": "Estadística"
           },
           {
-            "text": "La clase es demasiado útil y se aprende bastante bien el software estadístico de RStudio. Manejarlo con facilidad es clave para aprobar el curso. El proyecto a realizar es sencillo y hay muchos temas que se pueden aplicar. 
-Diana explica bien y deja sus tableros en el aula virtual por lo que al estudiar puede ser de utilidad contar con ellos. Sin embargo, es muy pasivo agresiva, es muy cansona con las asistencias y tiene tratos diferentes con los estudiantes. Los dos primeros parciales son los mismos para los dos grupos, pero el final no y Diana suele tirar bastante fuerte ahí. ",
+            "text": "La clase es demasiado útil y se aprende bastante bien el software estadístico de RStudio. Manejarlo con facilidad es clave para aprobar el curso. El proyecto a realizar es sencillo y hay muchos temas que se pueden aplicar.  Diana explica bien y deja sus tableros en el aula virtual por lo que al estudiar puede ser de utilidad contar con ellos. Sin embargo, es muy pasivo agresiva, es muy cansona con las asistencias y tiene tratos diferentes con los estudiantes. Los dos primeros parciales son los mismos para los dos grupos, pero el final no y Diana suele tirar bastante fuerte ahí. ",
             "rating": 1.5,
             "date": "2025-06-09",
             "course": "Estadística"
@@ -1095,8 +1091,7 @@ Diana explica bien y deja sus tableros en el aula virtual por lo que al estudiar
             "course": "Historia Económica General"
           },   
           {
-            "text": "Los temas del curso son poco interesantes, poco útiles para la formación profesional de los estudiantes, y, contrario al nombre del curso, no aborda toda historia económica en su conjunto, solo la pre revolución industrial. Ramiro es un profesor poco empático, con deficiente metodología, y una actitud petulante.
-A pesar de todo, no se debe retirar la materia antes de tiempo. Mucha de la actitud del profesor es solo por asustar. En la práctica, es factible pasar el curso con buena nota.",
+            "text": "Los temas del curso son poco interesantes, poco útiles para la formación profesional de los estudiantes, y, contrario al nombre del curso, no aborda toda historia económica en su conjunto, solo la pre revolución industrial. Ramiro es un profesor poco empático, con deficiente metodología, y una actitud petulante. A pesar de todo, no se debe retirar la materia antes de tiempo. Mucha de la actitud del profesor es solo por asustar. En la práctica, es factible pasar el curso con buena nota.",
             "rating": 0.5,
             "date": "2025-06-09",
             "course": "Historia Económica General"
@@ -1408,8 +1403,7 @@ A pesar de todo, no se debe retirar la materia antes de tiempo. Mucha de la acti
             "course": "Macroeconomía II"
           },
           {
-            "text": "Es un curso que presenta muchos conceptos y modelos importantes de la macroeconomía moderna, pero carece de un foco académico claro. No hay un eje de ruta temático claro, simplemente unos temas agrupados y ya.
-El profesor Zarate desarrollaba los modelos completos pero explicaba poco la intuición detrás. Aún así, fue valiosa la experiencia de ver clase con alguien con su trayectoria, se interesaba en el rendimiento de los estudiantes, y traía invitados varios de la economía real.",
+            "text": "Es un curso que presenta muchos conceptos y modelos importantes de la macroeconomía moderna, pero carece de un foco académico claro. No hay un eje de ruta temático claro, simplemente unos temas agrupados y ya. El profesor Zarate desarrollaba los modelos completos pero explicaba poco la intuición detrás. Aún así, fue valiosa la experiencia de ver clase con alguien con su trayectoria, se interesaba en el rendimiento de los estudiantes, y traía invitados varios de la economía real.",
             "rating": 4,
             "date": "2025-06-24",
             "course": "Macroeconomía II"
