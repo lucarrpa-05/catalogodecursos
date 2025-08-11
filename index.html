@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <!-- Theme mode functionality -->
   <script>
@@ -20,7 +20,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Cursos</title>
+  <title>Ruta Académica - Facultad de Economía</title>
   <!-- Tailwind CSS from CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome -->
@@ -30,21 +30,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Add hover effect class */
-    .hover-effect:hover {
-      background-color: var(--bg-element) !important;
-    }
-    
-    .theme-button {
-      color: var(--text-primary);
-      transition: all 0.2s ease;
-    }
-    
-    .theme-button.active {
-      background-color: var(--accent) !important;
-      color: white !important;
-    }
-    
     /* Theme color variables */
     :root[data-theme='light'] {
       --bg-main: #f9fafb;
@@ -90,6 +75,54 @@
       background-color: var(--bg-main);
       color: var(--text-primary);
     }
+
+    /* Navigation and section styles */
+    .nav-item {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .nav-item:hover {
+      background-color: var(--bg-element);
+    }
+    
+    .nav-item.active {
+      background-color: var(--accent);
+      color: white;
+    }
+    
+    .section {
+      display: none;
+    }
+    
+    .section.active {
+      display: block;
+    }
+    
+    /* Card styles */
+    .info-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .info-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .hover-effect:hover {
+      background-color: var(--bg-element) !important;
+    }
+    
+    .theme-button {
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+    
+    .theme-button.active {
+      background-color: var(--accent) !important;
+      color: white !important;
+    }
+
     .modal {
       display: none;
       position: fixed;
@@ -101,20 +134,25 @@
       z-index: 50;
       backdrop-filter: blur(3px);
     }
+    
     .modal-content {
       max-height: 80vh;
       overflow-y: auto;
     }
+    
     .professor-card {
       transition: transform 0.2s, box-shadow 0.2s;
     }
+    
     .professor-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
+    
     .star-rating {
       color: #fbbf24;
     }
+    
     .reviews-modal {
       display: none;
       position: fixed;
@@ -126,6 +164,16 @@
       z-index: 60;
       backdrop-filter: blur(5px);
     }
+    
+    /* Program subsection styles */
+    .program-subsection {
+      display: block;
+    }
+    
+    .program-subsection.hidden {
+      display: none;
+    }
+    
   </style>
 </head>
 <body class="min-h-screen p-4">
@@ -142,169 +190,826 @@
         <i class="fas fa-adjust text-sm"></i>
       </button>
     </div>
+
+    <!-- Header with Navigation -->
     <header class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl shadow-xl p-6 mb-8">
       <h1 class="text-3xl font-bold flex items-center">
-        <i class="fas fa-graduation-cap mr-3"></i>
-        Catálogo de Cursos - Facultad de Economía
+        <i class="fas fa-route mr-3"></i>
+        Ruta Académica - Facultad de Economía
       </h1>
-      <p class="mt-2 opacity-90">Recomendación de estudiantes para estudiantes. ¡No planees tu horario a ciegas!</p>
-      <nav class="mt-4 inline-flex rounded-lg overflow-hidden shadow-lg">
-        <button id="navCourses" class="px-4 py-2 bg-white text-indigo-700 font-semibold focus:outline-none">Cursos</button>
-        <button id="navProfessors" class="px-4 py-2 bg-white text-indigo-700 font-semibold border-l focus:outline-none">Profesores</button>
+      <p class="mt-2 opacity-90">Tu guía completa para navegar tu carrera académica</p>
+      
+      <!-- Main Navigation -->
+      <nav class="mt-6 flex flex-wrap gap-2">
+        <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none active" data-section="home">
+          <i class="fas fa-home mr-2"></i>Inicio
+        </button>
+        <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none" data-section="catalog">
+          <i class="fas fa-book mr-2"></i>Catálogo de Cursos
+        </button>
+        <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none" data-section="programs">
+          <i class="fas fa-university mr-2"></i>Programas
+        </button>
+        <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none" data-section="graduation">
+          <i class="fas fa-graduation-cap mr-2"></i>Opciones de Grado
+        </button>
+        <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none" data-section="exams">
+          <i class="fas fa-file-pdf mr-2"></i>Base de Parciales
+        </button>
       </nav>
-      <!-- Logo with responsive sizing -->
+      
+      <!-- Logo -->
       <img src="logo.png" alt="Logo" class="absolute lg:h-28 md:h-20 h-16 md:top-3 top-2 lg:right-4 md:right-3 right-2 md:opacity-100 opacity-80">
-      <!-- Add responsive padding to prevent text overlap with logo on small screens -->
-      <div class="md:pr-0 pr-16"></div>
     </header>
 
-    <div id="coursesSection" class="bg-card rounded-xl shadow-md overflow-hidden mb-8" style="background-color: var(--bg-card);">
-      <div class="p-6 border-b" style="background-color: var(--bg-card); border-color: var(--border);">
-        <div class="flex flex-wrap gap-4 items-center">
-          <div class="relative flex-grow">
-            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-            <input type="text" id="searchInput" placeholder="Buscar cursos..." 
-                  class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" style="background-color: var(--bg-element); color: var(--text-primary); border-color: var(--border);">
-          </div>
-          <div class="flex items-center text-sm" style="color: var(--text-secondary);">
-            <div class="mr-4">Dificultad:&nbsp;</div>
-            <div class="flex">
-              <i class="fas fa-star text-yellow-400 mr-1"></i>Fácil
-              <span class="mx-2">→</span>
-              <i class="fas fa-star text-yellow-400 mr-1"></i>
-              <i class="fas fa-star text-yellow-400 mr-1"></i>
-              <i class="fas fa-star text-yellow-400 mr-1"></i>
-              <i class="fas fa-star text-yellow-400 mr-1"></i>
-              <i class="fas fa-star text-yellow-400"></i>Difícil
+    <!-- HOME SECTION -->
+    <section id="home" class="section active">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <!-- Catálogo Card -->
+        <div class="info-card bg-card rounded-xl shadow-md overflow-hidden cursor-pointer" style="background-color: var(--bg-card);" onclick="showSection('catalog')">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-book text-white text-xl"></i>
               </div>
+              <h3 class="text-xl font-semibold ml-4" style="color: var(--text-primary);">Catálogo de Cursos</h3>
+            </div>
+            <p style="color: var(--text-secondary);">Explora cursos y reseñas de profesores basadas en experiencias reales de estudiantes</p>
+            <div class="mt-4 flex items-center text-sm" style="color: var(--text-muted);">
+              <i class="fas fa-users mr-2"></i>Recomendaciones estudiantiles
+            </div>
+          </div>
+        </div>
+
+        <!-- Opciones de Grado Card -->
+        <div class="info-card bg-card rounded-xl shadow-md overflow-hidden cursor-pointer" style="background-color: var(--bg-card);" onclick="showSection('graduation')">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-graduation-cap text-white text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold ml-4" style="color: var(--text-primary);">Opciones de Grado</h3>
+            </div>
+            <p style="color: var(--text-secondary);">Conoce las diferentes modalidades para graduarte: Coterminal, Tesis y Prácticas</p>
+            <div class="mt-4 flex items-center text-sm" style="color: var(--text-muted);">
+              <i class="fas fa-path mr-2"></i>3 modalidades disponibles
+            </div>
+          </div>
+        </div>
+
+        <!-- Programas Card -->
+        <div class="info-card bg-card rounded-xl shadow-md overflow-hidden cursor-pointer" style="background-color: var(--bg-card);" onclick="showSection('programs')">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-university text-white text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold ml-4" style="color: var(--text-primary);">Programas</h3>
+            </div>
+            <p style="color: var(--text-secondary);">Explora los planes de estudio de los 3 programas de pregrado</p>
+            <div class="mt-4 flex items-center text-sm" style="color: var(--text-muted);">
+              <i class="fas fa-graduation-cap mr-2"></i>Economía, Finanzas, Analítica
+            </div>
+          </div>
+        </div>
+
+        <!-- Base de Parciales Card -->
+        <div class="info-card bg-card rounded-xl shadow-md overflow-hidden cursor-pointer" style="background-color: var(--bg-card);" onclick="showSection('exams')">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-file-pdf text-white text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold ml-4" style="color: var(--text-primary);">Base de Parciales</h3>
+            </div>
+            <p style="color: var(--text-secondary);">Accede a exámenes de semestres anteriores para prepararte</p>
+            <div class="mt-4 flex items-center text-sm" style="color: var(--text-muted);">
+              <i class="fas fa-archive mr-2"></i>Repositorio histórico
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="overflow-x-auto">
-        <table class="min-w-full" style="background-color: var(--bg-card);">
-          <thead class="sticky top-0 z-10" style="background-color: var(--bg-element);">
-            <tr>
-              <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" onclick="sortTable(0)">
-                <div class="flex items-center">
-                  Nombre del Curso
-                  <i class="fas fa-sort ml-1"></i>
-                </div>
-              </th>
-              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable(1)">
-                <div class="flex items-center">
-                  Prerrequisito
-                  <i class="fas fa-sort ml-1"></i>
-                </div>
-              </th>
-              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable(2)">
-                <div class="flex items-center">
-                  Dificultad
-                  <i class="fas fa-sort ml-1"></i>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody id="coursesTable" class="divide-y divide-gray-200">
-            <!-- Course data will be injected here -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <div id="professorsSection" class="rounded-xl shadow-md overflow-hidden mb-8 hidden" style="background-color: var(--bg-card);">
-    <div class="p-6 border-b" style="background-color: var(--bg-card); border-color: var(--border);">
-
-      <div class="relative w-full">
-        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-        <input type="text" id="profSearchInput" placeholder="Buscar profesores..." 
-               class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" style="background-color: var(--bg-element); color: var(--text-primary); border-color: var(--border);">
-      </div>
-    </div>
-    <div class="overflow-x-auto">
-      <table class="min-w-full" style="background-color: var(--bg-card);">
-        <thead class="sticky top-0 z-10" style="background-color: var(--bg-element);">
-          <tr>
-            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" data-key="name" onclick="sortProfessors('name')"><div class="flex items-center">Profesor<i class="fas fa-sort ml-1"></i></div></th>
-            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" data-key="rating" onclick="sortProfessors('rating')"><div class="flex items-center">Rating<i class="fas fa-sort ml-1"></i></div></th>
-            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style="color: var(--text-muted);">Cursos</th>
-          </tr>
-        </thead>
-        <tbody id="professorsTable" class="divide-y divide-gray-200"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Professor Modal -->
-  <div id="professorModal" class="modal">
-    <div class="modal-content w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden" style="background-color: var(--bg-card);">
-      <div class="bg-gradient-to-r from-purple-700 to-indigo-700 p-6 text-white">
-        <div class="flex justify-between items-center">
-          <h2 id="professorModalTitle" class="text-2xl font-bold"></h2>
-          <button id="closeProfessorModal" class="text-white hover:text-gray-200 text-2xl p-1"><i class="fas fa-times"></i></button>
+      <!-- Statistics -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div class="bg-card rounded-xl shadow-md p-4 text-center" style="background-color: var(--bg-card);">
+          <div class="text-2xl font-bold" style="color: var(--accent);" id="courseCount">0</div>
+          <div class="text-sm" style="color: var(--text-secondary);">Cursos disponibles</div>
         </div>
-        <div id="professorModalSubtitle" class="text-sm opacity-90 mt-1"></div>
+        <div class="bg-card rounded-xl shadow-md p-4 text-center" style="background-color: var(--bg-card);">
+          <div class="text-2xl font-bold" style="color: var(--accent);" id="profCount">0</div>
+          <div class="text-sm" style="color: var(--text-secondary);">Profesores evaluados</div>
+        </div>
       </div>
-      <div id="professorModalContent" class="p-6 max-h-[60vh] overflow-y-auto"></div>
-    </div>
-  </div>
 
-  <!-- Course Modal -->
-  <div id="courseModal" class="modal">
-    <div class="modal-content w-full max-w-4xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden" style="background-color: var(--bg-card);">
-      <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
-        <div class="flex justify-between items-center">
-          <h2 id="modalTitle" class="text-2xl font-bold"></h2>
-          <button id="closeModal" class="text-white hover:text-gray-200 text-2xl p-1">
-            <i class="fas fa-times"></i>
+      <!-- Welcome Message -->
+      <div class="bg-card rounded-xl shadow-md p-8 text-center" style="background-color: var(--bg-card);">
+        <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Bienvenido a tu Ruta Académica</h2>
+        <p class="text-lg mb-6" style="color: var(--text-secondary);">
+          Esta plataforma te ayudará a navegar tu carrera en la Facultad de Economía con información real de estudiantes como tú.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <div class="text-left">
+            <h3 class="font-semibold mb-2" style="color: var(--text-primary);">📚 Catálogo de Cursos</h3>
+            <p style="color: var(--text-secondary);">Encuentra cursos, compara profesores y lee reseñas detalladas</p>
+          </div>
+          <div class="text-left">
+            <h3 class="font-semibold mb-2" style="color: var(--text-primary);">🏛️ Programas</h3>
+            <p style="color: var(--text-secondary);">Visualiza los planes de estudio de los 3 programas académicos</p>
+          </div>
+          <div class="text-left">
+            <h3 class="font-semibold mb-2" style="color: var(--text-primary);">🎓 Opciones de Grado</h3>
+            <p style="color: var(--text-secondary);">Explora las diferentes modalidades para culminar tu carrera</p>
+          </div>
+          <div class="text-left">
+            <h3 class="font-semibold mb-2" style="color: var(--text-primary);">📄 Base de Parciales</h3>
+            <p style="color: var(--text-secondary);">Consulta exámenes de semestres anteriores</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG SECTION -->
+    <section id="catalog" class="section">
+      <!-- Catalog Navigation -->
+      <div class="bg-card rounded-xl shadow-md p-4 mb-6" style="background-color: var(--bg-card);">
+        <nav class="flex gap-2">
+          <button id="navCourses" class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none active">
+            <i class="fas fa-book mr-2"></i>Cursos
           </button>
-        </div>
-        <div class="flex items-center mt-2">
-          <div id="modalPrereq" class="text-sm opacity-90"></div>
-          <div id="modalDifficulty" class="ml-6 text-sm opacity-90"></div>
-        </div>
-      </div>
-      <div id="modalContent" class="p-6 max-h-[60vh] overflow-y-auto"></div>
-    </div>
-  </div>
-  
-  <!-- Professor Reviews Modal -->
-  <div id="reviewsModal" class="reviews-modal">
-    <div class="modal-content w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden" style="background-color: var(--bg-card);">
-      <div class="bg-gradient-to-r from-indigo-600 to-purple-700 p-6 text-white">
-        <div class="flex justify-between items-center">
-          <h2 id="reviewsModalTitle" class="text-2xl font-bold"></h2>
-          <button id="closeReviewsModal" class="text-white hover:text-gray-200 text-2xl p-1">
-            <i class="fas fa-times"></i>
+          <button id="navProfessors" class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none">
+            <i class="fas fa-chalkboard-teacher mr-2"></i>Profesores
           </button>
-        </div>
-        <div id="reviewsModalSubtitle" class="text-sm opacity-90 mt-1"></div>
+        </nav>
       </div>
-      <div id="reviewsModalContent" class="p-6 max-h-[60vh] overflow-y-auto"></div>
+
+      <!-- Courses Section -->
+      <div id="coursesSection" class="bg-card rounded-xl shadow-md overflow-hidden mb-8" style="background-color: var(--bg-card);">
+        <div class="p-6 border-b" style="background-color: var(--bg-card); border-color: var(--border);">
+          <div class="flex flex-wrap gap-4 items-center">
+            <div class="relative flex-grow">
+              <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+              <input type="text" id="searchInput" placeholder="Buscar cursos..." 
+                    class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" style="background-color: var(--bg-element); color: var(--text-primary); border-color: var(--border);">
+            </div>
+            <div class="flex items-center text-sm" style="color: var(--text-secondary);">
+              <div class="mr-4">Dificultad:</div>
+              <div class="flex">
+                <i class="fas fa-star text-yellow-400 mr-1"></i>Fácil
+                <span class="mx-2">→</span>
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <i class="fas fa-star text-yellow-400"></i>Difícil
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full" style="background-color: var(--bg-card);">
+            <thead class="sticky top-0 z-10" style="background-color: var(--bg-element);">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" onclick="sortTable(0)">
+                  <div class="flex items-center">
+                    Nombre del Curso
+                    <i class="fas fa-sort ml-1"></i>
+                  </div>
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" onclick="sortTable(1)">
+                  <div class="flex items-center">
+                    Prerrequisito
+                    <i class="fas fa-sort ml-1"></i>
+                  </div>
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" onclick="sortTable(2)">
+                  <div class="flex items-center">
+                    Dificultad
+                    <i class="fas fa-sort ml-1"></i>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="coursesTable" class="divide-y divide-gray-200">
+              <!-- Course data will be injected here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Professors Section -->
+      <div id="professorsSection" class="bg-card rounded-xl shadow-md overflow-hidden mb-8 hidden" style="background-color: var(--bg-card);">
+        <div class="p-6 border-b" style="background-color: var(--bg-card); border-color: var(--border);">
+          <div class="relative w-full">
+            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            <input type="text" id="profSearchInput" placeholder="Buscar profesores..." 
+                   class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" style="background-color: var(--bg-element); color: var(--text-primary); border-color: var(--border);">
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full" style="background-color: var(--bg-card);">
+            <thead class="sticky top-0 z-10" style="background-color: var(--bg-element);">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" data-key="name" onclick="sortProfessors('name')">
+                  <div class="flex items-center">Profesor<i class="fas fa-sort ml-1"></i></div>
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer" style="color: var(--text-muted);" data-key="rating" onclick="sortProfessors('rating')">
+                  <div class="flex items-center">Rating<i class="fas fa-sort ml-1"></i></div>
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style="color: var(--text-muted);">Cursos</th>
+              </tr>
+            </thead>
+            <tbody id="professorsTable" class="divide-y divide-gray-200"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS SECTION -->
+    <section id="programs" class="section">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Programas de Pregrado</h2>
+        <p style="color: var(--text-secondary);">Explora los planes de estudio de los tres programas académicos de la Facultad de Economía</p>
+      </div>
+
+      <!-- Programs Navigation -->
+      <div class="bg-card rounded-xl shadow-md p-4 mb-6" style="background-color: var(--bg-card);">
+        <nav class="flex flex-wrap gap-2">
+          <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none active" data-program="economia">
+            <i class="fas fa-chart-line mr-2"></i>Economía
+          </button>
+          <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none" data-program="finanzas">
+            <i class="fas fa-dollar-sign mr-2"></i>Finanzas
+          </button>
+          <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none" data-program="analitica">
+            <i class="fas fa-database mr-2"></i>Analítica de Datos
+          </button>
+        </nav>
+      </div>
+
+      <!-- Economics Program -->
+      <div id="economia" class="program-subsection">
+        <div class="bg-card rounded-xl shadow-md p-6" style="background-color: var(--bg-card);">
+          <div class="flex justify-between items-start mb-6">
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Pregrado en Economía</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                    <i class="fas fa-info-circle mr-2"></i>Información del Programa
+                  </h4>
+                  <ul class="space-y-2 text-sm">
+                    <li style="color: var(--text-secondary);"><i class="fas fa-calendar mr-2 text-blue-500"></i><strong>Duración:</strong> 8 semestres</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-graduation-cap mr-2 text-blue-500"></i><strong>Créditos:</strong> 136</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-certificate mr-2 text-blue-500"></i><strong>Título:</strong> Economista</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-map-marker-alt mr-2 text-blue-500"></i><strong>Modalidad:</strong> Presencial, Bogotá</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                    <i class="fas fa-star mr-2"></i>Áreas de Formación
+                  </h4>
+                  <ul class="space-y-2 text-sm">
+                    <li style="color: var(--text-secondary);"><i class="fas fa-chart-line mr-2 text-green-500"></i>Teoría económica avanzada</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-calculator mr-2 text-green-500"></i>Métodos cuantitativos</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-globe mr-2 text-green-500"></i>Análisis aplicado</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-balance-scale mr-2 text-green-500"></i>Políticas públicas</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a href="https://urosario.edu.co/sites/default/files/2025-06/plan-de-estudios-economia.pdf" target="_blank" 
+               class="px-4 py-2 rounded-lg text-white text-sm font-medium ml-6" style="background-color: var(--accent);">
+              <i class="fas fa-download mr-2"></i>Plan de Estudios
+            </a>
+          </div>
+          
+          <div class="mt-6 p-4 rounded-lg" style="background-color: var(--bg-element);">
+            <p class="text-sm" style="color: var(--text-secondary);">
+              <strong>Descripción:</strong> Formación interdisciplinaria que combina teoría económica sólida con herramientas cuantitativas avanzadas. 
+              Los estudiantes desarrollan habilidades para el análisis de mercados, diseño de políticas públicas y comprensión de fenómenos económicos complejos.
+              El programa incluye opciones de especialización a través de menores en áreas como Política Económica, Fintech y Ciencia de Datos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finance Program -->
+      <div id="finanzas" class="program-subsection hidden">
+        <div class="bg-card rounded-xl shadow-md p-6" style="background-color: var(--bg-card);">
+          <div class="flex justify-between items-start mb-6">
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Pregrado en Finanzas</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                    <i class="fas fa-info-circle mr-2"></i>Información del Programa
+                  </h4>
+                  <ul class="space-y-2 text-sm">
+                    <li style="color: var(--text-secondary);"><i class="fas fa-calendar mr-2 text-blue-500"></i><strong>Duración:</strong> 8 semestres</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-graduation-cap mr-2 text-blue-500"></i><strong>Créditos:</strong> 136</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-certificate mr-2 text-blue-500"></i><strong>Título:</strong> Profesional en Finanzas</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-map-marker-alt mr-2 text-blue-500"></i><strong>Modalidad:</strong> Presencial, Bogotá</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                    <i class="fas fa-star mr-2"></i>Áreas de Formación
+                  </h4>
+                  <ul class="space-y-2 text-sm">
+                    <li style="color: var(--text-secondary);"><i class="fas fa-building mr-2 text-green-500"></i>Finanzas corporativas</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-chart-bar mr-2 text-green-500"></i>Mercados de capital</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-calculator mr-2 text-green-500"></i>Métodos cuantitativos</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-coins mr-2 text-green-500"></i>Gestión de riesgos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a href="https://urosario.edu.co/sites/default/files/2025-06/plan-de-estudios-finanzas.pdf" target="_blank" 
+               class="px-4 py-2 rounded-lg text-white text-sm font-medium ml-6" style="background-color: var(--accent);">
+              <i class="fas fa-download mr-2"></i>Plan de Estudios
+            </a>
+          </div>
+          
+          <div class="mt-6 p-4 rounded-lg" style="background-color: var(--bg-element);">
+            <p class="text-sm" style="color: var(--text-secondary);">
+              <strong>Descripción:</strong> Especialización en finanzas corporativas, mercados de capital y métodos cuantitativos financieros. 
+              Los estudiantes tienen acceso al Laboratorio de Finanzas con plataforma Bloomberg y desarrollan competencias en análisis financiero, 
+              valoración de activos, gestión de portafolios y evaluación de riesgos. Incluye opciones de especialización en Inversiones y Fintech.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Analytics Program -->
+      <div id="analitica" class="program-subsection hidden">
+        <div class="bg-card rounded-xl shadow-md p-6" style="background-color: var(--bg-card);">
+          <div class="flex justify-between items-start mb-6">
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Pregrado en Analítica de Datos y Mercados</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                    <i class="fas fa-info-circle mr-2"></i>Información del Programa
+                  </h4>
+                  <ul class="space-y-2 text-sm">
+                    <li style="color: var(--text-secondary);"><i class="fas fa-calendar mr-2 text-blue-500"></i><strong>Duración:</strong> 8 semestres</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-graduation-cap mr-2 text-blue-500"></i><strong>Créditos:</strong> 136</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-certificate mr-2 text-blue-500"></i><strong>Título:</strong> Profesional en Analítica de Datos y Mercados</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-map-marker-alt mr-2 text-blue-500"></i><strong>Modalidad:</strong> Presencial, Bogotá</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                    <i class="fas fa-star mr-2"></i>Áreas de Formación
+                  </h4>
+                  <ul class="space-y-2 text-sm">
+                    <li style="color: var(--text-secondary);"><i class="fas fa-database mr-2 text-green-500"></i>Ciencia de datos</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-chart-line mr-2 text-green-500"></i>Econometría avanzada</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-code mr-2 text-green-500"></i>Programación estadística</li>
+                    <li style="color: var(--text-secondary);"><i class="fas fa-brain mr-2 text-green-500"></i>Machine Learning</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a href="https://urosario.edu.co/sites/default/files/2025-06/plan-de-estudios-analitica-de-datos-y-mercados.pdf" target="_blank" 
+               class="px-4 py-2 rounded-lg text-white text-sm font-medium ml-6" style="background-color: var(--accent);">
+              <i class="fas fa-download mr-2"></i>Plan de Estudios
+            </a>
+          </div>
+          
+          <div class="mt-6 p-4 rounded-lg" style="background-color: var(--bg-element);">
+            <p class="text-sm" style="color: var(--text-secondary);">
+              <strong>Descripción:</strong> Programa interdisciplinario que combina economía y ciencia de datos. Los estudiantes desarrollan competencias 
+              técnicas en programación, machine learning y big data, aplicadas al análisis de mercados y problemas económicos. Más del 75% de las clases 
+              se imparten en laboratorios siguiendo el modelo UR STEAM de aprendizaje experiencial.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BASE DE PARCIALES SECTION -->
+    <section id="exams" class="section">
+      <div class="bg-card rounded-xl shadow-md p-8 text-center" style="background-color: var(--bg-card);">
+        <div class="mb-6">
+          <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-file-pdf text-white text-3xl"></i>
+          </div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary);">Base de Parciales</h2>
+          <p class="text-lg mb-6" style="color: var(--text-secondary);">
+            Repositorio completo de exámenes de semestres anteriores para ayudarte a preparar tus evaluaciones.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-element rounded-lg p-6" style="background-color: var(--bg-element);">
+            <i class="fas fa-archive text-2xl mb-3" style="color: var(--accent);"></i>
+            <h3 class="font-semibold mb-2" style="color: var(--text-primary);">Histórico Completo</h3>
+            <p class="text-sm" style="color: var(--text-secondary);">Exámenes de múltiples semestres organizados por curso</p>
+          </div>
+          <div class="bg-element rounded-lg p-6" style="background-color: var(--bg-element);">
+            <i class="fas fa-search text-2xl mb-3" style="color: var(--accent);"></i>
+            <h3 class="font-semibold mb-2" style="color: var(--text-primary);">Fácil Búsqueda</h3>
+            <p class="text-sm" style="color: var(--text-secondary);">Encuentra rápidamente los exámenes que necesitas</p>
+          </div>
+          <div class="bg-element rounded-lg p-6" style="background-color: var(--bg-element);">
+            <i class="fas fa-download text-2xl mb-3" style="color: var(--accent);"></i>
+            <h3 class="font-semibold mb-2" style="color: var(--text-primary);">Descarga Directa</h3>
+            <p class="text-sm" style="color: var(--text-secondary);">Acceso inmediato a los archivos PDF</p>
+          </div>
+        </div>
+
+        <a href="https://drive.google.com/drive/u/0/folders/1ZqD8fwWpAMDYQVx0bVw5KSzIvfQBgHLX" target="_blank" 
+           class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white rounded-xl shadow-lg transition-all hover:shadow-xl" 
+           style="background-color: var(--accent);" 
+           onmouseover="this.style.backgroundColor='var(--accent-hover)'" 
+           onmouseout="this.style.backgroundColor='var(--accent)'">
+          <i class="fab fa-google-drive mr-3"></i>
+          Acceder a Base de Parciales
+          <i class="fas fa-external-link-alt ml-3"></i>
+        </a>
+
+        <div class="mt-8 p-4 rounded-lg" style="background-color: var(--bg-element);">
+          <p class="text-sm" style="color: var(--text-secondary);">
+            <i class="fas fa-info-circle mr-2" style="color: var(--accent);"></i>
+            <strong>Nota:</strong> Este repositorio es mantenido por el Consejo Estudiantil. 
+            Si tienes exámenes para contribuir, contáctanos a través de nuestros canales oficiales.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRADUATION OPTIONS SECTION -->
+    <section id="graduation" class="section">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Opciones de Grado</h2>
+        <p style="color: var(--text-secondary);">Conoce las diferentes modalidades disponibles para culminar tu carrera en Economía</p>
+      </div>
+
+      <!-- Graduation Options Navigation -->
+      <div class="bg-card rounded-xl shadow-md p-4 mb-6" style="background-color: var(--bg-card);">
+        <nav class="flex flex-wrap gap-2">
+          <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none active" data-subsection="overview">
+            <i class="fas fa-info-circle mr-2"></i>Resumen
+          </button>
+          <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none" data-subsection="coterminal">
+            <i class="fas fa-rocket mr-2"></i>Coterminal
+          </button>
+          <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none" data-subsection="thesis">
+            <i class="fas fa-file-alt mr-2"></i>Tesis
+          </button>
+          <button class="nav-item px-4 py-2 rounded-lg font-semibold focus:outline-none" data-subsection="internship">
+            <i class="fas fa-briefcase mr-2"></i>Prácticas
+          </button>
+        </nav>
+      </div>
+
+      <!-- Overview Subsection -->
+      <div id="overview" class="subsection">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Coterminal Card -->
+          <div class="info-card bg-card rounded-xl shadow-md overflow-hidden cursor-pointer" style="background-color: var(--bg-card);" onclick="showSubsection('coterminal')">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-rocket text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold ml-4" style="color: var(--text-primary);">Coterminal</h3>
+              </div>
+              <p style="color: var(--text-secondary);">Cursa simultáneamente pregrado y posgrado</p>
+              <div class="mt-4 space-y-2 text-sm">
+                <div style="color: var(--text-muted);"><i class="fas fa-check mr-2 text-green-500"></i>Promedio mínimo 3.8</div>
+                <div style="color: var(--text-muted);"><i class="fas fa-check mr-2 text-green-500"></i>16 créditos de maestría</div>
+                <div style="color: var(--text-muted);"><i class="fas fa-check mr-2 text-green-500"></i>3 programas disponibles</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thesis Card -->
+          <div class="info-card bg-card rounded-xl shadow-md overflow-hidden cursor-pointer" style="background-color: var(--bg-card);" onclick="showSubsection('thesis')">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-file-alt text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold ml-4" style="color: var(--text-primary);">Tesis</h3>
+              </div>
+              <p style="color: var(--text-secondary);">Desarrolla una investigación académica original</p>
+              <div class="mt-4 space-y-2 text-sm">
+                <div style="color: var(--text-muted);"><i class="fas fa-check mr-2 text-green-500"></i>Sin requisitos previos</div>
+                <div style="color: var(--text-muted);"><i class="fas fa-check mr-2 text-green-500"></i>16 créditos totales</div>
+                <div style="color: var(--text-muted);"><i class="fas fa-check mr-2 text-green-500"></i>Investigación independiente</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Internship Card -->
+          <div class="info-card bg-card rounded-xl shadow-md overflow-hidden cursor-pointer" style="background-color: var(--bg-card);" onclick="showSubsection('internship')">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-briefcase text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold ml-4" style="color: var(--text-primary);">Prácticas</h3>
+              </div>
+              <p style="color: var(--text-secondary);">Experiencia laboral profesional supervisada</p>
+              <div class="mt-4 space-y-2 text-sm">
+                <div style="color: var(--text-muted);"><i class="fas fa-check mr-2 text-green-500"></i>Promedio mínimo 3.3</div>
+                <div style="color: var(--text-muted);"><i class="fas fa-check mr-2 text-green-500"></i>6 meses de práctica</div>
+                <div style="color: var(--text-muted);"><i class="fas fa-check mr-2 text-green-500"></i>16 créditos totales</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coterminal Subsection -->
+      <div id="coterminal" class="subsection hidden">
+        <div class="bg-card rounded-xl shadow-md p-6 mb-6" style="background-color: var(--bg-card);">
+          <h3 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Programa Coterminal</h3>
+          <p class="mb-6" style="color: var(--text-secondary);">
+            El programa coterminal te permite cursar simultáneamente tu pregrado en Economía y una maestría, 
+            optimizando tu tiempo académico y obteniendo dos títulos de forma más eficiente.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-element rounded-lg p-4" style="background-color: var(--bg-element);">
+              <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                <i class="fas fa-clipboard-list mr-2"></i>Requisitos
+              </h4>
+              <ul class="space-y-2 text-sm">
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>Promedio acumulado mínimo de 3.8</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>Haber completado el 75% del plan de estudios</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>Ensayo de motivación</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>Secuencias de microeconomía y econometría básica completadas</li>
+              </ul>
+            </div>
+
+            <div class="bg-element rounded-lg p-4" style="background-color: var(--bg-element);">
+              <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                <i class="fas fa-cogs mr-2"></i>Proceso
+              </h4>
+              <ul class="space-y-2 text-sm">
+                <li style="color: var(--text-secondary);"><i class="fas fa-arrow-right mr-2 text-blue-500"></i>Seleccionar 16 créditos académicos de maestría</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-arrow-right mr-2 text-blue-500"></i>Completar en máximo dos períodos académicos</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-arrow-right mr-2 text-blue-500"></i>Aprobar todos los cursos seleccionados</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-arrow-right mr-2 text-blue-500"></i>Solicitud formal a la secretaría académica</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Available Programs -->
+          <div class="mb-8">
+            <h4 class="text-xl font-semibold mb-4" style="color: var(--text-primary);">Programas Disponibles</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Maestría en Economía -->
+              <div class="bg-element rounded-lg p-4" style="background-color: var(--bg-element);">
+                <h5 class="font-semibold mb-2" style="color: var(--text-primary);">Maestría en Economía</h5>
+                <p class="text-sm mb-3" style="color: var(--text-secondary);">Programa interdisciplinario enfocado en teoría económica avanzada</p>
+                <div class="space-y-1 text-xs">
+                  <div style="color: var(--text-muted);"><strong>Créditos:</strong> 16 académicos</div>
+                  <div style="color: var(--text-muted);"><strong>Tipo:</strong> Interdisciplinario</div>
+                  <div style="color: var(--text-muted);"><strong>Requisitos:</strong> Cálculo I, Probabilidad, Estadística</div>
+                </div>
+              </div>
+
+              <!-- Maestría en Economía de las Políticas Públicas -->
+              <div class="bg-element rounded-lg p-4" style="background-color: var(--bg-element);">
+                <h5 class="font-semibold mb-2" style="color: var(--text-primary);">Economía de las Políticas Públicas</h5>
+                <p class="text-sm mb-3" style="color: var(--text-secondary);">Especialización en análisis y diseño de políticas públicas</p>
+                <div class="space-y-1 text-xs">
+                  <div style="color: var(--text-muted);"><strong>Créditos:</strong> 16 académicos</div>
+                  <div style="color: var(--text-muted);"><strong>Tipo:</strong> Interdisciplinario</div>
+                  <div style="color: var(--text-muted);"><strong>Cursos:</strong> Economía pública, Políticas macroeconómicas</div>
+                </div>
+              </div>
+
+              <!-- Maestría en Finanzas Cuantitativas -->
+              <div class="bg-element rounded-lg p-4 opacity-60" style="background-color: var(--bg-element);">
+                <h5 class="font-semibold mb-2" style="color: var(--text-primary);">Finanzas Cuantitativas</h5>
+                <p class="text-sm mb-3" style="color: var(--text-secondary);">Programa enfocado en métodos cuantitativos financieros</p>
+                <div class="space-y-1 text-xs">
+                  <div style="color: var(--text-muted);"><strong>Estado:</strong> Suspendido temporalmente</div>
+                  <div style="color: var(--text-muted);"><strong>Créditos:</strong> 16 académicos</div>
+                  <div style="color: var(--text-muted);"><strong>Nota:</strong> Consultar disponibilidad</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thesis Subsection -->
+      <div id="thesis" class="subsection hidden">
+        <div class="bg-card rounded-xl shadow-md p-6" style="background-color: var(--bg-card);">
+          <h3 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Opción de Tesis</h3>
+          <p class="mb-6" style="color: var(--text-secondary);">
+            La modalidad de tesis te permite desarrollar una investigación académica original de 16 créditos,
+            profundizando en un tema específico de tu interés con supervisión académica especializada.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-element rounded-lg p-4" style="background-color: var(--bg-element);">
+              <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                <i class="fas fa-clipboard-check mr-2"></i>Características
+              </h4>
+              <ul class="space-y-2 text-sm">
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>Sin requisitos previos de entrada</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>16 créditos de investigación</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>8 créditos de programación independiente</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>Revisión bibliográfica analítica requerida</li>
+              </ul>
+            </div>
+
+            <div class="bg-element rounded-lg p-4" style="background-color: var(--bg-element);">
+              <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                <i class="fas fa-route mr-2"></i>Proceso
+              </h4>
+              <ul class="space-y-2 text-sm">
+                <li style="color: var(--text-secondary);"><span class="font-medium">1.</span> Definir tema de investigación</li>
+                <li style="color: var(--text-secondary);"><span class="font-medium">2.</span> Elegir director de tesis</li>
+                <li style="color: var(--text-secondary);"><span class="font-medium">3.</span> Presentar proyecto preliminar</li>
+                <li style="color: var(--text-secondary);"><span class="font-medium">4.</span> Asignación de evaluador por facultad</li>
+                <li style="color: var(--text-secondary);"><span class="font-medium">5.</span> Desarrollo completo de investigación</li>
+                <li style="color: var(--text-secondary);"><span class="font-medium">6.</span> Entrega de trabajo final</li>
+                <li style="color: var(--text-secondary);"><span class="font-medium">7.</span> Aprobación por facultad</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+            <h4 class="font-semibold mb-2" style="color: var(--text-primary);">
+              <i class="fas fa-info-circle mr-2 text-blue-500"></i>Información Importante
+            </h4>
+            <p class="text-sm" style="color: var(--text-secondary);">
+              La tesis debe incluir una revisión bibliográfica analítica sólida y un segundo evaluador debe aprobar el trabajo final.
+              Es una excelente opción para estudiantes interesados en continuar estudios de posgrado o investigación académica.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internship Subsection -->
+      <div id="internship" class="subsection hidden">
+        <div class="bg-card rounded-xl shadow-md p-6" style="background-color: var(--bg-card);">
+          <h3 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Prácticas y Pasantías</h3>
+          <p class="mb-6" style="color: var(--text-secondary);">
+            La modalidad de prácticas profesionales te permite obtener experiencia laboral real mientras culminas tu carrera,
+            combinando formación teórica con aplicación práctica en entornos profesionales.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-element rounded-lg p-4" style="background-color: var(--bg-element);">
+              <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                <i class="fas fa-clipboard-list mr-2"></i>Requisitos
+              </h4>
+              <ul class="space-y-2 text-sm">
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>Promedio acumulado mínimo de 3.3</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>75% de créditos obligatorios completados</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>Curso de Econometría Básica aprobado</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-check mr-2 text-green-500"></i>Sin registros disciplinarios activos</li>
+              </ul>
+            </div>
+
+            <div class="bg-element rounded-lg p-4" style="background-color: var(--bg-element);">
+              <h4 class="font-semibold mb-3" style="color: var(--text-primary);">
+                <i class="fas fa-cogs mr-2"></i>Estructura
+              </h4>
+              <ul class="space-y-2 text-sm">
+                <li style="color: var(--text-secondary);"><i class="fas fa-briefcase mr-2 text-blue-500"></i>5 créditos: Entrenamiento Práctico Profesional</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-book mr-2 text-blue-500"></i>10 créditos: Cursos específicos de facultad</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-graduation-cap mr-2 text-blue-500"></i>1 crédito: Curso de Desempeño Profesional</li>
+                <li style="color: var(--text-secondary);"><i class="fas fa-clock mr-2 text-blue-500"></i>Duración: 6 meses tiempo completo</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-xl font-semibold mb-4" style="color: var(--text-primary);">Proceso de Aplicación</h4>
+            <div class="bg-element rounded-lg p-4" style="background-color: var(--bg-element);">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h5 class="font-semibold mb-2" style="color: var(--text-primary);">Opción 1: Oportunidades Aprobadas</h5>
+                  <p class="text-sm" style="color: var(--text-secondary);">
+                    Aplicar a oportunidades pre-aprobadas por la facultad con funciones laborales ya validadas.
+                  </p>
+                </div>
+                <div>
+                  <h5 class="font-semibold mb-2" style="color: var(--text-primary);">Opción 2: Búsqueda Independiente</h5>
+                  <p class="text-sm" style="color: var(--text-secondary);">
+                    Encontrar tu propia oportunidad de práctica, sujeta a aprobación de funciones por la facultad.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 rounded-lg p-4">
+            <h4 class="font-semibold mb-2" style="color: var(--text-primary);">
+              <i class="fas fa-lightbulb mr-2 text-green-500"></i>Beneficios
+            </h4>
+            <p class="text-sm" style="color: var(--text-secondary);">
+              Esta modalidad te permite aplicar conocimientos teóricos en entornos reales, construir tu red profesional,
+              y obtener experiencia valiosa que facilite tu inserción laboral después de graduarte.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS (Course, Professor, Reviews) -->
+    <!-- Professor Modal -->
+    <div id="professorModal" class="modal">
+      <div class="modal-content w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden" style="background-color: var(--bg-card);">
+        <div class="bg-gradient-to-r from-purple-700 to-indigo-700 p-6 text-white">
+          <div class="flex justify-between items-center">
+            <h2 id="professorModalTitle" class="text-2xl font-bold"></h2>
+            <button id="closeProfessorModal" class="text-white hover:text-gray-200 text-2xl p-1"><i class="fas fa-times"></i></button>
+          </div>
+          <div id="professorModalSubtitle" class="text-sm opacity-90 mt-1"></div>
+        </div>
+        <div id="professorModalContent" class="p-6 max-h-[60vh] overflow-y-auto"></div>
+      </div>
     </div>
+
+    <!-- Course Modal -->
+    <div id="courseModal" class="modal">
+      <div class="modal-content w-full max-w-4xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden" style="background-color: var(--bg-card);">
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
+          <div class="flex justify-between items-center">
+            <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+            <button id="closeModal" class="text-white hover:text-gray-200 text-2xl p-1">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="flex items-center mt-2">
+            <div id="modalPrereq" class="text-sm opacity-90"></div>
+            <div id="modalDifficulty" class="ml-6 text-sm opacity-90"></div>
+          </div>
+        </div>
+        <div id="modalContent" class="p-6 max-h-[60vh] overflow-y-auto"></div>
+      </div>
+    </div>
+    
+    <!-- Professor Reviews Modal -->
+    <div id="reviewsModal" class="reviews-modal">
+      <div class="modal-content w-full max-w-3xl mx-auto mt-20 rounded-xl shadow-2xl p-0 overflow-hidden" style="background-color: var(--bg-card);">
+        <div class="bg-gradient-to-r from-indigo-600 to-purple-700 p-6 text-white">
+          <div class="flex justify-between items-center">
+            <h2 id="reviewsModalTitle" class="text-2xl font-bold"></h2>
+            <button id="closeReviewsModal" class="text-white hover:text-gray-200 text-2xl p-1">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div id="reviewsModalSubtitle" class="text-sm opacity-90 mt-1"></div>
+        </div>
+        <div id="reviewsModalContent" class="p-6 max-h-[60vh] overflow-y-auto"></div>
+      </div>
+    </div>
+
+    <!-- Floating review button -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdrlW3eG_wwAWFHfLDoE6bM4nllon6-CZ0gIsnK53hXFhWMw/viewform" target="_blank" title="Enviar una nueva reseña"
+       class="fixed bottom-6 right-6 text-white rounded-full shadow-lg px-5 py-3 text-sm font-medium focus:outline-none focus:ring-2"
+       style="background-color: var(--accent); transition: background-color 0.2s;"
+       onmouseover="this.style.backgroundColor='var(--accent-hover)'"
+       onmouseout="this.style.backgroundColor='var(--accent)'">
+       <i class="fas fa-pen mr-2"></i>Agregar reseña
+    </a>
+
+    <p class="text-center text-xs my-4" style="color: var(--text-muted);">Última actualización: 11 de agosto de 2025</p>
+    <p class="text-center text-xs my-4" style="color: var(--text-muted);">Desarrollado por el Consejo Estudiantil de la Facultad de Economía.</p>
   </div>
 
   <script>
-    // Global state for modals
+    // Global state
     let currentProfessor = null;
-    
-    // Fetch and display course data
+    let allCourses = [];
+    let allProfessors = [];
+
+    // Navigation state
+    let currentSection = 'home';
+    let currentSubsection = 'overview';
+
+    // Initialize application
     document.addEventListener('DOMContentLoaded', async function() {
       try {
         const response = await fetch('courses.json');
         const courses = await response.json();
         
-        window.allCourses = courses;
+        allCourses = courses;
         const professors = buildProfessors(courses);
+        allProfessors = professors;
 
         displayCourses(courses);
         displayProfessors(professors);
+        updateStats(courses, professors);
 
         setupSearch(courses);
         setupProfSearch(professors);
         setupModalClosers();
-        setupNav();
+        setupNavigation();
         setupThemeToggle();
       } catch (error) {
         console.error('Error loading courses:', error);
@@ -313,7 +1018,112 @@
       }
     });
 
-    // Display courses in the table
+    // Update statistics
+    function updateStats(courses, professors) {
+      document.getElementById('courseCount').textContent = courses.length;
+      document.getElementById('profCount').textContent = professors.length;
+    }
+
+    // Navigation functions
+    function setupNavigation() {
+      // Main navigation
+      document.querySelectorAll('[data-section]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const button = e.target.closest('[data-section]');
+          if (button) {
+            const section = button.dataset.section;
+            showSection(section);
+          }
+        });
+      });
+
+      // Catalog sub-navigation
+      document.getElementById('navCourses').addEventListener('click', () => {
+        document.getElementById('coursesSection').classList.remove('hidden');
+        document.getElementById('professorsSection').classList.add('hidden');
+        document.getElementById('navCourses').classList.add('active');
+        document.getElementById('navProfessors').classList.remove('active');
+      });
+
+      document.getElementById('navProfessors').addEventListener('click', () => {
+        document.getElementById('coursesSection').classList.add('hidden');
+        document.getElementById('professorsSection').classList.remove('hidden');
+        document.getElementById('navProfessors').classList.add('active');
+        document.getElementById('navCourses').classList.remove('active');
+      });
+
+      // Graduation subsection navigation
+      document.querySelectorAll('[data-subsection]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const subsection = e.target.closest('[data-subsection]').dataset.subsection;
+          showSubsection(subsection);
+        });
+      });
+
+      // Programs navigation
+      document.querySelectorAll('[data-program]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const program = e.target.closest('[data-program]').dataset.program;
+          showProgram(program);
+        });
+      });
+
+    }
+
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Show target section
+      document.getElementById(sectionId).classList.add('active');
+      
+      // Update navigation
+      document.querySelectorAll('[data-section]').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+      
+      currentSection = sectionId;
+    }
+
+    function showSubsection(subsectionId) {
+      // Hide all subsections
+      document.querySelectorAll('.subsection').forEach(subsection => {
+        subsection.classList.add('hidden');
+      });
+      
+      // Show target subsection
+      document.getElementById(subsectionId).classList.remove('hidden');
+      
+      // Update navigation
+      document.querySelectorAll('[data-subsection]').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`[data-subsection="${subsectionId}"]`).classList.add('active');
+      
+      currentSubsection = subsectionId;
+    }
+
+    function showProgram(programId) {
+      // Hide all program subsections
+      document.querySelectorAll('.program-subsection').forEach(program => {
+        program.classList.add('hidden');
+      });
+      
+      // Show target program
+      document.getElementById(programId).classList.remove('hidden');
+      
+      // Update navigation
+      document.querySelectorAll('[data-program]').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`[data-program="${programId}"]`).classList.add('active');
+    }
+
+    // Course catalog functions (keep existing ones)
     function displayCourses(courses) {
       const tableBody = document.getElementById('coursesTable');
       tableBody.innerHTML = '';
@@ -324,7 +1134,6 @@
         row.style.transition = 'background-color 0.2s';
         row.onclick = () => showCourseModal(course);
         
-        // Generate star HTML for difficulty
         const difficultyStars = generateStarRating(course.difficulty);
         
         row.innerHTML = `
@@ -345,8 +1154,7 @@
         tableBody.appendChild(row);
       });
     }
-    
-    // Generate star rating HTML
+
     function generateStarRating(rating) {
       let starsHtml = '';
       for (let i = 0; i < 5; i++) {
@@ -359,7 +1167,6 @@
       return starsHtml;
     }
 
-    // Setup search functionality
     function setupSearch(courses) {
       const searchInput = document.getElementById('searchInput');
       
@@ -374,22 +1181,23 @@
       });
     }
 
-    // Setup modal closers
     function setupModalClosers() {
-      // Course modal
       document.getElementById('closeModal').addEventListener('click', () => {
         document.getElementById('courseModal').style.display = 'none';
       });
       
-      // Reviews modal
       document.getElementById('closeReviewsModal').addEventListener('click', () => {
         document.getElementById('reviewsModal').style.display = 'none';
       });
       
-      // Close modals when clicking outside
+      document.getElementById('closeProfessorModal').addEventListener('click', () => {
+        document.getElementById('professorModal').style.display = 'none';
+      });
+      
       window.addEventListener('click', (event) => {
         const courseModal = document.getElementById('courseModal');
         const reviewsModal = document.getElementById('reviewsModal');
+        const professorModal = document.getElementById('professorModal');
         
         if (event.target === courseModal) {
           courseModal.style.display = 'none';
@@ -398,10 +1206,13 @@
         if (event.target === reviewsModal) {
           reviewsModal.style.display = 'none';
         }
+        
+        if (event.target === professorModal) {
+          professorModal.style.display = 'none';
+        }
       });
     }
 
-    // Show course modal with professors
     function showCourseModal(course) {
       const modal = document.getElementById('courseModal');
       const modalTitle = document.getElementById('modalTitle');
@@ -409,20 +1220,17 @@
       const modalPrereq = document.getElementById('modalPrereq');
       const modalDifficulty = document.getElementById('modalDifficulty');
       
-      // Set course info
       modalTitle.textContent = course.name;
       modalPrereq.innerHTML = `<i class="fas fa-book-open mr-2"></i>Prerrequisito: ${course.prerequisite}`;
       modalDifficulty.innerHTML = `<i class="fas fa-chart-line mr-2"></i>Dificultad: ${generateStarRating(course.difficulty)}`;
       
       let content = '';
       
-      // Display professors
       if (course.professors.length > 0) {
         content += `<h3 class="text-xl font-semibold mb-4">Profesores</h3>`;
         content += `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">`;
         
         course.professors.forEach(prof => {
-          // Calculate per-course rating information
           let ratingSum = 0;
           let ratingCnt = 0;
           if (Array.isArray(prof.reviews)) {
@@ -434,7 +1242,6 @@
               }
             });
           }
-          // If there are no individual ratings for this course, fall back to prof.rating if provided
           let numericRating = ratingCnt ? ratingSum / ratingCnt : (typeof prof.rating === 'number' ? prof.rating : null);
           const ratingStars = numericRating !== null ? generateStarRating(Math.round(numericRating)) : generateStarRating(0);
           const ratingDisplay = numericRating !== null ? numericRating.toFixed(1) : 'N/A';
@@ -469,13 +1276,10 @@
       modalContent.innerHTML = content;
       modal.style.display = 'block';
     }
-    
-    // Show reviews modal for a professor
+
     function showReviewsModal(event, encodedProfJson, courseName) {
-      // Prevent the click from propagating to the course modal
       event.stopPropagation();
       
-      // Decode and parse the professor JSON string
       const professorJson = decodeURIComponent(encodedProfJson);
       const professor = JSON.parse(professorJson);
       
@@ -514,16 +1318,14 @@
       modal.style.display = 'block';
     }
 
-    // Sorting state variables
+    // Sorting functionality
     let courseSort = {col: null, asc: true};
     let profSort = {key: null, asc: true};
 
-    // Sort table functionality
     function sortTable(columnIndex) {
       const table = document.getElementById('coursesTable');
       const rows = Array.from(table.rows);
 
-      // toggle sort direction
       if (courseSort.col === columnIndex) {
         courseSort.asc = !courseSort.asc;
       } else {
@@ -547,7 +1349,6 @@
 
       rows.forEach(row => table.appendChild(row));
 
-      // update header icons
       const headers = document.querySelectorAll('#coursesSection thead th');
       headers.forEach((th, idx) => {
         const icon = th.querySelector('i');
@@ -561,8 +1362,6 @@
       });
     }
 
-    // Professors sorting
-    let allProfessors = [];
     function sortProfessors(by) {
       if (!allProfessors.length) return;
 
@@ -570,7 +1369,7 @@
         profSort.asc = !profSort.asc;
       } else {
         profSort.key = by;
-        profSort.asc = by === 'rating' ? false : true; // default direction
+        profSort.asc = by === 'rating' ? false : true;
       }
 
       const sorted = [...allProfessors];
@@ -585,7 +1384,6 @@
       }
       displayProfessors(sorted);
 
-      // update header icons
       const headers = document.querySelectorAll('#professorsSection thead th');
       headers.forEach(th => {
         const key = th.dataset.key;
@@ -600,7 +1398,6 @@
       });
     }
 
-    // Build professors list from courses
     function buildProfessors(courses) {
       const map = {};
       courses.forEach(course => {
@@ -618,7 +1415,6 @@
           const profObj = map[p.slug];
           profObj.courses.add(course.name);
 
-          // accumulate reviews
           if (Array.isArray(p.reviews)) {
             p.reviews.forEach(r => {
               const numeric = Number(r.rating);
@@ -635,7 +1431,6 @@
             });
           }
 
-          // fallback: use p.rating only if there are no individual review ratings
           if (profObj.ratingCount === 0 && typeof p.rating === 'number') {
             profObj.ratingSum += p.rating;
             profObj.ratingCount += 1;
@@ -654,56 +1449,7 @@
         };
       });
     }
-      /* Duplicate old buildProfessors block
-      const map = {};
-      courses.forEach(course => {
-        course.professors?.forEach(p => {
-          if (!map[p.slug]) {
-            map[p.slug] = {
-              slug: p.slug,
-              name: p.name,
-              courses: new Set(),
-              reviews: [],
-                ratingValues: []
-            };
-          }
-          map[p.slug].courses.add(course.name);
-          // collect rating value for this course occurrence
-          let ratingVal = null;
-          if (typeof p.rating === 'number') {
-            ratingVal = p.rating;
-          } else if (Array.isArray(p.reviews) && p.reviews.length) {
-            const nums = p.reviews.map(r=>Number(r.rating)).filter(n=>!isNaN(n));
-            if (nums.length) ratingVal = nums.reduce((a,b)=>a+b,0)/nums.length;
-          }
-          if (ratingVal !== null) {
-            map[p.slug].ratingValues.push(ratingVal);
-          }
-          if (Array.isArray(p.reviews)) {
-            p.reviews.forEach(r => {
-              const numeric = Number(r.rating);
-              map[p.slug].reviews.push({
-                ...r,
-                rating: isNaN(numeric) ? null : numeric,
-                course: r.course || course.name
-              });
-            });
-          }
-        });
-      });
-      return Object.values(map).map(p => {
-        const avg = p.ratingValues.length ? p.ratingValues.reduce((a,b)=>a+b,0)/p.ratingValues.length : null;
-        return {
-          slug: p.slug,
-          name: p.name,
-          courses: Array.from(p.courses),
-          reviews: p.reviews,
-          avgRating: avg
-        };
-      });
-    }
-    */
-    // Display professors in table
+
     function displayProfessors(professors) {
       allProfessors = professors;
       const tbody = document.getElementById('professorsTable');
@@ -727,8 +1473,6 @@
       });
     }
 
-
-    // Professor modal showing courses they teach
     function showProfessorModal(prof) {
       const modal = document.getElementById('professorModal');
       const title = document.getElementById('professorModalTitle');
@@ -761,35 +1505,6 @@
       modal.style.display = 'block';
     }
 
-
-    // Navigation handling
-    function setupNav() {
-      const btnCourses = document.getElementById('navCourses');
-      const btnProfs = document.getElementById('navProfessors');
-      const coursesSec = document.getElementById('coursesSection');
-      const profSec = document.getElementById('professorsSection');
-
-      function activate(showCourses) {
-        if (showCourses) {
-          coursesSec.classList.remove('hidden');
-          profSec.classList.add('hidden');
-          btnCourses.classList.add('bg-indigo-600','text-white');
-          btnProfs.classList.remove('bg-indigo-600','text-white');
-        } else {
-          coursesSec.classList.add('hidden');
-          profSec.classList.remove('hidden');
-          btnProfs.classList.add('bg-indigo-600','text-white');
-          btnCourses.classList.remove('bg-indigo-600','text-white');
-        }
-      }
-
-      btnCourses.addEventListener('click', () => activate(true));
-      btnProfs.addEventListener('click', () => activate(false));
-      // default view
-      activate(true);
-    }
-
-    // Professors search
     function setupProfSearch(professors) {
       const input = document.getElementById('profSearchInput');
       input.addEventListener('input', () => {
@@ -799,20 +1514,12 @@
       });
     }
 
-    // Close professor modal
-    document.getElementById('closeProfessorModal').addEventListener('click', () => {
-      document.getElementById('professorModal').style.display = 'none';
-    });
-
-    // Theme toggle functionality
     function setupThemeToggle() {
       const themeButtons = document.querySelectorAll('.theme-button');
       const currentTheme = getStoredTheme();
 
-      // Highlight the active theme button
       updateActiveThemeButton(currentTheme);
       
-      // Add event listeners for each theme button
       themeButtons.forEach(button => {
         button.addEventListener('click', () => {
           const newTheme = button.getAttribute('data-theme');
@@ -822,7 +1529,6 @@
       });
     }
 
-    // Update active theme button styling
     function updateActiveThemeButton(activeTheme) {
       const themeButtons = document.querySelectorAll('.theme-button');
       themeButtons.forEach(button => {
@@ -834,18 +1540,6 @@
         }
       });
     }
-
   </script>
-  <!-- Floating review button -->
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdrlW3eG_wwAWFHfLDoE6bM4nllon6-CZ0gIsnK53hXFhWMw/viewform" target="_blank" title="Enviar una nueva reseña"
-     class="fixed bottom-6 right-6 text-white rounded-full shadow-lg px-5 py-3 text-sm font-medium focus:outline-none focus:ring-2"
-     style="background-color: var(--accent); transition: background-color 0.2s;"
-     onmouseover="this.style.backgroundColor='var(--accent-hover)'"
-     onmouseout="this.style.backgroundColor='var(--accent)'">
-     <i class="fas fa-pen mr-2"></i>Agregar reseña
-  </a>
-
-  <p class="text-center text-xs my-4" style="color: var(--text-muted);">Última actualización: 5 de julio de 2025</p>
-  <p class="text-center text-xs my-4" style="color: var(--text-muted);">Desarrollado por el Consejo Estudiantil de la Facultad de Economía.</p>
 </body>
 </html>
